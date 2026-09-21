@@ -9,8 +9,6 @@
    hairline dividers instead of boxes.
    =================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,300..600;1,300..600&family=Work+Sans:wght@300;400;500;600;700&family=Noto+Sans+Arabic:wght@300;400;600&family=Noto+Sans+SC:wght@300;400;600&display=swap');
-
 :root {
   --font-display: 'Newsreader', 'Georgia', serif;
   --font-body: 'Work Sans', -apple-system, sans-serif;

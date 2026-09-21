@@ -10,8 +10,6 @@
    gallery — all distinct from the previous three builds.
    =================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Mulish:wght@400;500;600;700;800&family=Noto+Sans+Arabic:wght@400;600;700&family=Noto+Sans+SC:wght@400;600;700&display=swap');
-
 :root {
   --font-display: 'Lora', 'Georgia', serif;
   --font-body: 'Mulish', -apple-system, sans-serif;

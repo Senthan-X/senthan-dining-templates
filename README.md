@@ -110,4 +110,4 @@ usage rights before reusing any of these images elsewhere.
 
 ---
 
-Crafted by [Senthan & Co](mailto:jonathanrivers0414@gmail.com)
+Crafted by [Senthan & Co](mailto:hello@senthan-co.example)

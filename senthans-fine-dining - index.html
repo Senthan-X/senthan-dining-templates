@@ -20,7 +20,420 @@
 })();
 </script>
 
-<link rel="stylesheet" href="senthans-fine-dining - style.css">
+<style>
+/* ===================================================================
+   SENTHAN'S FINE DINING — stylesheet
+   Token system: 3 palettes (espresso / wine / slate) x 2 themes
+   (dark / light) set on <html data-palette data-theme>.
+   =================================================================== */
+
+/* -------------------------------------------------------------
+   1. BASE TOKENS (shared across all palettes)
+------------------------------------------------------------------ */
+:root {
+  --font-display: 'Fraunces', 'Georgia', serif;
+  --font-body: 'Karla', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 28px;
+  --radius-pill: 999px;
+
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.75rem;
+  --space-lg: 3rem;
+  --space-xl: 5rem;
+  --space-2xl: 8rem;
+
+  --container: 1240px;
+  --transition-fast: 0.2s ease;
+  --transition-med: 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+
+  --shadow-sm: 0 2px 10px rgba(0,0,0,0.12);
+  --shadow-md: 0 12px 32px rgba(0,0,0,0.18);
+  --shadow-lg: 0 24px 60px rgba(0,0,0,0.28);
+}
+
+html[lang="ar"] { --font-display: 'Noto Sans Arabic', var(--font-body); --font-body: 'Noto Sans Arabic', sans-serif; }
+html[lang="zh"] { --font-display: 'Fraunces', 'Noto Sans SC', serif; --font-body: 'Noto Sans SC', 'Karla', sans-serif; }
+
+/* -------------------------------------------------------------
+   2. PALETTE + THEME TOKENS
+------------------------------------------------------------------ */
+html[data-palette="espresso"][data-theme="dark"] {
+  --bg: #1C140F; --surface: #241A13; --surface-2: #2E2119; --surface-raise: #35271D;
+  --text: #F2E9DE; --text-muted: #C7B9AA; --heading: #FBF3E8;
+  --accent: #C99A45; --accent-strong: #E0B563; --accent-contrast: #241A13;
+  --border: #3D2E22; --overlay: rgba(18,12,8,0.72);
+}
+html[data-palette="espresso"][data-theme="light"] {
+  --bg: #FBF6EF; --surface: #FFFFFF; --surface-2: #F3EADC; --surface-raise: #FFFFFF;
+  --text: #241A13; --text-muted: #6B5A47; --heading: #1D140E;
+  --accent: #A8752E; --accent-strong: #8C5F26; --accent-contrast: #FBF6EF;
+  --border: #E4D9C8; --overlay: rgba(36,26,19,0.6);
+}
+html[data-palette="wine"][data-theme="dark"] {
+  --bg: #1F1013; --surface: #2A151A; --surface-2: #351A21; --surface-raise: #3D1F26;
+  --text: #F5EDE7; --text-muted: #C9AFAF; --heading: #FBF2ED;
+  --accent: #A8434F; --accent-strong: #C25863; --accent-contrast: #FBF2ED;
+  --border: #3D1F28; --overlay: rgba(20,10,12,0.72);
+}
+html[data-palette="wine"][data-theme="light"] {
+  --bg: #FAF3EF; --surface: #FFFFFF; --surface-2: #F1E1DC; --surface-raise: #FFFFFF;
+  --text: #2A151A; --text-muted: #7A5E5E; --heading: #240F13;
+  --accent: #8C2F39; --accent-strong: #6E232B; --accent-contrast: #FAF3EF;
+  --border: #E8D8D2; --overlay: rgba(42,21,26,0.6);
+}
+html[data-palette="slate"][data-theme="dark"] {
+  --bg: #171B1A; --surface: #1F2624; --surface-2: #26302D; --surface-raise: #2C3835;
+  --text: #E9EFEC; --text-muted: #A9B8B2; --heading: #F2F6F4;
+  --accent: #82A18C; --accent-strong: #9CBBA5; --accent-contrast: #171B1A;
+  --border: #2C3634; --overlay: rgba(10,13,12,0.72);
+}
+html[data-palette="slate"][data-theme="light"] {
+  --bg: #F3F5F3; --surface: #FFFFFF; --surface-2: #E7ECE8; --surface-raise: #FFFFFF;
+  --text: #1C2422; --text-muted: #57655F; --heading: #131917;
+  --accent: #4F7362; --accent-strong: #3D5A4B; --accent-contrast: #F3F5F3;
+  --border: #DCE3DF; --overlay: rgba(23,27,26,0.6);
+}
+
+/* -------------------------------------------------------------
+   3. RESET + BASE
+------------------------------------------------------------------ */
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
+}
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  transition: background-color var(--transition-med), color var(--transition-med);
+  overflow-x: hidden;
+}
+body.nav-lock { overflow: hidden; }
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+ul { list-style: none; margin: 0; padding: 0; }
+h1, h2, h3, h4 { font-family: var(--font-display); color: var(--heading); margin: 0; line-height: 1.15; }
+p { margin: 0; }
+button { font-family: inherit; cursor: pointer; }
+input, select, textarea { font-family: inherit; }
+
+:focus-visible {
+  outline: 2px solid var(--accent-strong);
+  outline-offset: 3px;
+}
+
+.container { max-width: var(--container); margin: 0 auto; padding: 0 1.5rem; }
+.section { padding: var(--space-2xl) 0; }
+.section-inner { padding: var(--space-xl) 0; }
+.eyebrow {
+  display: inline-block; font-family: var(--font-body); font-weight: 700; font-size: 0.78rem;
+  letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent-strong); margin-bottom: var(--space-xs);
+}
+.section-head { max-width: 640px; margin-bottom: var(--space-lg); }
+.section-head.center { margin-left: auto; margin-right: auto; text-align: center; }
+.section-head h2 { font-size: clamp(2rem, 4vw, 2.9rem); font-weight: 500; margin-top: 0.4rem; }
+.section-head p { color: var(--text-muted); margin-top: var(--space-sm); font-size: 1.05rem; }
+
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+  padding: 0.9rem 1.8rem; border-radius: var(--radius-pill); font-weight: 700; font-size: 0.95rem;
+  border: 1px solid transparent; transition: transform var(--transition-fast), background-color var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast);
+  white-space: nowrap;
+}
+.btn:hover { transform: translateY(-2px); }
+.btn-solid { background: var(--accent); color: var(--accent-contrast); }
+.btn-solid:hover { background: var(--accent-strong); }
+.btn-outline { background: transparent; color: var(--heading); border-color: var(--border); }
+.btn-outline:hover { border-color: var(--accent-strong); color: var(--accent-strong); }
+.btn-block { width: 100%; }
+
+[data-reveal] { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
+[data-reveal].is-visible { opacity: 1; transform: translateY(0); }
+
+/* -------------------------------------------------------------
+   4. HEADER + NAV
+------------------------------------------------------------------ */
+.site-header {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  padding: 1.4rem 0; transition: background-color var(--transition-med), padding var(--transition-med), box-shadow var(--transition-med), border-color var(--transition-med);
+  border-bottom: 1px solid transparent;
+}
+.site-header.is-scrolled {
+  padding: 0.85rem 0; background: color-mix(in srgb, var(--surface) 88%, transparent);
+  backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+  border-bottom-color: var(--border); box-shadow: var(--shadow-sm);
+}
+.site-header .container { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+.logo { font-family: var(--font-display); font-size: 1.4rem; font-weight: 600; color: var(--heading); letter-spacing: 0.01em; }
+.logo span { color: var(--accent-strong); }
+
+.nav-panel { display: flex; align-items: center; gap: 2.1rem; }
+.nav-links { display: flex; gap: 1.9rem; }
+.nav-links a { font-size: 0.95rem; font-weight: 600; color: var(--text); opacity: 0.85; transition: opacity var(--transition-fast), color var(--transition-fast); position: relative; }
+.nav-links a:hover { opacity: 1; color: var(--accent-strong); }
+
+.nav-tools { display: flex; align-items: center; gap: 0.6rem; }
+
+.icon-btn {
+  width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--border);
+  background: var(--surface); color: var(--heading); display: flex; align-items: center; justify-content: center;
+  transition: border-color var(--transition-fast), transform var(--transition-fast);
+}
+.icon-btn:hover { border-color: var(--accent-strong); transform: translateY(-2px); }
+.icon-btn svg { width: 18px; height: 18px; }
+.icon-btn .icon-moon { display: none; }
+html[data-theme="light"] .icon-btn .icon-sun { display: none; }
+html[data-theme="light"] .icon-btn .icon-moon { display: block; }
+
+/* palette switcher — "choose your flavor" dots */
+.flavor-switch { display: flex; align-items: center; gap: 0.45rem; padding: 0.3rem; border: 1px solid var(--border); border-radius: var(--radius-pill); background: var(--surface); }
+.flavor-dot { width: 22px; height: 22px; border-radius: 50%; border: 2px solid transparent; padding: 0; position: relative; transition: border-color var(--transition-fast), transform var(--transition-fast); }
+.flavor-dot:hover { transform: scale(1.12); }
+.flavor-dot[aria-pressed="true"] { border-color: var(--accent-strong); }
+.flavor-dot[data-palette-btn="espresso"] { background: linear-gradient(135deg, #C99A45, #6E4A22); }
+.flavor-dot[data-palette-btn="wine"] { background: linear-gradient(135deg, #C25863, #6E232B); }
+.flavor-dot[data-palette-btn="slate"] { background: linear-gradient(135deg, #9CBBA5, #3D5A4B); }
+
+/* language dropdown */
+.lang-switch { position: relative; }
+.lang-toggle {
+  display: flex; align-items: center; gap: 0.35rem; height: 40px; padding: 0 0.9rem;
+  border-radius: var(--radius-pill); border: 1px solid var(--border); background: var(--surface); color: var(--heading);
+  font-weight: 700; font-size: 0.82rem; letter-spacing: 0.04em;
+}
+.lang-dropdown {
+  position: absolute; top: calc(100% + 10px); right: 0; min-width: 190px; background: var(--surface-raise);
+  border: 1px solid var(--border); border-radius: var(--radius-md); box-shadow: var(--shadow-md);
+  padding: 0.5rem; display: grid; gap: 0.15rem; opacity: 0; visibility: hidden; transform: translateY(-6px);
+  transition: opacity var(--transition-fast), transform var(--transition-fast), visibility var(--transition-fast);
+}
+html[dir="rtl"] .lang-dropdown { right: auto; left: 0; }
+.lang-dropdown.is-open { opacity: 1; visibility: visible; transform: translateY(0); }
+.lang-dropdown button {
+  display: flex; justify-content: space-between; gap: 0.6rem; width: 100%; text-align: left;
+  padding: 0.55rem 0.75rem; border-radius: var(--radius-sm); border: none; background: transparent; color: var(--text); font-size: 0.9rem;
+}
+html[dir="rtl"] .lang-dropdown button { text-align: right; }
+.lang-dropdown button:hover { background: var(--surface-2); }
+.lang-dropdown button.is-active { color: var(--accent-strong); font-weight: 700; }
+
+.nav-toggle { display: none; }
+
+@media (max-width: 980px) {
+  .nav-links { display: none; }
+  .nav-toggle {
+    display: flex; align-items: center; justify-content: center; width: 42px; height: 42px;
+    border-radius: 50%; border: 1px solid var(--border); background: var(--surface); color: var(--heading);
+  }
+  .nav-toggle svg { width: 20px; height: 20px; }
+  .nav-panel-mobile {
+    position: fixed; inset: 0; top: 0; background: var(--bg); z-index: 90; padding: 6.5rem 1.5rem 2rem;
+    transform: translateY(-100%); transition: transform var(--transition-med); overflow-y: auto;
+  }
+  .nav-panel-mobile.is-open { transform: translateY(0); }
+  .nav-panel-mobile .nav-links { flex-direction: column; gap: 0.3rem; }
+  .nav-panel-mobile .nav-links a { display: block; padding: 1rem 0; border-bottom: 1px solid var(--border); font-size: 1.15rem; }
+  .nav-panel-mobile .mobile-tools { margin-top: 2rem; display: flex; flex-direction: column; gap: 1.25rem; }
+  .nav-panel-mobile .flavor-switch, .nav-panel-mobile .lang-switch-mobile { justify-content: center; }
+}
+
+/* -------------------------------------------------------------
+   5. HERO
+------------------------------------------------------------------ */
+.hero { position: relative; min-height: 100vh; display: flex; align-items: center; overflow: hidden; }
+.hero-media { position: absolute; inset: 0; z-index: 0; }
+.hero-media img { width: 100%; height: 100%; object-fit: cover; object-position: center 35%; }
+.hero-media::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, var(--overlay) 0%, rgba(0,0,0,0.55) 55%, var(--overlay) 100%); }
+.hero-content { position: relative; z-index: 1; padding-top: 6rem; display: grid; grid-template-columns: 1.4fr 1fr; gap: 3rem; align-items: end; }
+.hero-text { color: #FBF6EF; }
+.hero-text .eyebrow { color: var(--accent-strong); }
+.hero-text h1 { font-size: clamp(2.6rem, 6vw, 4.6rem); font-weight: 500; color: #FBF6EF; margin: 0.6rem 0 1.3rem; max-width: 14ch; }
+.hero-text p { font-size: 1.1rem; color: rgba(251,246,239,0.86); max-width: 46ch; margin-bottom: 2rem; }
+.hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+.chef-ticket {
+  background: var(--surface-raise); border: 1.5px dashed var(--border); border-radius: var(--radius-md);
+  padding: 1.6rem 1.5rem; box-shadow: var(--shadow-lg); transform: rotate(2deg); margin-bottom: 0.5rem;
+}
+.chef-ticket::before {
+  content: ""; display: block; width: 40px; height: 4px; background: var(--border); border-radius: var(--radius-pill); margin: 0 auto 1rem;
+}
+.chef-ticket-label { font-family: var(--font-display); font-weight: 600; font-size: 1.15rem; color: var(--heading); }
+.chef-ticket-note { font-size: 0.82rem; color: var(--text-muted); margin-top: 0.15rem; margin-bottom: 1rem; }
+.chef-ticket ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.6rem; }
+.chef-ticket li { display: flex; gap: 0.7rem; align-items: baseline; font-size: 0.95rem; color: var(--text); border-top: 1px dotted var(--border); padding-top: 0.6rem; }
+.chef-ticket li:first-child { border-top: none; padding-top: 0; }
+.chef-ticket li::before { content: "—"; color: var(--accent-strong); }
+
+@media (max-width: 900px) {
+  .hero-content { grid-template-columns: 1fr; }
+  .chef-ticket { transform: rotate(0); }
+}
+
+/* -------------------------------------------------------------
+   6. ABOUT
+------------------------------------------------------------------ */
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+.about-media { position: relative; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-md); aspect-ratio: 4/5; }
+.about-media img { width: 100%; height: 100%; object-fit: cover; }
+.about-text p { color: var(--text-muted); margin-bottom: 1.1rem; font-size: 1.05rem; }
+.about-quote {
+  font-family: var(--font-display); font-style: italic; font-size: 1.4rem; color: var(--heading);
+  border-left: 3px solid var(--accent); padding-left: 1.2rem; margin-top: 1.6rem;
+}
+html[dir="rtl"] .about-quote { border-left: none; border-right: 3px solid var(--accent); padding-left: 0; padding-right: 1.2rem; }
+@media (max-width: 900px) { .about-grid { grid-template-columns: 1fr; gap: 2.5rem; } }
+
+/* -------------------------------------------------------------
+   7. MENU
+------------------------------------------------------------------ */
+.menu-tabs { display: flex; flex-wrap: wrap; gap: 0.7rem; margin-bottom: var(--space-lg); }
+.menu-tab {
+  padding: 0.7rem 1.4rem; border-radius: var(--radius-pill); border: 1px solid var(--border);
+  background: var(--surface); color: var(--text-muted); font-weight: 700; font-size: 0.92rem;
+  transition: all var(--transition-fast);
+}
+.menu-tab[aria-selected="true"] { background: var(--accent); color: var(--accent-contrast); border-color: var(--accent); }
+.menu-tab:hover { border-color: var(--accent-strong); }
+
+.menu-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.8rem; }
+.dish-card {
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-md); overflow: hidden;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast);
+}
+.dish-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); border-color: var(--border); }
+.dish-media { aspect-ratio: 4/3; overflow: hidden; }
+.dish-media img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
+.dish-card:hover .dish-media img { transform: scale(1.06); }
+.dish-body { padding: 1.3rem 1.4rem 1.5rem; }
+.dish-top { display: flex; justify-content: space-between; align-items: baseline; gap: 0.8rem; }
+.dish-name { font-family: var(--font-display); font-size: 1.15rem; font-weight: 600; color: var(--heading); }
+.dish-price { font-weight: 700; color: var(--accent-strong); white-space: nowrap; font-family: var(--font-display); }
+.dish-desc { color: var(--text-muted); font-size: 0.92rem; margin-top: 0.5rem; line-height: 1.55; }
+
+/* -------------------------------------------------------------
+   8. GALLERY
+------------------------------------------------------------------ */
+.gallery-grid { display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: 160px; gap: 1rem; }
+.gallery-item { position: relative; border-radius: var(--radius-md); overflow: hidden; cursor: pointer; border: none; padding: 0; }
+.gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+.gallery-item:hover img { transform: scale(1.08); }
+.gallery-item::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 55%, rgba(0,0,0,0.45)); opacity: 0; transition: opacity var(--transition-fast); }
+.gallery-item:hover::after { opacity: 1; }
+.gallery-item.tall { grid-row: span 2; }
+.gallery-item.wide { grid-column: span 2; }
+@media (max-width: 900px) {
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 140px; }
+}
+
+.lightbox {
+  position: fixed; inset: 0; z-index: 200; background: rgba(10,8,6,0.92); display: flex; align-items: center; justify-content: center;
+  padding: 2rem; opacity: 0; visibility: hidden; transition: opacity var(--transition-fast), visibility var(--transition-fast);
+}
+.lightbox.is-open { opacity: 1; visibility: visible; }
+.lightbox-inner { max-width: 900px; width: 100%; position: relative; }
+.lightbox-inner img { width: 100%; max-height: 76vh; object-fit: contain; border-radius: var(--radius-md); margin: 0 auto; }
+.lightbox-caption { color: #F2E9DE; text-align: center; margin-top: 1rem; font-family: var(--font-display); }
+.lightbox-close {
+  position: absolute; top: -3.2rem; right: 0; width: 44px; height: 44px; border-radius: 50%;
+  background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.25); color: #fff; display: flex; align-items: center; justify-content: center;
+}
+
+/* -------------------------------------------------------------
+   9. TESTIMONIALS
+------------------------------------------------------------------ */
+.testimonial-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.6rem; }
+.testimonial-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 1.8rem; }
+.testimonial-stars { color: var(--accent-strong); font-size: 0.9rem; letter-spacing: 0.15em; margin-bottom: 0.9rem; }
+.testimonial-quote { font-family: var(--font-display); font-size: 1.08rem; color: var(--heading); line-height: 1.5; }
+.testimonial-author { margin-top: 1.2rem; font-size: 0.88rem; color: var(--text-muted); font-weight: 600; }
+@media (max-width: 900px) { .testimonial-grid { grid-template-columns: 1fr; } }
+
+/* -------------------------------------------------------------
+   10. RESERVATION
+------------------------------------------------------------------ */
+.reservation-wrap { display: grid; grid-template-columns: 1fr 1.15fr; gap: 3rem; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 3rem; }
+.reservation-info h3 { font-size: 1.3rem; margin-bottom: 1rem; }
+.info-row { display: flex; gap: 0.9rem; margin-bottom: 1.1rem; color: var(--text-muted); }
+.info-row strong { color: var(--heading); display: block; font-family: var(--font-body); font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.15rem; }
+.info-divider { height: 1px; background: var(--border); margin: 1.6rem 0; }
+
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.1rem; }
+.form-field { display: flex; flex-direction: column; gap: 0.4rem; }
+.form-field.full { grid-column: 1 / -1; }
+.form-field label { font-size: 0.82rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; }
+.form-field input, .form-field select, .form-field textarea {
+  background: var(--surface-2); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 0.8rem 1rem;
+  color: var(--text); font-size: 0.98rem; transition: border-color var(--transition-fast);
+}
+.form-field input:focus, .form-field select:focus, .form-field textarea:focus { border-color: var(--accent-strong); outline: none; }
+.form-field textarea { resize: vertical; min-height: 90px; }
+.reservation-success {
+  background: var(--surface-2); border: 1px solid var(--accent); border-radius: var(--radius-md); padding: 2rem; text-align: center;
+  font-size: 1.05rem; color: var(--heading);
+}
+@media (max-width: 900px) {
+  .reservation-wrap { grid-template-columns: 1fr; padding: 1.8rem; }
+  .form-grid { grid-template-columns: 1fr; }
+}
+
+/* -------------------------------------------------------------
+   11. FOOTER
+------------------------------------------------------------------ */
+.site-footer { background: var(--surface); border-top: 1px solid var(--border); padding: var(--space-xl) 0 var(--space-md); }
+.footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1.2fr; gap: 2.5rem; padding-bottom: var(--space-lg); }
+.footer-logo { font-family: var(--font-display); font-size: 1.35rem; margin-bottom: 0.9rem; }
+.footer-about { color: var(--text-muted); font-size: 0.94rem; max-width: 32ch; }
+.footer-col h4 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 1.1rem; color: var(--heading); }
+.footer-col ul { display: grid; gap: 0.65rem; }
+.footer-col a { color: var(--text-muted); font-size: 0.94rem; transition: color var(--transition-fast); }
+.footer-col a:hover { color: var(--accent-strong); }
+.newsletter-form { display: flex; gap: 0.5rem; margin-top: 0.9rem; }
+.newsletter-form input {
+  flex: 1; background: var(--surface-2); border: 1px solid var(--border); border-radius: var(--radius-sm);
+  padding: 0.7rem 0.9rem; color: var(--text); min-width: 0;
+}
+.footer-switches { display: flex; flex-wrap: wrap; gap: 1.5rem; align-items: center; padding: var(--space-md) 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); margin-bottom: var(--space-md); }
+.footer-switch-group { display: flex; align-items: center; gap: 0.7rem; }
+.footer-switch-group span { font-size: 0.82rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; }
+.theme-pill-group { display: flex; border: 1px solid var(--border); border-radius: var(--radius-pill); padding: 0.25rem; gap: 0.2rem; }
+.theme-pill { padding: 0.4rem 0.9rem; border-radius: var(--radius-pill); font-size: 0.82rem; font-weight: 700; color: var(--text-muted); border: none; background: transparent; }
+.theme-pill[aria-pressed="true"] { background: var(--accent); color: var(--accent-contrast); }
+
+.footer-bottom { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.6rem; color: var(--text-muted); font-size: 0.85rem; padding-top: var(--space-md); }
+.footer-bottom a { color: var(--accent-strong); font-weight: 700; }
+
+@media (max-width: 900px) {
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .footer-grid > :first-child { grid-column: 1 / -1; }
+}
+@media (max-width: 560px) {
+  .footer-grid { grid-template-columns: 1fr; }
+}
+
+/* -------------------------------------------------------------
+   12. RESPONSIVE — GENERAL
+------------------------------------------------------------------ */
+@media (max-width: 900px) {
+  .section { padding: var(--space-xl) 0; }
+  .menu-grid { grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
+  .testimonial-grid, .about-grid { gap: 2rem; }
+}
+@media (max-width: 640px) {
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+  .hero-actions .btn { flex: 1 1 auto; }
+}
+
+</style>
 </head>
 <body>
 
@@ -63,10 +476,11 @@
             <button type="button" data-lang-btn="en" class="is-active">English <span>EN</span></button>
             <button type="button" data-lang-btn="es">Español <span>ES</span></button>
             <button type="button" data-lang-btn="fr">Français <span>FR</span></button>
+            <button type="button" data-lang-btn="de">Deutsch <span>DE</span></button>
+            <button type="button" data-lang-btn="pt">Português <span>PT</span></button>
             <button type="button" data-lang-btn="sw">Kiswahili <span>SW</span></button>
             <button type="button" data-lang-btn="zh">中文 <span>ZH</span></button>
             <button type="button" data-lang-btn="ar">العربية <span>AR</span></button>
-            <button type="button" data-lang-btn="la">Latina <span>LA</span></button>
           </div>
         </div>
 
@@ -565,12 +979,303 @@
 
     <div class="footer-bottom">
       <span>© <span data-current-year>2026</span> Senthan's Fine Dining. <span data-i18n="footer.rights">All rights reserved.</span></span>
-      <span><span data-i18n="footer.credit">Template crafted by</span> <a href="mailto:jonathanrivers0414@gmail.com">Senthan &amp; Co</a></span>
+      <span><span data-i18n="footer.credit">Template crafted by</span> <a href="mailto:hello@example.test">Senthan &amp; Co</a></span>
     </div>
   </div>
 </footer>
 
-<script src="senthans-fine-dining - script.js"></script>
+<script>
+/* ===================================================================
+   SENTHAN'S FINE DINING — main script
+   Sections: i18n dictionary, storage helpers, theme/palette engine,
+   nav + menu tabs, gallery lightbox, reservation form, reveal-on-scroll
+   =================================================================== */
+
+/* -------------------------------------------------------------
+   1. TRANSLATIONS
+   Site chrome (nav, hero, section headers, forms, footer) is fully
+   localized in 7 languages. Dish names/descriptions and testimonial
+   quotes are intentionally left in English — as with most fine-dining
+   menus, specialty dish names are commonly kept in their original
+   language even on translated menus. Replace with your own copy or a
+   professional translator's pass if you need dish-level localization.
+------------------------------------------------------------------ */
+const I18N = {"en":{"nav":{"home":"Home","menu":"Menu","about":"About","gallery":"Gallery","testimonials":"Testimonials","reservations":"Reservations","contact":"Contact"},"hero":{"eyebrow":"Modern Kitchen · Rooted Flavors","headline":"Dinner, the way home tastes","subheadline":"Slow-simmered stews, fire-seared fish, and garden plates plated with a modern hand — a table built around real recipes, real ingredients, real flavor.","cta_menu":"View the Menu","cta_reserve":"Reserve a Table","ticket_label":"Chef's Ticket","ticket_note":"Tonight's picks, fired fresh","ticket_item1":"Pan-Seared Tilapia","ticket_item2":"Braised Chicken with Matoke","ticket_item3":"Banana-Leaf Steamed Meat"},"about":{"eyebrow":"Our Story","heading":"A table set with intention","paragraph1":"Senthan's Fine Dining started with one idea: the dishes we grew up on deserve the same care as any tasting menu. Every plate here traces back to a real kitchen, a real pot, a real hand that stirred it.","paragraph2":"We kept the flavor honest and modernized the room around it — considered plating, a calmer palette, and a kitchen that still simmers things low and slow.","quote":"“We don't reinvent the dish. We just give it the table it deserves.”"},"menu":{"eyebrow":"On the Menu","heading":"Food that remembers where it's from","subheading":"Every dish is photographed in our own kitchen — no stock plates, no stand-ins.","tab_mains":"Signature Mains","tab_stews":"Stews & Chapati","tab_garden":"Garden & Bean Plates","tab_breakfast":"Breakfast & Sharing"},"gallery":{"eyebrow":"From the Kitchen","heading":"A closer look at the table","subheading":"Behind every plate — the pots, the hands, and the table it lands on."},"testimonials":{"eyebrow":"Guests at the Table","heading":"What people say after dinner"},"reservation":{"eyebrow":"Book a Table","heading":"Save your seat at the table","subheading":"Tell us when you're coming, and we'll have the table ready.","label_name":"Full Name","label_email":"Email Address","label_phone":"Phone Number","label_date":"Date","label_time":"Time","label_guests":"Guests","label_notes":"Special Requests","placeholder_notes":"Allergies, celebrations, seating preference…","submit":"Reserve Now","success":"Thank you — your table request has been received. We'll confirm shortly by phone or email.","hours_heading":"Hours","hours_weekday":"Mon – Fri: 11:00 – 22:00","hours_weekend":"Sat – Sun: 09:00 – 23:00","address_label":"Address","phone_label":"Phone","email_label":"Email"},"footer":{"about_blurb":"A modern table for dishes rooted in real kitchens — pulled pots, slow stews, and plates worth booking ahead for.","quicklinks_heading":"Quick Links","menu_heading":"Menu","contact_heading":"Contact","newsletter_heading":"Stay in the Loop","newsletter_placeholder":"Your email address","newsletter_button":"Subscribe","theme_label":"Theme","palette_label":"Choose Your Flavor","light":"Light","dark":"Dark","rights":"All rights reserved.","credit":"Template crafted by"}},"es":{"nav":{"home":"Inicio","menu":"Menú","about":"Nosotros","gallery":"Galería","testimonials":"Testimonios","reservations":"Reservas","contact":"Contacto"},"hero":{"eyebrow":"Cocina Moderna · Sabores de Siempre","headline":"La cena, como sabe el hogar","subheadline":"Guisos cocidos a fuego lento, pescado a la parrilla y platos de jardín servidos con un toque moderno — una mesa construida con recetas reales, ingredientes reales, sabor real.","cta_menu":"Ver el Menú","cta_reserve":"Reservar una Mesa","ticket_label":"Comanda del Chef","ticket_note":"Las elecciones de esta noche, recién hechas","ticket_item1":"Tilapia a la Plancha","ticket_item2":"Pollo Guisado con Matoke","ticket_item3":"Carne al Vapor en Hoja de Plátano"},"about":{"eyebrow":"Nuestra Historia","heading":"Una mesa puesta con intención","paragraph1":"Senthan's Fine Dining nació de una idea: los platos con los que crecimos merecen el mismo cuidado que cualquier menú degustación. Cada plato aquí viene de una cocina real, una olla real, una mano real que lo removió.","paragraph2":"Mantuvimos el sabor honesto y modernizamos el entorno — una presentación cuidada, una paleta más serena y una cocina que sigue cociendo a fuego lento.","quote":"«No reinventamos el plato. Solo le damos la mesa que merece.»"},"menu":{"eyebrow":"En el Menú","heading":"Comida que recuerda de dónde viene","subheading":"Cada plato está fotografiado en nuestra propia cocina — sin fotos de stock, sin sustitutos.","tab_mains":"Platos Principales","tab_stews":"Guisos y Chapati","tab_garden":"Platos de Jardín y Legumbres","tab_breakfast":"Desayuno y Para Compartir"},"gallery":{"eyebrow":"Desde la Cocina","heading":"Una mirada más cercana a la mesa","subheading":"Detrás de cada plato — las ollas, las manos y la mesa donde aterriza."},"testimonials":{"eyebrow":"Invitados en la Mesa","heading":"Lo que dicen después de cenar"},"reservation":{"eyebrow":"Reserva una Mesa","heading":"Guarda tu lugar en la mesa","subheading":"Dinos cuándo vienes y tendremos la mesa lista.","label_name":"Nombre Completo","label_email":"Correo Electrónico","label_phone":"Número de Teléfono","label_date":"Fecha","label_time":"Hora","label_guests":"Comensales","label_notes":"Peticiones Especiales","placeholder_notes":"Alergias, celebraciones, preferencia de asiento…","submit":"Reservar Ahora","success":"Gracias — hemos recibido tu solicitud de reserva. Te confirmaremos pronto por teléfono o correo.","hours_heading":"Horario","hours_weekday":"Lun – Vie: 11:00 – 22:00","hours_weekend":"Sáb – Dom: 09:00 – 23:00","address_label":"Dirección","phone_label":"Teléfono","email_label":"Correo"},"footer":{"about_blurb":"Una mesa moderna para platos con raíces en cocinas reales — ollas removidas, guisos lentos y platos que vale la pena reservar con antelación.","quicklinks_heading":"Enlaces Rápidos","menu_heading":"Menú","contact_heading":"Contacto","newsletter_heading":"Mantente Informado","newsletter_placeholder":"Tu correo electrónico","newsletter_button":"Suscribirse","theme_label":"Tema","palette_label":"Elige Tu Sabor","light":"Claro","dark":"Oscuro","rights":"Todos los derechos reservados.","credit":"Plantilla creada por"}},"fr":{"nav":{"home":"Accueil","menu":"Menu","about":"À Propos","gallery":"Galerie","testimonials":"Témoignages","reservations":"Réservations","contact":"Contact"},"hero":{"eyebrow":"Cuisine Moderne · Saveurs Authentiques","headline":"Le dîner, comme à la maison","subheadline":"Ragoûts mijotés, poisson grillé au feu et assiettes du jardin dressées avec une touche moderne — une table bâtie sur de vraies recettes, de vrais ingrédients, une vraie saveur.","cta_menu":"Voir le Menu","cta_reserve":"Réserver une Table","ticket_label":"Ardoise du Chef","ticket_note":"Les choix du soir, tout juste sortis du feu","ticket_item1":"Tilapia Saisie à la Poêle","ticket_item2":"Poulet Mijoté au Matoke","ticket_item3":"Viande Cuite à la Vapeur en Feuille de Bananier"},"about":{"eyebrow":"Notre Histoire","heading":"Une table dressée avec intention","paragraph1":"Senthan's Fine Dining est né d'une idée simple : les plats avec lesquels nous avons grandi méritent autant de soin qu'un menu dégustation. Chaque assiette vient d'une vraie cuisine, d'une vraie marmite, d'une vraie main qui l'a remuée.","paragraph2":"Nous avons gardé la saveur honnête et modernisé le décor autour — un dressage soigné, une palette plus sobre, et une cuisine qui continue de mijoter lentement.","quote":"« Nous ne réinventons pas le plat. Nous lui donnons simplement la table qu'il mérite. »"},"menu":{"eyebrow":"Au Menu","heading":"Une cuisine qui n'oublie pas ses racines","subheading":"Chaque plat est photographié dans notre propre cuisine — pas de photos de stock, pas de doublures.","tab_mains":"Plats Signature","tab_stews":"Ragoûts et Chapati","tab_garden":"Assiettes du Jardin et Légumineuses","tab_breakfast":"Petit-Déjeuner et à Partager"},"gallery":{"eyebrow":"Depuis la Cuisine","heading":"Un regard plus proche sur la table","subheading":"Derrière chaque assiette — les marmites, les mains, et la table où elle atterrit."},"testimonials":{"eyebrow":"Nos Convives","heading":"Ce qu'ils disent après le dîner"},"reservation":{"eyebrow":"Réserver une Table","heading":"Réservez votre place à table","subheading":"Dites-nous quand vous venez, et la table sera prête.","label_name":"Nom Complet","label_email":"Adresse E-mail","label_phone":"Numéro de Téléphone","label_date":"Date","label_time":"Heure","label_guests":"Convives","label_notes":"Demandes Spéciales","placeholder_notes":"Allergies, célébrations, préférence de place…","submit":"Réserver Maintenant","success":"Merci — votre demande de réservation a été reçue. Nous confirmerons bientôt par téléphone ou e-mail.","hours_heading":"Horaires","hours_weekday":"Lun – Ven : 11h00 – 22h00","hours_weekend":"Sam – Dim : 09h00 – 23h00","address_label":"Adresse","phone_label":"Téléphone","email_label":"E-mail"},"footer":{"about_blurb":"Une table moderne pour des plats enracinés dans de vraies cuisines — marmites remuées, ragoûts mijotés, et assiettes qui valent la peine d'être réservées à l'avance.","quicklinks_heading":"Liens Rapides","menu_heading":"Menu","contact_heading":"Contact","newsletter_heading":"Restez Informé","newsletter_placeholder":"Votre adresse e-mail","newsletter_button":"S'abonner","theme_label":"Thème","palette_label":"Choisissez Votre Saveur","light":"Clair","dark":"Sombre","rights":"Tous droits réservés.","credit":"Modèle conçu par"}},"sw":{"nav":{"home":"Nyumbani","menu":"Menyu","about":"Kuhusu","gallery":"Picha","testimonials":"Maoni","reservations":"Uhifadhi","contact":"Wasiliana"},"hero":{"eyebrow":"Jiko la Kisasa · Ladha za Asili","headline":"Chakula cha jioni, kama nyumbani","subheadline":"Mchuzi ulioivishwa taratibu, samaki wa kuchoma, na sahani za bustani zilizopambwa kwa mtindo wa kisasa — meza iliyojengwa kwa mapishi halisi, viungo halisi, na ladha halisi.","cta_menu":"Angalia Menyu","cta_reserve":"Hifadhi Meza","ticket_label":"Chaguo la Mpishi","ticket_note":"Vyakula vya leo jioni, vipya kutoka jikoni","ticket_item1":"Samaki wa Tilapia wa Kukaanga","ticket_item2":"Kuku wa Kuchemshwa na Matoke","ticket_item3":"Nyama ya Kuchemshwa kwa Jani la Ndizi"},"about":{"eyebrow":"Historia Yetu","heading":"Meza iliyoandaliwa kwa nia","paragraph1":"Senthan's Fine Dining ilianza na wazo moja: vyakula tulivyokulia navyo vinastahili uangalifu ule ule kama menyu yoyote ya hali ya juu. Kila sahani hapa inatoka jikoni halisi, sufuria halisi, na mkono halisi uliochochea.","paragraph2":"Tumeendelea kudumisha ladha ya kweli huku tukiboresha mazingira — upambaji makini, rangi tulivu zaidi, na jiko linaloendelea kupika taratibu.","quote":"“Hatubuni upya sahani. Tunaipatia tu meza inayostahili.”"},"menu":{"eyebrow":"Kwenye Menyu","heading":"Chakula kinachokumbuka ilikotoka","subheading":"Kila sahani imepigwa picha kutoka jikoni letu — hakuna picha za hisa, hakuna mbadala.","tab_mains":"Sahani Kuu","tab_stews":"Mchuzi na Chapati","tab_garden":"Sahani za Bustani na Mikunde","tab_breakfast":"Kifungua Kinywa na Kushirikiana"},"gallery":{"eyebrow":"Kutoka Jikoni","heading":"Mtazamo wa karibu wa meza","subheading":"Nyuma ya kila sahani — sufuria, mikono, na meza inayoifikia."},"testimonials":{"eyebrow":"Wageni Mezani","heading":"Wanachosema baada ya chakula cha jioni"},"reservation":{"eyebrow":"Hifadhi Meza","heading":"Hifadhi nafasi yako mezani","subheading":"Tuambie utakapofika, nasi tutakuwa tumeandaa meza.","label_name":"Jina Kamili","label_email":"Barua Pepe","label_phone":"Namba ya Simu","label_date":"Tarehe","label_time":"Muda","label_guests":"Wageni","label_notes":"Maombi Maalum","placeholder_notes":"Mzio, sherehe, upendeleo wa kiti…","submit":"Hifadhi Sasa","success":"Asante — ombi lako la kuhifadhi limepokelewa. Tutathibitisha hivi karibuni kwa simu au barua pepe.","hours_heading":"Saa za Kufanya Kazi","hours_weekday":"Jumatatu – Ijumaa: 11:00 – 22:00","hours_weekend":"Jumamosi – Jumapili: 09:00 – 23:00","address_label":"Anwani","phone_label":"Simu","email_label":"Barua Pepe"},"footer":{"about_blurb":"Meza ya kisasa kwa sahani zenye mizizi katika jiko halisi — sufuria zilizochochewa, mchuzi ulioivishwa taratibu, na sahani zinazostahili kuhifadhiwa mapema.","quicklinks_heading":"Viungo vya Haraka","menu_heading":"Menyu","contact_heading":"Mawasiliano","newsletter_heading":"Baki Ukijua","newsletter_placeholder":"Barua pepe yako","newsletter_button":"Jiandikishe","theme_label":"Mandhari","palette_label":"Chagua Ladha Yako","light":"Nuru","dark":"Giza","rights":"Haki zote zimehifadhiwa.","credit":"Kiolezo kilibuniwa na"}},"zh":{"nav":{"home":"首页","menu":"菜单","about":"关于我们","gallery":"图库","testimonials":"顾客评价","reservations":"预订","contact":"联系我们"},"hero":{"eyebrow":"现代厨房 · 传统风味","headline":"晚餐,如家的味道","subheadline":"文火慢炖的炖菜、明火煎烤的鱼,以及以现代手法装盘的田园菜肴——这张餐桌,建立在真实的食谱、真实的食材与真实的味道之上。","cta_menu":"查看菜单","cta_reserve":"预订座位","ticket_label":"主厨精选","ticket_note":"今晚新鲜出炉的推荐","ticket_item1":"香煎罗非鱼","ticket_item2":"炖鸡配马托克","ticket_item3":"香蕉叶蒸肉"},"about":{"eyebrow":"我们的故事","heading":"用心摆好的一张桌子","paragraph1":"Senthan's Fine Dining 源于一个理念:我们从小吃到大的菜肴,值得与任何品鉴菜单同样的用心。这里的每一道菜,都源自一个真实的厨房、一口真实的锅,以及一双真实搅动过它的手。","paragraph2":"我们保留了最真实的味道,同时让用餐环境更加现代——精心的摆盘、更沉稳的色调,以及依然文火慢炖的厨房。","quote":"“我们不重新发明这道菜,只是为它配上应得的餐桌。”"},"menu":{"eyebrow":"菜单","heading":"不忘本味的料理","subheading":"每一道菜都在我们自己的厨房拍摄——没有图库照片,没有替身。","tab_mains":"招牌主菜","tab_stews":"炖菜与恰帕提","tab_garden":"田园豆类拼盘","tab_breakfast":"早餐与分享餐"},"gallery":{"eyebrow":"来自厨房","heading":"近距离看这张餐桌","subheading":"每道菜背后——那些锅、那些手,以及它最终抵达的餐桌。"},"testimonials":{"eyebrow":"座上宾客","heading":"晚餐后他们怎么说"},"reservation":{"eyebrow":"预订座位","heading":"为自己留一个座位","subheading":"告诉我们您到访的时间,我们会备好餐桌。","label_name":"姓名","label_email":"电子邮箱","label_phone":"电话号码","label_date":"日期","label_time":"时间","label_guests":"人数","label_notes":"特殊要求","placeholder_notes":"过敏信息、庆祝活动、座位偏好……","submit":"立即预订","success":"谢谢——我们已收到您的预订请求,稍后会通过电话或邮件确认。","hours_heading":"营业时间","hours_weekday":"周一至周五:11:00 – 22:00","hours_weekend":"周六至周日:09:00 – 23:00","address_label":"地址","phone_label":"电话","email_label":"邮箱"},"footer":{"about_blurb":"一张现代餐桌,承载着源自真实厨房的菜肴——被搅动过的锅、文火慢炖的炖菜,以及值得提前预订的佳肴。","quicklinks_heading":"快速链接","menu_heading":"菜单","contact_heading":"联系方式","newsletter_heading":"保持联系","newsletter_placeholder":"您的电子邮箱","newsletter_button":"订阅","theme_label":"主题","palette_label":"选择您的风味","light":"浅色","dark":"深色","rights":"版权所有。","credit":"模板制作"}},"ar":{"nav":{"home":"الرئيسية","menu":"القائمة","about":"من نحن","gallery":"معرض الصور","testimonials":"آراء الزبائن","reservations":"الحجوزات","contact":"تواصل معنا"},"hero":{"eyebrow":"مطبخ عصري · نكهات أصيلة","headline":"عشاء بطعم البيت","subheadline":"يخنات تُطهى ببطء، وسمك مشوي على النار، وأطباق من حديقتنا تُقدَّم بلمسة عصرية — مائدة بُنيت على وصفات حقيقية، ومكوّنات حقيقية، ونكهة حقيقية.","cta_menu":"تصفح القائمة","cta_reserve":"احجز طاولة","ticket_label":"مختارات الشيف","ticket_note":"أطباق الليلة، طازجة من الفرن","ticket_item1":"سمك التلابيا المقلي","ticket_item2":"دجاج مطهو مع الماتوكي","ticket_item3":"لحم مطهو على البخار بورق الموز"},"about":{"eyebrow":"قصتنا","heading":"مائدة أُعدّت بعناية","paragraph1":"بدأ Senthan's Fine Dining بفكرة واحدة: الأطباق التي كبرنا عليها تستحق نفس العناية التي تُمنح لأي قائمة تذوق راقية. كل طبق هنا يعود إلى مطبخ حقيقي، وقِدر حقيقي، ويد حقيقية قلّبته.","paragraph2":"حافظنا على صدق النكهة، وطوّرنا الأجواء من حولها — تقديم مدروس، ألوان أكثر هدوءًا، ومطبخ ما زال يطهو على نار هادئة.","quote":"«نحن لا نعيد اختراع الطبق، بل نمنحه المائدة التي يستحقها.»"},"menu":{"eyebrow":"على القائمة","heading":"طعام يتذكّر من أين أتى","subheading":"كل طبق مصوَّر في مطبخنا الخاص — لا صور جاهزة ولا بدائل.","tab_mains":"الأطباق الرئيسية المميزة","tab_stews":"اليخنات والشاباتي","tab_garden":"أطباق الحديقة والبقوليات","tab_breakfast":"الإفطار وأطباق المشاركة"},"gallery":{"eyebrow":"من المطبخ","heading":"نظرة أقرب إلى المائدة","subheading":"خلف كل طبق — القدور، الأيدي، والمائدة التي يصل إليها."},"testimonials":{"eyebrow":"ضيوف على المائدة","heading":"ماذا يقولون بعد العشاء"},"reservation":{"eyebrow":"احجز طاولة","heading":"احجز مقعدك على المائدة","subheading":"أخبرنا بموعد قدومك، وسنجهّز لك الطاولة.","label_name":"الاسم الكامل","label_email":"البريد الإلكتروني","label_phone":"رقم الهاتف","label_date":"التاريخ","label_time":"الوقت","label_guests":"عدد الضيوف","label_notes":"طلبات خاصة","placeholder_notes":"حساسية غذائية، مناسبة، تفضيل مكان الجلوس…","submit":"احجز الآن","success":"شكرًا لك — تم استلام طلب الحجز. سنؤكد قريبًا عبر الهاتف أو البريد الإلكتروني.","hours_heading":"ساعات العمل","hours_weekday":"الاثنين – الجمعة: 11:00 – 22:00","hours_weekend":"السبت – الأحد: 09:00 – 23:00","address_label":"العنوان","phone_label":"الهاتف","email_label":"البريد الإلكتروني"},"footer":{"about_blurb":"مائدة عصرية لأطباق متجذّرة في مطابخ حقيقية — قدور مقلَّبة، يخنات تُطهى ببطء، وأطباق تستحق الحجز المسبق.","quicklinks_heading":"روابط سريعة","menu_heading":"القائمة","contact_heading":"تواصل معنا","newsletter_heading":"ابقَ على اطلاع","newsletter_placeholder":"بريدك الإلكتروني","newsletter_button":"اشترك","theme_label":"المظهر","palette_label":"اختر نكهتك","light":"فاتح","dark":"داكن","rights":"جميع الحقوق محفوظة.","credit":"القالب من تصميم"}},"la":{"nav":{"home":"Domus","menu":"Index Ciborum","about":"De Nobis","gallery":"Imagines","testimonials":"Testimonia","reservations":"Reservationes","contact":"Contactus"},"hero":{"eyebrow":"Culina Moderna · Sapores Antiqui","headline":"Cena, sicut domi sapit","subheadline":"Iura lente cocta, piscis igne assus, et fercula hortensia arte moderna composita — mensa ex veris rationibus coquendi, veris rebus, vero sapore aedificata.","cta_menu":"Indicem Vide","cta_reserve":"Mensam Reserva","ticket_label":"Electio Coci","ticket_note":"Fercula huius vesperi, recens parata","ticket_item1":"Tilapia in Sartagine Assa","ticket_item2":"Pullus Coctus cum Matoke","ticket_item3":"Caro in Folio Musae Vaporata"},"about":{"eyebrow":"Historia Nostra","heading":"Mensa cum consilio posita","paragraph1":"Senthan's Fine Dining ab una sententia coepit: fercula quibus crevimus eandem curam merentur quam quodlibet ferculum electum. Quodque hic ferculum ex vera culina, vera olla, vera manu quae id agitavit, oritur.","paragraph2":"Saporem verum servavimus et locum circa illum renovavimus — compositionem diligentem, colores tranquilliores, et culinam quae adhuc lente coquit.","quote":"“Ferculum non de novo invenimus. Ei tantum mensam quam meretur damus.”"},"menu":{"eyebrow":"In Indice","heading":"Cibus qui originem suam meminit","subheading":"Quodque ferculum in nostra ipsa culina depictum est — nullae imagines emptae, nulla simulacra.","tab_mains":"Fercula Praecipua","tab_stews":"Iura et Chapati","tab_garden":"Fercula Hortensia et Legumina","tab_breakfast":"Ientaculum et Fercula Communia"},"gallery":{"eyebrow":"Ex Culina","heading":"Propior aspectus mensae","subheading":"Post quodque ferculum — ollae, manus, et mensa ad quam pervenit."},"testimonials":{"eyebrow":"Hospites ad Mensam","heading":"Quid post cenam dicant"},"reservation":{"eyebrow":"Mensam Reserva","heading":"Locum tuum ad mensam serva","subheading":"Nobis dic quando ventura sis, et mensa parata erit.","label_name":"Nomen Plenum","label_email":"Inscriptio Electronica","label_phone":"Numerus Telephonicus","label_date":"Dies","label_time":"Hora","label_guests":"Hospites","label_notes":"Petitiones Speciales","placeholder_notes":"Allergiae, celebrationes, sedis optio…","submit":"Nunc Reserva","success":"Gratias — petitio tua reservationis accepta est. Mox per telephonum vel litteras electronicas confirmabimus.","hours_heading":"Horae Apertionis","hours_weekday":"Lunae – Veneris: 11:00 – 22:00","hours_weekend":"Saturni – Solis: 09:00 – 23:00","address_label":"Inscriptio","phone_label":"Telephonum","email_label":"Littera Electronica"},"footer":{"about_blurb":"Mensa moderna ferculis in veris culinis radicatis — ollae agitatae, iura lente cocta, et fercula quae reservatione praevia digna sunt.","quicklinks_heading":"Nexus Celeres","menu_heading":"Index","contact_heading":"Contactus","newsletter_heading":"Certior Mane","newsletter_placeholder":"Inscriptio tua electronica","newsletter_button":"Subscribe","theme_label":"Species","palette_label":"Elige Saporem Tuum","light":"Lucidum","dark":"Obscurum","rights":"Omnia iura reservata.","credit":"Exemplar factum ab"}},"de":{"nav":{"home":"Zuhause","menu":"Menü","about":"Über","gallery":"Galerie","testimonials":"Erfahrungsberichte","reservations":"Reservierungen","contact":"Kontakt"},"hero":{"eyebrow":"Moderne Küche · Verwurzelte Aromen","headline":"Abendessen, der Heimweg schmeckt","subheadline":"Langsam gegarte Eintöpfe, feuergebratener Fisch und mit moderner Hand angerichtete Gartengerichte – ein Tisch, der auf echten Rezepten, echten Zutaten und echtem Geschmack basiert.","cta_menu":"Sehen Sie sich das Menü an","cta_reserve":"Reservieren Sie einen Tisch","ticket_label":"Ticket für den Koch","ticket_note":"Die Picks von heute Abend, frisch gebrannt","ticket_item1":"Gebratener Tilapia","ticket_item2":"Geschmortes Hähnchen mit Matoke","ticket_item3":"Mit Bananenblättern gedämpftes Fleisch"},"about":{"eyebrow":"Unsere Geschichte","heading":"Ein mit Absicht gedeckter Tisch","paragraph1":"Senthan's Fine Dining begann mit einer Idee: Die Gerichte, mit denen wir aufgewachsen sind, verdienen die gleiche Sorgfalt wie jedes Degustationsmenü. Jeder Teller hier geht auf eine echte Küche zurück, auf einen echten Topf, auf eine echte Hand, die ihn gerührt hat.","paragraph2":"Wir haben den Geschmack ehrlich gehalten und den Raum um ihn herum modernisiert – mit Überlegungen zu Anrichten, einer ruhigeren Farbpalette und einer Küche, in der die Dinge immer noch niedrig und langsam köcheln.","quote":"„Wir erfinden das Gericht nicht neu. Wir geben ihm einfach den Tisch, den es verdient.“"},"menu":{"eyebrow":"Auf der Speisekarte","heading":"Lebensmittel, die sich daran erinnern, woher sie kommen","subheading":"Jedes Gericht wird in unserer eigenen Küche fotografiert – keine Suppenteller, keine Ersatzgerichte.","tab_mains":"Signature Mains","tab_stews":"Eintöpfe und Chapati","tab_garden":"Garten- und Bohnenteller","tab_breakfast":"Frühstück & Teilen"},"gallery":{"eyebrow":"Aus der Küche","heading":"Ein genauerer Blick auf die Tabelle","subheading":"Hinter jedem Teller – den Töpfen, den Händen und dem Tisch, auf dem er landet."},"testimonials":{"eyebrow":"Gäste am Tisch","heading":"Was die Leute nach dem Abendessen sagen"},"reservation":{"eyebrow":"Reservieren Sie einen Tisch","heading":"Sichern Sie sich Ihren Platz am Tisch","subheading":"Sagen Sie uns, wann Sie kommen und wir bereiten den Tisch für Sie vor.","label_name":"Vollständiger Name","label_email":"E-Mail-Adresse","label_phone":"Telefonnummer","label_date":"Datum","label_time":"Zeit","label_guests":"Gäste","label_notes":"Sonderwünsche","placeholder_notes":"Allergien, Feiern, Sitzplatzvorlieben…","submit":"Jetzt reservieren","success":"Vielen Dank – Ihre Tischanfrage ist eingegangen. Wir bestätigen Ihnen in Kürze per Telefon oder E-Mail.","hours_heading":"Stunden","hours_weekday":"Mo – Fr: 11:00 – 22:00 Uhr","hours_weekend":"Sa – So: 09:00 – 23:00 Uhr","address_label":"Adresse","phone_label":"Telefon","email_label":"E-Mail"},"footer":{"about_blurb":"Ein moderner Tisch für Gerichte mit Wurzeln in echten Küchen – Pulled Pots, langsame Eintöpfe und Teller, für die es sich lohnt, im Voraus zu reservieren.","quicklinks_heading":"Quicklinks","menu_heading":"Menü","contact_heading":"Kontakt","newsletter_heading":"Bleiben Sie auf dem Laufenden","newsletter_placeholder":"Ihre E-Mail-Adresse","newsletter_button":"Abonnieren","theme_label":"Thema","palette_label":"Wählen Sie Ihren Geschmack","light":"Licht","dark":"Dunkel","rights":"Alle Rechte vorbehalten.","credit":"Vorlage erstellt von"}},"pt":{"nav":{"home":"Página inicial","menu":"Cardápio","about":"Sobre","gallery":"Galeria","testimonials":"Depoimentos","reservations":"Reservas","contact":"Contato"},"hero":{"eyebrow":"Cozinha Moderna · Sabores Enraizados","headline":"Jantar, o gosto de casa","subheadline":"Ensopados cozidos lentamente, peixe grelhado no fogo e pratos de jardim preparados com mão moderna - uma mesa construída em torno de receitas reais, ingredientes reais, sabor real.","cta_menu":"Veja o cardápio","cta_reserve":"Reserve uma mesa","ticket_label":"Bilhete do Chef","ticket_note":"As escolhas desta noite, preparadas de fresco","ticket_item1":"Tilápia grelhada","ticket_item2":"Frango Assado com Matoke","ticket_item3":"Carne Cozida no Vapor com Folha de Bananeira"},"about":{"eyebrow":"Nossa história","heading":"Uma mesa posta com intenção","paragraph1":"O Senthan's Fine Dining começou com uma ideia: os pratos com os quais crescemos merecem o mesmo cuidado que qualquer menu degustação. Cada prato aqui remonta a uma cozinha real, uma panela real, uma mão real que a mexeu.","paragraph2":"Mantivemos o sabor honesto e modernizamos o ambiente ao seu redor - considerado revestimento, uma paleta mais calma e uma cozinha que ainda cozinha em fogo baixo e lento.","quote":"\"Não reinventamos o prato. Apenas lhe damos a mesa que merece.\""},"menu":{"eyebrow":"No cardápio","heading":"Comida que lembra de onde veio","subheading":"Cada prato é fotografado em nossa própria cozinha – sem pratos, sem substitutos.","tab_mains":"Rede de assinatura","tab_stews":"Ensopados e Chapati","tab_garden":"Pratos de jardim e feijão","tab_breakfast":"Café da manhã e compartilhamento"},"gallery":{"eyebrow":"Da cozinha","heading":"Um olhar mais atento à mesa","subheading":"Atrás de cada prato – os potes, as mãos e a mesa onde ele cai."},"testimonials":{"eyebrow":"Convidados à mesa","heading":"O que as pessoas dizem depois do jantar"},"reservation":{"eyebrow":"Reserve uma mesa","heading":"Reserve seu lugar à mesa","subheading":"Avise-nos quando chegar e teremos a mesa pronta.","label_name":"Nome Completo","label_email":"Endereço de e-mail","label_phone":"Número de telefone","label_date":"Data","label_time":"Hora","label_guests":"Convidados","label_notes":"Pedidos Especiais","placeholder_notes":"Alergias, comemorações, preferência de assento…","submit":"Reserve agora","success":"Obrigado – sua solicitação de mesa foi recebida. Confirmaremos em breve por telefone ou e-mail.","hours_heading":"Horas","hours_weekday":"Seg – Sex: 11h00 – 22h00","hours_weekend":"Sábado – Dom: 09h00 – 23h00","address_label":"Endereço","phone_label":"Telefone","email_label":"E-mail"},"footer":{"about_blurb":"Uma mesa moderna para pratos enraizados em cozinhas reais – panelas puxadas, ensopados lentos e pratos que vale a pena reservar com antecedência.","quicklinks_heading":"Links rápidos","menu_heading":"Cardápio","contact_heading":"Contato","newsletter_heading":"Fique por dentro","newsletter_placeholder":"Seu endereço de e-mail","newsletter_button":"Inscrever-se","theme_label":"Tema","palette_label":"Escolha o seu sabor","light":"Luz","dark":"Escuro","rights":"Todos os direitos reservados.","credit":"Modelo criado por"}}};
+
+const RTL_LANGS = new Set(["ar"]);
+
+/* -------------------------------------------------------------
+   2. STORAGE — defensive wrapper so this degrades gracefully
+   in sandboxed preview environments but persists normally once
+   the template is deployed to real hosting.
+------------------------------------------------------------------ */
+const memoryStore = {};
+const safeStorage = {
+  get(key, fallback) {
+    try {
+      const v = window.localStorage.getItem(key);
+      return v === null ? fallback : v;
+    } catch (e) {
+      return key in memoryStore ? memoryStore[key] : fallback;
+    }
+  },
+  set(key, value) {
+    try {
+      window.localStorage.setItem(key, value);
+    } catch (e) {
+      memoryStore[key] = value;
+    }
+  }
+};
+
+/* -------------------------------------------------------------
+   3. THEME + PALETTE ENGINE
+------------------------------------------------------------------ */
+const root = document.documentElement;
+const VALID_PALETTES = ["espresso", "wine", "slate"];
+const VALID_THEMES = ["dark", "light"];
+
+function applyPalette(palette, theme) {
+  root.setAttribute("data-palette", palette);
+  root.setAttribute("data-theme", theme);
+  document.querySelectorAll("[data-palette-btn]").forEach(btn => {
+    btn.setAttribute("aria-pressed", btn.dataset.paletteBtn === palette ? "true" : "false");
+  });
+  document.querySelectorAll("[data-theme-btn]").forEach(btn => {
+    btn.setAttribute("aria-pressed", btn.dataset.themeBtn === theme ? "true" : "false");
+  });
+  safeStorage.set("sfd-palette", palette);
+  safeStorage.set("sfd-theme", theme);
+}
+
+function initThemeEngine() {
+  const palette = VALID_PALETTES.includes(safeStorage.get("sfd-palette", "")) ? safeStorage.get("sfd-palette", "espresso") : "espresso";
+  const theme = VALID_THEMES.includes(safeStorage.get("sfd-theme", "")) ? safeStorage.get("sfd-theme", "dark") : "dark";
+  applyPalette(palette, theme);
+
+  document.querySelectorAll("[data-palette-btn]").forEach(btn => {
+    btn.addEventListener("click", () => applyPalette(btn.dataset.paletteBtn, root.getAttribute("data-theme")));
+  });
+  document.querySelectorAll("[data-theme-toggle]").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+      applyPalette(root.getAttribute("data-palette"), next);
+    });
+  });
+  document.querySelectorAll("[data-theme-btn]").forEach(btn => {
+    btn.addEventListener("click", () => applyPalette(root.getAttribute("data-palette"), btn.dataset.themeBtn));
+  });
+}
+
+/* -------------------------------------------------------------
+   4. LANGUAGE ENGINE
+------------------------------------------------------------------ */
+function getPath(obj, path) {
+  return path.split(".").reduce((acc, key) => (acc && acc[key] !== undefined ? acc[key] : undefined), obj);
+}
+
+function applyLanguage(lang) {
+  const dict = I18N[lang] ? lang : "en";
+  const table = I18N[dict];
+
+  document.querySelectorAll("[data-i18n]").forEach(el => {
+    const val = getPath(table, el.dataset.i18n);
+    if (val !== undefined) el.textContent = val;
+  });
+  document.querySelectorAll("[data-i18n-placeholder]").forEach(el => {
+    const val = getPath(table, el.dataset.i18nPlaceholder);
+    if (val !== undefined) el.setAttribute("placeholder", val);
+  });
+
+  root.setAttribute("lang", dict);
+  root.setAttribute("dir", RTL_LANGS.has(dict) ? "rtl" : "ltr");
+
+  document.querySelectorAll("[data-lang-btn]").forEach(btn => {
+    btn.classList.toggle("is-active", btn.dataset.langBtn === dict);
+  });
+  const currentLabel = document.querySelector("[data-current-lang]");
+  if (currentLabel) currentLabel.textContent = dict.toUpperCase();
+
+  safeStorage.set("sfd-lang", dict);
+}
+
+function initLanguageEngine() {
+  const saved = safeStorage.get("sfd-lang", null);
+  const browserLang = (navigator.language || "en").slice(0, 2).toLowerCase();
+  const initialLang = saved || (I18N[browserLang] ? browserLang : "en");
+  applyLanguage(I18N[initialLang] ? initialLang : "en");
+
+  document.querySelectorAll("[data-lang-btn]").forEach(btn => {
+    btn.addEventListener("click", () => {
+      applyLanguage(btn.dataset.langBtn);
+      const dropdown = document.querySelector("[data-lang-dropdown]");
+      if (dropdown) dropdown.classList.remove("is-open");
+    });
+  });
+
+  const langToggle = document.querySelector("[data-lang-toggle]");
+  const langDropdown = document.querySelector("[data-lang-dropdown]");
+  if (langToggle && langDropdown) {
+    langToggle.addEventListener("click", () => langDropdown.classList.toggle("is-open"));
+    document.addEventListener("click", (e) => {
+      if (!langToggle.contains(e.target) && !langDropdown.contains(e.target)) {
+        langDropdown.classList.remove("is-open");
+      }
+    });
+  }
+}
+
+/* -------------------------------------------------------------
+   5. MOBILE NAV
+------------------------------------------------------------------ */
+function initMobileNav() {
+  const toggle = document.querySelector("[data-nav-toggle]");
+  const panel = document.querySelector("[data-nav-panel]");
+  if (!toggle || !panel) return;
+  toggle.addEventListener("click", () => {
+    const isOpen = panel.classList.toggle("is-open");
+    toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    document.body.classList.toggle("nav-lock", isOpen);
+  });
+  panel.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+      panel.classList.remove("is-open");
+      toggle.setAttribute("aria-expanded", "false");
+      document.body.classList.remove("nav-lock");
+    });
+  });
+}
+
+/* -------------------------------------------------------------
+   6. MENU TABS
+------------------------------------------------------------------ */
+function initMenuTabs() {
+  const tabs = document.querySelectorAll("[data-menu-tab]");
+  const panels = document.querySelectorAll("[data-menu-panel]");
+  tabs.forEach(tab => {
+    tab.addEventListener("click", () => {
+      tabs.forEach(t => t.setAttribute("aria-selected", "false"));
+      tab.setAttribute("aria-selected", "true");
+      const target = tab.dataset.menuTab;
+      panels.forEach(panel => {
+        panel.toggleAttribute("hidden", panel.dataset.menuPanel !== target);
+      });
+    });
+  });
+}
+
+/* -------------------------------------------------------------
+   7. GALLERY LIGHTBOX
+------------------------------------------------------------------ */
+function initGalleryLightbox() {
+  const items = document.querySelectorAll("[data-gallery-item]");
+  const lightbox = document.querySelector("[data-lightbox]");
+  if (!items.length || !lightbox) return;
+  const img = lightbox.querySelector("img");
+  const caption = lightbox.querySelector("[data-lightbox-caption]");
+
+  function open(src, alt) {
+    img.setAttribute("src", src);
+    img.setAttribute("alt", alt);
+    caption.textContent = alt;
+    lightbox.classList.add("is-open");
+    document.body.classList.add("nav-lock");
+  }
+  function close() {
+    lightbox.classList.remove("is-open");
+    document.body.classList.remove("nav-lock");
+  }
+
+  items.forEach(item => {
+    item.addEventListener("click", () => {
+      const fullImg = item.querySelector("img");
+      open(fullImg.getAttribute("src"), fullImg.getAttribute("alt"));
+    });
+  });
+  lightbox.addEventListener("click", (e) => {
+    if (e.target === lightbox || e.target.closest("[data-lightbox-close]")) close();
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") close();
+  });
+}
+
+/* -------------------------------------------------------------
+   8. RESERVATION FORM
+------------------------------------------------------------------ */
+function initReservationForm() {
+  const form = document.querySelector("[data-reservation-form]");
+  if (!form) return;
+  const dateInput = form.querySelector('input[type="date"]');
+  if (dateInput) {
+    const today = new Date().toISOString().split("T")[0];
+    dateInput.setAttribute("min", today);
+  }
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+    const successEl = document.querySelector("[data-reservation-success]");
+    form.hidden = true;
+    if (successEl) successEl.hidden = false;
+  });
+}
+
+/* -------------------------------------------------------------
+   9. SCROLL REVEAL
+------------------------------------------------------------------ */
+function initScrollReveal() {
+  const targets = document.querySelectorAll("[data-reveal]");
+  const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (prefersReduced || !("IntersectionObserver" in window)) {
+    targets.forEach(t => t.classList.add("is-visible"));
+    return;
+  }
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: "0px 0px -40px 0px" });
+  targets.forEach(t => observer.observe(t));
+}
+
+/* -------------------------------------------------------------
+   10. HEADER SCROLL STATE + FOOTER YEAR
+------------------------------------------------------------------ */
+function initHeaderScroll() {
+  const header = document.querySelector("[data-site-header]");
+  if (!header) return;
+  const onScroll = () => header.classList.toggle("is-scrolled", window.scrollY > 24);
+  onScroll();
+  window.addEventListener("scroll", onScroll, { passive: true });
+}
+
+function initFooterYear() {
+  const el = document.querySelector("[data-current-year]");
+  if (el) el.textContent = new Date().getFullYear();
+}
+
+/* -------------------------------------------------------------
+   INIT
+------------------------------------------------------------------ */
+document.addEventListener("DOMContentLoaded", () => {
+  initThemeEngine();
+  initLanguageEngine();
+  initMobileNav();
+  initMenuTabs();
+  initGalleryLightbox();
+  initReservationForm();
+  initScrollReveal();
+  initHeaderScroll();
+  initFooterYear();
+});
+
+</script>
 <!-- note: footer theme pills (.theme-pill[data-theme-btn]) and header palette dots
      are both wired up inside script.js's initThemeEngine() — no extra inline JS needed -->
 

@@ -7,8 +7,6 @@
    Senthan's Fine Dining, so this reads as its own product.
    =================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Noto+Sans+Arabic:wght@400;600;700&family=Noto+Sans+SC:wght@400;600;700&display=swap');
-
 :root {
   --font-display: 'Bricolage Grotesque', 'Arial Black', sans-serif;
   --font-body: 'Instrument Sans', -apple-system, sans-serif;

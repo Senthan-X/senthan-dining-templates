@@ -18,7 +18,206 @@
 })();
 </script>
 
-<link rel="stylesheet" href="root-and-table - style.css">
+<style>
+/* ===================================================================
+   ROOT & TABLE — stylesheet
+   Quiet minimal / contemporary. One signature "Stoneware" palette,
+   dark/light mode via <html data-theme="dark|light">, light by default.
+   Fonts: Newsreader (display, quiet editorial serif) + Work Sans (body) —
+   distinct from both Senthan's Fine Dining (Fraunces/Karla) and
+   Ember Kitchen (Bricolage Grotesque/Instrument Sans).
+   Deliberately flat: no card borders/shadows, generous whitespace,
+   hairline dividers instead of boxes.
+   =================================================================== */
+
+:root {
+  --font-display: 'Newsreader', 'Georgia', serif;
+  --font-body: 'Work Sans', -apple-system, sans-serif;
+
+  --radius-sm: 3px; --radius-md: 4px;
+  --space-xs: .6rem; --space-sm: 1.1rem; --space-md: 2rem; --space-lg: 3.5rem; --space-xl: 6rem; --space-2xl: 9rem;
+  --container: 1180px;
+  --transition-fast: .25s ease; --transition-med: .5s cubic-bezier(.22,1,.36,1);
+}
+html[lang="ar"] { --font-display: 'Noto Sans Arabic', var(--font-body); --font-body: 'Noto Sans Arabic', sans-serif; }
+html[lang="zh"] { --font-display: 'Newsreader', 'Noto Sans SC', serif; --font-body: 'Noto Sans SC', 'Work Sans', sans-serif; }
+
+html[data-theme="light"] {
+  --bg: #F6F4EF; --surface: #FFFFFF; --surface-2: #EFEBE2; --line: #DAD4C6;
+  --text: #1C1F22; --text-muted: #6B6E63;
+  --heading: #131917; --accent: #3F6478; --accent-strong: #2E4E60; --accent-contrast: #F6F4EF;
+}
+html[data-theme="dark"] {
+  --bg: #14171A; --surface: #1B1F23; --surface-2: #21262B; --line: #2C333A;
+  --text: #E8EDEF; --text-muted: #97A3AA;
+  --heading: #F2F6F7; --accent: #6F93A6; --accent-strong: #8FB0C2; --accent-contrast: #0F1215;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { animation-duration: .001ms !important; transition-duration: .001ms !important; animation-iteration-count: 1 !important; }
+}
+body { margin:0; background:var(--bg); color:var(--text); font-family:var(--font-body); font-weight:400; line-height:1.7; letter-spacing:.01em; transition: background-color var(--transition-med), color var(--transition-med); overflow-x:hidden; }
+body.nav-lock { overflow:hidden; }
+img { max-width:100%; display:block; }
+a { color:inherit; text-decoration:none; }
+ul { list-style:none; margin:0; padding:0; }
+h1,h2,h3,h4 { font-family:var(--font-display); color:var(--heading); margin:0; line-height:1.2; font-weight:500; }
+p { margin:0; }
+button { font-family:inherit; cursor:pointer; }
+input, select, textarea { font-family:inherit; }
+:focus-visible { outline:1.5px solid var(--accent-strong); outline-offset:3px; }
+
+.container { max-width:var(--container); margin:0 auto; padding:0 1.75rem; }
+.section { padding:var(--space-2xl) 0; }
+.hairline { height:1px; background:var(--line); }
+.eyebrow { display:block; font-family:var(--font-body); font-weight:500; font-size:.72rem; letter-spacing:.22em; text-transform:uppercase; color:var(--text-muted); margin-bottom:var(--space-sm); }
+.section-head { max-width:600px; margin-bottom:var(--space-xl); }
+.section-head.center { margin-left:auto; margin-right:auto; text-align:center; }
+.section-head h2 { font-size:clamp(1.9rem,3.6vw,2.7rem); font-weight:400; letter-spacing:-.01em; }
+.section-head h2 em { font-style:italic; color:var(--accent-strong); }
+.section-head p { color:var(--text-muted); margin-top:var(--space-sm); font-size:1.05rem; max-width:50ch; }
+.section-head.center p { margin-left:auto; margin-right:auto; }
+
+.btn { display:inline-flex; align-items:center; justify-content:center; gap:.5rem; padding:.85rem 1.9rem; font-weight:500; font-size:.92rem; letter-spacing:.03em; border:1px solid var(--heading); transition: all var(--transition-fast); white-space:nowrap; border-radius:var(--radius-sm); }
+.btn-solid { background:var(--heading); color:var(--bg); }
+.btn-solid:hover { background:transparent; color:var(--heading); }
+.btn-outline { background:transparent; color:var(--heading); border-color:var(--line); }
+.btn-outline:hover { border-color:var(--heading); }
+.btn-block { width:100%; }
+
+[data-reveal] { opacity:0; transform:translateY(18px); transition:opacity .8s ease, transform .8s ease; }
+[data-reveal].is-visible { opacity:1; transform:translateY(0); }
+
+/* HEADER — thin, understated */
+.site-header { position:fixed; top:0; left:0; right:0; z-index:100; padding:1.6rem 0; transition: all var(--transition-med); border-bottom:1px solid transparent; }
+.site-header.is-scrolled { padding:1rem 0; background:color-mix(in srgb, var(--surface) 92%, transparent); backdrop-filter:blur(10px); border-bottom-color:var(--line); }
+.site-header .container { display:flex; align-items:center; justify-content:space-between; gap:1rem; }
+.logo { font-family:var(--font-display); font-size:1.3rem; font-weight:500; font-style:italic; letter-spacing:.01em; color:var(--heading); }
+.nav-panel { display:flex; align-items:center; gap:2.4rem; }
+.nav-links { display:flex; gap:2.1rem; }
+.nav-links a { font-size:.82rem; letter-spacing:.06em; text-transform:uppercase; opacity:.7; }
+.nav-links a:hover { opacity:1; }
+.nav-tools { display:flex; align-items:center; gap:1.1rem; }
+.icon-btn { width:36px; height:36px; border-radius:50%; border:1px solid var(--line); background:transparent; color:var(--heading); display:flex; align-items:center; justify-content:center; transition: all var(--transition-fast); }
+.icon-btn:hover { border-color:var(--heading); }
+.icon-btn svg { width:16px; height:16px; }
+.icon-btn .icon-moon { display:none; }
+html[data-theme="dark"] .icon-btn .icon-sun { display:none; }
+html[data-theme="dark"] .icon-btn .icon-moon { display:block; }
+.lang-switch { position:relative; }
+.lang-toggle { display:flex; align-items:center; gap:.3rem; height:36px; padding:0 .3rem; border:none; background:transparent; color:var(--heading); font-weight:500; font-size:.78rem; letter-spacing:.05em; border-bottom:1px solid var(--line); }
+.lang-dropdown { position:absolute; top:calc(100% + 12px); right:0; min-width:170px; background:var(--surface); border:1px solid var(--line); border-radius:var(--radius-sm); padding:.4rem; display:grid; gap:.1rem; opacity:0; visibility:hidden; transform:translateY(-6px); transition: all var(--transition-fast); }
+html[dir="rtl"] .lang-dropdown { right:auto; left:0; }
+.lang-dropdown.is-open { opacity:1; visibility:visible; transform:translateY(0); }
+.lang-dropdown button { display:flex; justify-content:space-between; gap:.6rem; width:100%; text-align:left; padding:.5rem .7rem; border:none; background:transparent; color:var(--text); font-size:.86rem; }
+html[dir="rtl"] .lang-dropdown button { text-align:right; }
+.lang-dropdown button:hover { background:var(--surface-2); }
+.lang-dropdown button.is-active { color:var(--accent-strong); font-weight:600; }
+.nav-toggle { display:none; }
+@media (max-width:980px) {
+  .nav-links { display:none; }
+  .nav-toggle { display:flex; align-items:center; justify-content:center; width:38px; height:38px; border-radius:50%; border:1px solid var(--line); background:transparent; color:var(--heading); }
+  .nav-toggle svg { width:18px; height:18px; }
+  .nav-panel-mobile { position:fixed; inset:0; background:var(--bg); z-index:90; padding:6rem 1.75rem 2rem; transform:translateY(-100%); transition:transform var(--transition-med); overflow-y:auto; }
+  .nav-panel-mobile.is-open { transform:translateY(0); }
+  .nav-panel-mobile .nav-links { flex-direction:column; gap:0; }
+  .nav-panel-mobile .nav-links a { display:block; padding:1.1rem 0; border-bottom:1px solid var(--line); font-size:1.2rem; }
+}
+
+/* HERO — minimal, centered, whitespace-forward */
+.hero { padding:9rem 0 0; text-align:center; }
+.hero-text { max-width:720px; margin:0 auto; }
+.hero-text .eyebrow { text-align:center; }
+.hero-text h1 { font-size:clamp(2.4rem,5.6vw,4.2rem); font-weight:400; letter-spacing:-.01em; margin:0 0 1.6rem; }
+.hero-text h1 em { font-style:italic; color:var(--accent-strong); }
+.hero-text p { font-size:1.15rem; color:var(--text-muted); max-width:52ch; margin:0 auto 2.4rem; }
+.hero-actions { display:flex; justify-content:center; gap:1rem; flex-wrap:wrap; margin-bottom:4rem; }
+.hero-photo { width:100%; aspect-ratio:21/9; overflow:hidden; }
+.hero-photo img { width:100%; height:100%; object-fit:cover; }
+@media (max-width:700px) { .hero-photo { aspect-ratio:4/5; } }
+
+/* ABOUT — centered, generous whitespace */
+.about-wrap { max-width:760px; margin:0 auto; text-align:center; }
+.about-wrap p { color:var(--text-muted); font-size:1.12rem; margin-bottom:1.3rem; }
+.about-quote { font-family:var(--font-display); font-style:italic; font-size:1.7rem; color:var(--heading); margin-top:2.2rem; line-height:1.4; }
+.about-photo-row { display:grid; grid-template-columns:1fr 1fr; gap:1.25rem; margin-top:var(--space-xl); }
+.about-photo-row img { width:100%; aspect-ratio:5/6; object-fit:cover; }
+@media (max-width:700px) { .about-photo-row { grid-template-columns:1fr; } }
+
+/* MENU — flowing cookbook-style column, no card borders */
+.menu-groups { max-width:820px; margin:0 auto; }
+.menu-group { margin-bottom:var(--space-xl); }
+.menu-group-title { font-size:.78rem; letter-spacing:.18em; text-transform:uppercase; color:var(--text-muted); margin-bottom:var(--space-md); }
+.menu-line { display:flex; align-items:baseline; justify-content:space-between; gap:1rem; padding:1.15rem 0; border-bottom:1px solid var(--line); }
+.menu-line:last-child { border-bottom:none; }
+.menu-line-left { display:flex; flex-direction:column; gap:.3rem; }
+.menu-line-name { font-family:var(--font-display); font-size:1.28rem; color:var(--heading); font-weight:500; }
+.menu-line-desc { color:var(--text-muted); font-size:.9rem; max-width:48ch; }
+.menu-line-price { font-family:var(--font-display); font-style:italic; color:var(--accent-strong); font-size:1.1rem; white-space:nowrap; }
+.menu-break { margin:var(--space-xl) calc(-1 * 1.75rem); }
+.menu-break img { width:100%; max-height:440px; object-fit:cover; }
+
+/* GALLERY — horizontal scroll-snap filmstrip */
+.filmstrip { display:flex; gap:1.25rem; overflow-x:auto; scroll-snap-type:x mandatory; padding-bottom:1rem; -webkit-overflow-scrolling:touch; }
+.filmstrip::-webkit-scrollbar { height:4px; }
+.filmstrip::-webkit-scrollbar-thumb { background:var(--line); border-radius:var(--radius-sm); }
+.film-item { flex:0 0 auto; width:min(78vw, 460px); aspect-ratio:4/5; scroll-snap-align:center; overflow:hidden; cursor:pointer; border:none; padding:0; }
+.film-item img { width:100%; height:100%; object-fit:cover; transition:transform .6s ease; }
+.film-item:hover img { transform:scale(1.04); }
+
+.lightbox { position:fixed; inset:0; z-index:200; background:rgba(15,15,15,.92); display:flex; align-items:center; justify-content:center; padding:2rem; opacity:0; visibility:hidden; transition:all var(--transition-fast); }
+.lightbox.is-open { opacity:1; visibility:visible; }
+.lightbox-inner { max-width:880px; width:100%; position:relative; }
+.lightbox-inner img { width:100%; max-height:76vh; object-fit:contain; }
+.lightbox-caption { color:#F3F1EC; text-align:center; margin-top:1rem; font-family:var(--font-display); font-style:italic; }
+.lightbox-close { position:absolute; top:-3.2rem; right:0; width:40px; height:40px; border-radius:50%; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.2); color:#fff; display:flex; align-items:center; justify-content:center; }
+
+/* TESTIMONIALS — plain stacked, no cards */
+.testimonial-stack { max-width:680px; margin:0 auto; display:grid; gap:var(--space-lg); text-align:center; }
+.testimonial-quote { font-family:var(--font-display); font-style:italic; font-size:1.4rem; color:var(--heading); line-height:1.5; }
+.testimonial-author { margin-top:1rem; font-size:.8rem; letter-spacing:.08em; text-transform:uppercase; color:var(--text-muted); }
+
+/* RESERVATION */
+.reservation-wrap { max-width:640px; margin:0 auto; }
+.info-strip { display:flex; justify-content:center; gap:2.5rem; flex-wrap:wrap; margin-bottom:var(--space-xl); text-align:center; }
+.info-strip strong { display:block; font-size:.72rem; text-transform:uppercase; letter-spacing:.1em; color:var(--text-muted); margin-bottom:.3rem; }
+.form-grid { display:grid; grid-template-columns:1fr 1fr; gap:1.4rem; }
+.form-field { display:flex; flex-direction:column; gap:.5rem; }
+.form-field.full { grid-column:1/-1; }
+.form-field label { font-size:.75rem; letter-spacing:.06em; text-transform:uppercase; color:var(--text-muted); }
+.form-field input, .form-field select, .form-field textarea { background:transparent; border:none; border-bottom:1px solid var(--line); padding:.6rem 0; color:var(--text); font-size:1rem; transition:border-color var(--transition-fast); }
+.form-field input:focus, .form-field select:focus, .form-field textarea:focus { border-color:var(--heading); outline:none; }
+.form-field textarea { resize:vertical; min-height:80px; }
+.reservation-success { text-align:center; padding:2.5rem 0; font-size:1.1rem; font-family:var(--font-display); font-style:italic; }
+@media (max-width:640px) { .form-grid { grid-template-columns:1fr; } }
+
+/* FOOTER */
+.site-footer { padding:var(--space-xl) 0 var(--space-md); }
+.footer-grid { display:grid; grid-template-columns:1.4fr 1fr 1fr 1.2fr; gap:2.5rem; padding-bottom:var(--space-lg); }
+.footer-logo { font-family:var(--font-display); font-style:italic; font-size:1.3rem; margin-bottom:.9rem; }
+.footer-about { color:var(--text-muted); font-size:.94rem; max-width:32ch; }
+.footer-col h4 { font-size:.75rem; text-transform:uppercase; letter-spacing:.1em; margin-bottom:1.1rem; color:var(--heading); font-family:var(--font-body); font-weight:600; }
+.footer-col ul { display:grid; gap:.7rem; }
+.footer-col a { color:var(--text-muted); font-size:.92rem; }
+.footer-col a:hover { color:var(--heading); }
+.newsletter-form { display:flex; gap:0; margin-top:.9rem; border-bottom:1px solid var(--line); }
+.newsletter-form input { flex:1; background:transparent; border:none; padding:.6rem 0; color:var(--text); min-width:0; }
+.newsletter-form button { border:none; background:transparent; color:var(--heading); font-weight:600; padding:.6rem 0 .6rem .8rem; }
+.footer-switches { display:flex; align-items:center; gap:1.5rem; padding:var(--space-md) 0; border-top:1px solid var(--line); border-bottom:1px solid var(--line); margin-bottom:var(--space-md); }
+.footer-switch-group { display:flex; align-items:center; gap:.7rem; }
+.footer-switch-group span { font-size:.72rem; color:var(--text-muted); text-transform:uppercase; letter-spacing:.08em; }
+.theme-pill-group { display:flex; gap:1rem; }
+.theme-pill { padding:0; border:none; background:transparent; font-size:.78rem; color:var(--text-muted); text-transform:uppercase; letter-spacing:.05em; border-bottom:1px solid transparent; }
+.theme-pill[aria-pressed="true"] { color:var(--heading); border-bottom-color:var(--heading); }
+.footer-bottom { display:flex; justify-content:space-between; flex-wrap:wrap; gap:.6rem; color:var(--text-muted); font-size:.82rem; padding-top:var(--space-md); }
+.footer-bottom a { color:var(--heading); }
+@media (max-width:900px) { .footer-grid { grid-template-columns:1fr 1fr; } .footer-grid > :first-child { grid-column:1/-1; } }
+@media (max-width:560px) { .footer-grid { grid-template-columns:1fr; } }
+
+</style>
 </head>
 <body>
 
@@ -48,10 +247,11 @@
             <button type="button" data-lang-btn="en" class="is-active">English <span>EN</span></button>
             <button type="button" data-lang-btn="es">Español <span>ES</span></button>
             <button type="button" data-lang-btn="fr">Français <span>FR</span></button>
+            <button type="button" data-lang-btn="de">Deutsch <span>DE</span></button>
+            <button type="button" data-lang-btn="pt">Português <span>PT</span></button>
             <button type="button" data-lang-btn="sw">Kiswahili <span>SW</span></button>
             <button type="button" data-lang-btn="zh">中文 <span>ZH</span></button>
             <button type="button" data-lang-btn="ar">العربية <span>AR</span></button>
-            <button type="button" data-lang-btn="la">Latina <span>LA</span></button>
           </div>
         </div>
         <button type="button" class="nav-toggle" data-nav-toggle aria-expanded="false" aria-label="Open menu">
@@ -295,11 +495,201 @@
     </div>
     <div class="footer-bottom">
       <span>© <span data-current-year>2026</span> Root &amp; Table. <span data-i18n="footer.rights">All rights reserved.</span></span>
-      <span><span data-i18n="footer.credit">Designed by</span> <a href="mailto:jonathanrivers0414@gmail.com">Senthan &amp; Co</a></span>
+      <span><span data-i18n="footer.credit">Designed by</span> <a href="mailto:hello@example.test">Senthan &amp; Co</a></span>
     </div>
   </div>
 </footer>
 
-<script src="root-and-table - script.js"></script>
+<script>
+/* ===================================================================
+   ROOT & TABLE — main script
+   Quiet minimal counterpart to Senthan's Fine Dining and Ember
+   Kitchen: single palette, light mode by default, no flavor switcher.
+   Same proven i18n/storage/reveal architecture, new copy throughout.
+   =================================================================== */
+
+const I18N = {"en":{"nav":{"home":"Home","menu":"Menu","about":"About","gallery":"Gallery","testimonials":"Reviews","reservations":"Reserve","contact":"Contact"},"hero":{"eyebrow":"A Quiet Table","headline_pre":"Food, ","headline_em":"unhurried.","subheadline":"A small table built around slow-cooked dishes, real ingredients, and the belief that dinner should never feel rushed.","cta_menu":"View the Menu","cta_reserve":"Reserve a Seat"},"about":{"eyebrow":"Our Philosophy","heading":"Simplicity, done with care","paragraph":"Root & Table began with a simple question: what if a menu felt like a favorite cookbook rather than a spectacle? So we stripped away what didn't matter and kept what did — real dishes, quiet rooms, and time to enjoy both.","quote":"“The best meals are the ones you don't have to talk yourself into.”"},"menu":{"eyebrow":"The Menu","heading":"A quiet, considered table","subheading":"Every photograph here comes from our own kitchen, plated exactly as it reaches your table.","group_mains":"Mains","group_stews":"Stews & Chapati","group_garden":"Garden & Bean","group_breakfast":"Breakfast & Sharing"},"gallery":{"eyebrow":"A Closer Look","heading":"Moments from the table","subheading":"A few quiet moments from our kitchen and dining room."},"testimonials":{"eyebrow":"In Their Words","heading":"What guests remember most"},"reservation":{"eyebrow":"Reserve","heading":"Reserve your table","subheading":"Let us know when you'd like to visit.","label_name":"Full Name","label_email":"Email Address","label_phone":"Phone Number","label_date":"Date","label_time":"Time","label_guests":"Guests","label_notes":"Special Requests","placeholder_notes":"Allergies, celebrations, seating preference…","submit":"Confirm Reservation","success":"Thank you. We've received your request and will confirm shortly.","hours_heading":"Hours","hours_weekday":"Tue – Sat: 12:00 – 21:00","hours_weekend":"Sun: 12:00 – 16:00 · Mon: Closed","address_label":"Address","phone_label":"Phone","email_label":"Email"},"footer":{"about_blurb":"A quiet table for slow-cooked dishes and real ingredients — unhurried, considered, and always real.","quicklinks_heading":"Explore","menu_heading":"Menu","contact_heading":"Contact","newsletter_heading":"Keep in Touch","newsletter_placeholder":"Your email","newsletter_button":"Subscribe","theme_label":"Mode","light":"Light","dark":"Dark","rights":"All rights reserved.","credit":"Designed by"}},"es":{"nav":{"home":"Inicio","menu":"Menú","about":"Nosotros","gallery":"Galería","testimonials":"Opiniones","reservations":"Reservar","contact":"Contacto"},"hero":{"eyebrow":"Una Mesa Tranquila","headline_pre":"Comida, ","headline_em":"sin prisa.","subheadline":"Una mesa pequeña construida en torno a platos cocinados lentamente, ingredientes reales y la idea de que la cena nunca debería sentirse apresurada.","cta_menu":"Ver el Menú","cta_reserve":"Reservar un Lugar"},"about":{"eyebrow":"Nuestra Filosofía","heading":"Sencillez, hecha con cuidado","paragraph":"Root & Table nació de una pregunta simple: ¿y si un menú se sintiera como un libro de cocina favorito en vez de un espectáculo? Así que quitamos lo que no importaba y conservamos lo que sí — platos reales, salas tranquilas, y tiempo para disfrutar ambos.","quote":"«Las mejores comidas son las que no necesitas convencerte de tomar.»"},"menu":{"eyebrow":"El Menú","heading":"Una mesa tranquila y meditada","subheading":"Cada fotografía aquí viene de nuestra propia cocina, servida exactamente como llega a tu mesa.","group_mains":"Platos Fuertes","group_stews":"Guisos y Chapati","group_garden":"Jardín y Legumbres","group_breakfast":"Desayuno y Para Compartir"},"gallery":{"eyebrow":"Una Mirada Más Cercana","heading":"Momentos de la mesa","subheading":"Algunos momentos tranquilos de nuestra cocina y comedor."},"testimonials":{"eyebrow":"En Sus Palabras","heading":"Lo que más recuerdan los comensales"},"reservation":{"eyebrow":"Reservar","heading":"Reserva tu mesa","subheading":"Dinos cuándo te gustaría visitarnos.","label_name":"Nombre Completo","label_email":"Correo Electrónico","label_phone":"Número de Teléfono","label_date":"Fecha","label_time":"Hora","label_guests":"Comensales","label_notes":"Peticiones Especiales","placeholder_notes":"Alergias, celebraciones, preferencia de asiento…","submit":"Confirmar Reserva","success":"Gracias. Hemos recibido tu solicitud y confirmaremos pronto.","hours_heading":"Horario","hours_weekday":"Mar – Sáb: 12:00 – 21:00","hours_weekend":"Dom: 12:00 – 16:00 · Lun: Cerrado","address_label":"Dirección","phone_label":"Teléfono","email_label":"Correo"},"footer":{"about_blurb":"Una mesa tranquila para platos cocinados lentamente e ingredientes reales — sin prisa, meditada y siempre auténtica.","quicklinks_heading":"Explorar","menu_heading":"Menú","contact_heading":"Contacto","newsletter_heading":"Mantente en Contacto","newsletter_placeholder":"Tu correo","newsletter_button":"Suscribirse","theme_label":"Modo","light":"Claro","dark":"Oscuro","rights":"Todos los derechos reservados.","credit":"Diseñado por"}},"fr":{"nav":{"home":"Accueil","menu":"Menu","about":"À Propos","gallery":"Galerie","testimonials":"Avis","reservations":"Réserver","contact":"Contact"},"hero":{"eyebrow":"Une Table Tranquille","headline_pre":"La cuisine, ","headline_em":"sans hâte.","subheadline":"Une petite table construite autour de plats mijotés lentement, d'ingrédients réels, et de l'idée que le dîner ne devrait jamais sembler pressé.","cta_menu":"Voir le Menu","cta_reserve":"Réserver une Place"},"about":{"eyebrow":"Notre Philosophie","heading":"La simplicité, avec soin","paragraph":"Root & Table est né d'une question simple : et si un menu ressemblait à un livre de cuisine préféré plutôt qu'à un spectacle ? Nous avons donc retiré ce qui ne comptait pas et gardé ce qui comptait — de vrais plats, des salles calmes, et le temps d'apprécier les deux.","quote":"« Les meilleurs repas sont ceux qu'on n'a pas besoin de se convaincre de prendre. »"},"menu":{"eyebrow":"Le Menu","heading":"Une table calme et réfléchie","subheading":"Chaque photo ici vient de notre propre cuisine, dressée exactement comme elle arrive à votre table.","group_mains":"Plats Principaux","group_stews":"Ragoûts et Chapati","group_garden":"Jardin et Légumineuses","group_breakfast":"Petit-Déjeuner et à Partager"},"gallery":{"eyebrow":"Un Regard Plus Proche","heading":"Instants de la table","subheading":"Quelques instants calmes de notre cuisine et de notre salle."},"testimonials":{"eyebrow":"Dans Leurs Mots","heading":"Ce que les convives retiennent le plus"},"reservation":{"eyebrow":"Réserver","heading":"Réservez votre table","subheading":"Dites-nous quand vous aimeriez venir.","label_name":"Nom Complet","label_email":"Adresse E-mail","label_phone":"Numéro de Téléphone","label_date":"Date","label_time":"Heure","label_guests":"Convives","label_notes":"Demandes Spéciales","placeholder_notes":"Allergies, célébrations, préférence de place…","submit":"Confirmer la Réservation","success":"Merci. Nous avons reçu votre demande et confirmerons bientôt.","hours_heading":"Horaires","hours_weekday":"Mar – Sam : 12h00 – 21h00","hours_weekend":"Dim : 12h00 – 16h00 · Lun : Fermé","address_label":"Adresse","phone_label":"Téléphone","email_label":"E-mail"},"footer":{"about_blurb":"Une table calme pour des plats mijotés lentement et de vrais ingrédients — sans hâte, réfléchie, et toujours authentique.","quicklinks_heading":"Explorer","menu_heading":"Menu","contact_heading":"Contact","newsletter_heading":"Restons en Contact","newsletter_placeholder":"Votre e-mail","newsletter_button":"S'abonner","theme_label":"Mode","light":"Clair","dark":"Sombre","rights":"Tous droits réservés.","credit":"Conçu par"}},"sw":{"nav":{"home":"Nyumbani","menu":"Menyu","about":"Kuhusu","gallery":"Picha","testimonials":"Maoni","reservations":"Hifadhi","contact":"Wasiliana"},"hero":{"eyebrow":"Meza Tulivu","headline_pre":"Chakula, ","headline_em":"bila haraka.","subheadline":"Meza ndogo iliyojengwa kuzunguka vyakula vilivyopikwa taratibu, viungo halisi, na imani kwamba chakula cha jioni hakipaswi kuhisi cha haraka.","cta_menu":"Angalia Menyu","cta_reserve":"Hifadhi Nafasi"},"about":{"eyebrow":"Falsafa Yetu","heading":"Urahisi, uliofanywa kwa uangalifu","paragraph":"Root & Table ilianza na swali rahisi: vipi kama menyu ingehisi kama kitabu cha mapishi kipendwacho badala ya onyesho? Kwa hivyo tuliondoa kisichohitajika na kubaki na kile muhimu — vyakula halisi, vyumba vitulivu, na muda wa kufurahia vyote viwili.","quote":"“Milo bora ni ile ambayo huhitaji kujishawishi kula.”"},"menu":{"eyebrow":"Menyu","heading":"Meza tulivu na iliyofikiriwa","subheading":"Kila picha hapa inatoka jikoni petu wenyewe, ikiwa tayari kama inavyofika mezani kwako.","group_mains":"Sahani Kuu","group_stews":"Mchuzi na Chapati","group_garden":"Bustani na Mikunde","group_breakfast":"Kifungua Kinywa na Kushirikiana"},"gallery":{"eyebrow":"Mtazamo wa Karibu","heading":"Nyakati za mezani","subheading":"Nyakati chache tulivu kutoka jikoni na eneo letu la kulia."},"testimonials":{"eyebrow":"Kwa Maneno Yao","heading":"Wanachokumbuka zaidi wageni"},"reservation":{"eyebrow":"Hifadhi","heading":"Hifadhi meza yako","subheading":"Tujulishe utakapopenda kutembelea.","label_name":"Jina Kamili","label_email":"Barua Pepe","label_phone":"Namba ya Simu","label_date":"Tarehe","label_time":"Muda","label_guests":"Wageni","label_notes":"Maombi Maalum","placeholder_notes":"Mzio, sherehe, upendeleo wa kiti…","submit":"Thibitisha Hifadhi","success":"Asante. Tumepokea ombi lako na tutathibitisha hivi karibuni.","hours_heading":"Saa za Kufanya Kazi","hours_weekday":"Jumanne – Jumamosi: 12:00 – 21:00","hours_weekend":"Jumapili: 12:00 – 16:00 · Jumatatu: Imefungwa","address_label":"Anwani","phone_label":"Simu","email_label":"Barua Pepe"},"footer":{"about_blurb":"Meza tulivu kwa vyakula vilivyopikwa taratibu na viungo halisi — bila haraka, yenye kufikiriwa, na daima halisi.","quicklinks_heading":"Gundua","menu_heading":"Menyu","contact_heading":"Mawasiliano","newsletter_heading":"Endelea Kuwasiliana","newsletter_placeholder":"Barua pepe yako","newsletter_button":"Jiandikishe","theme_label":"Hali","light":"Nuru","dark":"Giza","rights":"Haki zote zimehifadhiwa.","credit":"Imebuniwa na"}},"zh":{"nav":{"home":"首页","menu":"菜单","about":"关于我们","gallery":"图库","testimonials":"顾客评价","reservations":"预订","contact":"联系我们"},"hero":{"eyebrow":"一张安静的餐桌","headline_pre":"美食,","headline_em":"从容不迫。","subheadline":"一张小小的餐桌,围绕慢炖菜肴与真实食材而建——我们相信,晚餐永远不该匆忙。","cta_menu":"查看菜单","cta_reserve":"预订座位"},"about":{"eyebrow":"我们的理念","heading":"用心成就简单","paragraph":"Root & Table 源于一个简单的问题:如果菜单读起来更像一本心爱的食谱,而不是一场表演,会怎样?于是我们去掉了不重要的部分,留下了真正重要的——真实的菜肴、安静的空间,以及从容享受两者的时间。","quote":"“最好的一餐,是你无需说服自己就想吃的那一餐。”"},"menu":{"eyebrow":"菜单","heading":"一张安静而用心的餐桌","subheading":"这里的每一张照片都来自我们自己的厨房,呈现方式与端上您餐桌时完全一致。","group_mains":"主菜","group_stews":"炖菜与恰帕提","group_garden":"田园豆类","group_breakfast":"早餐与分享餐"},"gallery":{"eyebrow":"近距离观察","heading":"餐桌上的片刻","subheading":"来自我们厨房与餐厅的几个安静瞬间。"},"testimonials":{"eyebrow":"他们的话语","heading":"客人印象最深的事"},"reservation":{"eyebrow":"预订","heading":"预订您的餐桌","subheading":"告诉我们您希望到访的时间。","label_name":"姓名","label_email":"电子邮箱","label_phone":"电话号码","label_date":"日期","label_time":"时间","label_guests":"人数","label_notes":"特殊要求","placeholder_notes":"过敏信息、庆祝活动、座位偏好……","submit":"确认预订","success":"谢谢,我们已收到您的请求,稍后会尽快确认。","hours_heading":"营业时间","hours_weekday":"周二至周六:12:00 – 21:00","hours_weekend":"周日:12:00 – 16:00 · 周一休息","address_label":"地址","phone_label":"电话","email_label":"邮箱"},"footer":{"about_blurb":"一张安静的餐桌,呈现慢炖菜肴与真实食材——从容、用心,始终真实。","quicklinks_heading":"探索","menu_heading":"菜单","contact_heading":"联系方式","newsletter_heading":"保持联系","newsletter_placeholder":"您的电子邮箱","newsletter_button":"订阅","theme_label":"模式","light":"浅色","dark":"深色","rights":"版权所有。","credit":"设计者"}},"ar":{"nav":{"home":"الرئيسية","menu":"القائمة","about":"من نحن","gallery":"معرض الصور","testimonials":"آراء الزبائن","reservations":"الحجز","contact":"تواصل معنا"},"hero":{"eyebrow":"مائدة هادئة","headline_pre":"طعام ","headline_em":"بلا استعجال.","subheadline":"مائدة صغيرة بُنيت حول أطباق تُطهى ببطء، ومكوّنات حقيقية، وإيمان بأن العشاء لا ينبغي أن يبدو متسرّعًا أبدًا.","cta_menu":"تصفح القائمة","cta_reserve":"احجز مقعدًا"},"about":{"eyebrow":"فلسفتنا","heading":"البساطة، بعناية","paragraph":"وُلدت Root & Table من سؤال بسيط: ماذا لو شعرت القائمة وكأنها كتاب طبخ محبوب بدلاً من عرض استعراضي؟ فتخلّينا عمّا لا يهم، وأبقينا على ما يهم — أطباق حقيقية، وأجواء هادئة، ووقت كافٍ للاستمتاع بكليهما.","quote":"«أفضل الوجبات هي التي لا تحتاج لإقناع نفسك بتناولها.»"},"menu":{"eyebrow":"القائمة","heading":"مائدة هادئة ومدروسة","subheading":"كل صورة هنا مأخوذة من مطبخنا الخاص، مقدَّمة تمامًا كما تصل إلى مائدتك.","group_mains":"الأطباق الرئيسية","group_stews":"اليخنات والشاباتي","group_garden":"الحديقة والبقوليات","group_breakfast":"الإفطار وأطباق المشاركة"},"gallery":{"eyebrow":"نظرة أقرب","heading":"لحظات من المائدة","subheading":"بضع لحظات هادئة من مطبخنا وقاعة الطعام."},"testimonials":{"eyebrow":"بكلماتهم","heading":"ما يتذكره ضيوفنا أكثر"},"reservation":{"eyebrow":"احجز","heading":"احجز طاولتك","subheading":"أخبرنا بالموعد الذي ترغب فيه بزيارتنا.","label_name":"الاسم الكامل","label_email":"البريد الإلكتروني","label_phone":"رقم الهاتف","label_date":"التاريخ","label_time":"الوقت","label_guests":"عدد الضيوف","label_notes":"طلبات خاصة","placeholder_notes":"حساسية غذائية، مناسبة، تفضيل مكان الجلوس…","submit":"تأكيد الحجز","success":"شكرًا لك. تلقّينا طلبك وسنؤكده قريبًا.","hours_heading":"ساعات العمل","hours_weekday":"الثلاثاء – السبت: 12:00 – 21:00","hours_weekend":"الأحد: 12:00 – 16:00 · الاثنين: مغلق","address_label":"العنوان","phone_label":"الهاتف","email_label":"البريد الإلكتروني"},"footer":{"about_blurb":"مائدة هادئة لأطباق تُطهى ببطء ومكوّنات حقيقية — بلا استعجال، مدروسة، وحقيقية دائمًا.","quicklinks_heading":"استكشف","menu_heading":"القائمة","contact_heading":"تواصل معنا","newsletter_heading":"ابقَ على تواصل","newsletter_placeholder":"بريدك الإلكتروني","newsletter_button":"اشترك","theme_label":"الوضع","light":"فاتح","dark":"داكن","rights":"جميع الحقوق محفوظة.","credit":"صمّمه"}},"la":{"nav":{"home":"Domus","menu":"Index Ciborum","about":"De Nobis","gallery":"Imagines","testimonials":"Testimonia","reservations":"Reservationes","contact":"Contactus"},"hero":{"eyebrow":"Mensa Quieta","headline_pre":"Cibus, ","headline_em":"sine festinatione.","subheadline":"Mensa parva circa fercula lente cocta, res veras, et fidem quod cena numquam festinata sentiri debeat aedificata.","cta_menu":"Indicem Vide","cta_reserve":"Sedem Reserva"},"about":{"eyebrow":"Nostra Ratio","heading":"Simplicitas, cum cura facta","paragraph":"Root & Table ab una quaestione simplici coepit: quid si index sicut liber coquinarius dilectus, non spectaculum, sentiretur? Itaque removimus quod non intererat, et servavimus quod intererat — fercula vera, loca quieta, et tempus utrumque fruendi.","quote":"“Optima fercula sunt quae te edere persuadere non opus est.”"},"menu":{"eyebrow":"Index","heading":"Mensa quieta et considerata","subheading":"Quaeque imago hic e nostra ipsa culina venit, sicut ad mensam tuam pervenit composita.","group_mains":"Fercula Praecipua","group_stews":"Iura et Chapati","group_garden":"Hortus et Legumina","group_breakfast":"Ientaculum et Fercula Communia"},"gallery":{"eyebrow":"Propior Aspectus","heading":"Momenta Mensae","subheading":"Pauca momenta quieta ex culina et cenaculo nostro."},"testimonials":{"eyebrow":"Verbis Eorum","heading":"Quid Hospites Maxime Meminerint"},"reservation":{"eyebrow":"Reserva","heading":"Mensam Tuam Reserva","subheading":"Nobis dic quando nos visitare velis.","label_name":"Nomen Plenum","label_email":"Inscriptio Electronica","label_phone":"Numerus Telephonicus","label_date":"Dies","label_time":"Hora","label_guests":"Hospites","label_notes":"Petitiones Speciales","placeholder_notes":"Allergiae, celebrationes, sedis optio…","submit":"Reservationem Confirma","success":"Gratias. Petitionem tuam accepimus et mox confirmabimus.","hours_heading":"Horae Apertionis","hours_weekday":"Martis – Saturni: 12:00 – 21:00","hours_weekend":"Solis: 12:00 – 16:00 · Lunae: Clausum","address_label":"Inscriptio","phone_label":"Telephonum","email_label":"Littera Electronica"},"footer":{"about_blurb":"Mensa quieta ferculis lente coctis et rebus veris — sine festinatione, considerata, et semper vera.","quicklinks_heading":"Explora","menu_heading":"Index","contact_heading":"Contactus","newsletter_heading":"Mane Coniunctus","newsletter_placeholder":"Inscriptio tua electronica","newsletter_button":"Subscribe","theme_label":"Modus","light":"Lucidum","dark":"Obscurum","rights":"Omnia iura reservata.","credit":"Designatum ab"}},"de":{"nav":{"home":"Zuhause","menu":"Menü","about":"Über","gallery":"Galerie","testimonials":"Rezensionen","reservations":"Reservieren","contact":"Kontakt"},"hero":{"eyebrow":"Ein ruhiger Tisch","headline_pre":"Essen,","headline_em":"ohne Eile.","subheadline":"Ein kleiner Tisch, der sich um langsam gegarte Gerichte, echte Zutaten und die Überzeugung dreht, dass das Abendessen niemals gehetzt wirken sollte.","cta_menu":"Sehen Sie sich das Menü an","cta_reserve":"Reservieren Sie einen Sitzplatz"},"about":{"eyebrow":"Unsere Philosophie","heading":"Einfachheit, mit Sorgfalt umgesetzt","paragraph":"Root & Table begann mit einer einfachen Frage: Was wäre, wenn sich ein Menü eher wie ein Lieblingskochbuch als wie ein Spektakel anfühlen würde? Also haben wir weggelassen, was unwichtig war, und das behalten, was wichtig war: echte Gerichte, ruhige Räume und Zeit, beides zu genießen.","quote":"„Die besten Mahlzeiten sind die, zu denen man sich nicht überreden muss.“"},"menu":{"eyebrow":"Das Menü","heading":"Ein ruhiger, überlegter Tisch","subheading":"Jedes Foto hier stammt aus unserer eigenen Küche und wird genau so plattiert, wie es Ihren Tisch erreicht.","group_mains":"Hauptgericht","group_stews":"Eintöpfe und Chapati","group_garden":"Garten & Bohne","group_breakfast":"Frühstück & Teilen"},"gallery":{"eyebrow":"Ein genauerer Blick","heading":"Momente vom Tisch","subheading":"Ein paar ruhige Momente aus unserer Küche und unserem Esszimmer."},"testimonials":{"eyebrow":"In ihren Worten","heading":"Woran sich Gäste am meisten erinnern"},"reservation":{"eyebrow":"Reservieren","heading":"Reservieren Sie Ihren Tisch","subheading":"Teilen Sie uns mit, wann Sie uns besuchen möchten.","label_name":"Vollständiger Name","label_email":"E-Mail-Adresse","label_phone":"Telefonnummer","label_date":"Datum","label_time":"Zeit","label_guests":"Gäste","label_notes":"Sonderwünsche","placeholder_notes":"Allergien, Feiern, Sitzplatzvorlieben…","submit":"Bestätigen Sie die Reservierung","success":"Vielen Dank. Wir haben Ihre Anfrage erhalten und werden sie in Kürze bestätigen.","hours_heading":"Stunden","hours_weekday":"Di – Sa: 12:00 – 21:00 Uhr","hours_weekend":"So: 12:00 – 16:00 · Mo: Geschlossen","address_label":"Adresse","phone_label":"Telefon","email_label":"E-Mail"},"footer":{"about_blurb":"Ein ruhiger Tisch für langsam gegarte Gerichte und echte Zutaten – gemächlich, bedacht und immer echt.","quicklinks_heading":"Entdecken","menu_heading":"Menü","contact_heading":"Kontakt","newsletter_heading":"Bleiben Sie in Kontakt","newsletter_placeholder":"Ihre E-Mail","newsletter_button":"Abonnieren","theme_label":"Modus","light":"Licht","dark":"Dunkel","rights":"Alle Rechte vorbehalten.","credit":"Entworfen von"}},"pt":{"nav":{"home":"Página inicial","menu":"Cardápio","about":"Sobre","gallery":"Galeria","testimonials":"Avaliações","reservations":"Reserva","contact":"Contato"},"hero":{"eyebrow":"Uma mesa silenciosa","headline_pre":"Comida,","headline_em":"sem pressa.","subheadline":"Uma pequena mesa construída em torno de pratos cozidos lentamente, ingredientes reais e a crença de que o jantar nunca deve ser apressado.","cta_menu":"Veja o cardápio","cta_reserve":"Reserve um assento"},"about":{"eyebrow":"Nossa Filosofia","heading":"Simplicidade, feita com cuidado","paragraph":"Root & Table começou com uma pergunta simples: e se um menu parecesse um livro de receitas favorito em vez de um espetáculo? Então, eliminamos o que não importava e mantivemos o que importava: pratos de verdade, salas silenciosas e tempo para desfrutar de ambos.","quote":"“As melhores refeições são aquelas com as quais você não precisa se convencer.”"},"menu":{"eyebrow":"O cardápio","heading":"Uma mesa tranquila e ponderada","subheading":"Cada fotografia aqui vem da nossa própria cozinha, folheada exatamente quando chega à sua mesa.","group_mains":"Rede elétrica","group_stews":"Ensopados e Chapati","group_garden":"Jardim e Feijão","group_breakfast":"Café da manhã e compartilhamento"},"gallery":{"eyebrow":"Um olhar mais atento","heading":"Momentos da mesa","subheading":"Alguns momentos tranquilos da nossa cozinha e sala de jantar."},"testimonials":{"eyebrow":"Em suas palavras","heading":"O que os convidados mais lembram"},"reservation":{"eyebrow":"Reserva","heading":"Reserve sua mesa","subheading":"Deixe-nos saber quando você gostaria de visitar.","label_name":"Nome Completo","label_email":"Endereço de e-mail","label_phone":"Número de telefone","label_date":"Data","label_time":"Hora","label_guests":"Convidados","label_notes":"Pedidos Especiais","placeholder_notes":"Alergias, comemorações, preferência de assento…","submit":"Confirmar reserva","success":"Obrigado. Recebemos sua solicitação e confirmaremos em breve.","hours_heading":"Horas","hours_weekday":"Terça – Sábado: 12h00 – 21h00","hours_weekend":"Dom: 12h00 – 16h00 · Seg: Fechado","address_label":"Endereço","phone_label":"Telefone","email_label":"E-mail"},"footer":{"about_blurb":"Uma mesa tranquila para pratos cozidos lentamente e ingredientes reais – sem pressa, ponderados e sempre reais.","quicklinks_heading":"Explorar","menu_heading":"Cardápio","contact_heading":"Contato","newsletter_heading":"Mantenha contato","newsletter_placeholder":"Seu e-mail","newsletter_button":"Inscrever-se","theme_label":"Modo","light":"Luz","dark":"Escuro","rights":"Todos os direitos reservados.","credit":"Projetado por"}}};
+
+const RTL_LANGS = new Set(["ar"]);
+
+const memoryStore = {};
+const safeStorage = {
+  get(key, fallback) {
+    try { const v = window.localStorage.getItem(key); return v === null ? fallback : v; }
+    catch (e) { return key in memoryStore ? memoryStore[key] : fallback; }
+  },
+  set(key, value) {
+    try { window.localStorage.setItem(key, value); }
+    catch (e) { memoryStore[key] = value; }
+  }
+};
+
+const root = document.documentElement;
+const VALID_THEMES = ["dark", "light"];
+
+function applyTheme(theme) {
+  root.setAttribute("data-theme", theme);
+  document.querySelectorAll("[data-theme-btn]").forEach(btn => {
+    btn.setAttribute("aria-pressed", btn.dataset.themeBtn === theme ? "true" : "false");
+  });
+  safeStorage.set("rt-theme", theme);
+}
+
+function initThemeEngine() {
+  const theme = VALID_THEMES.includes(safeStorage.get("rt-theme", "")) ? safeStorage.get("rt-theme", "light") : "light";
+  applyTheme(theme);
+  document.querySelectorAll("[data-theme-toggle], [data-theme-btn]").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const next = btn.dataset.themeBtn || (root.getAttribute("data-theme") === "dark" ? "light" : "dark");
+      applyTheme(next);
+    });
+  });
+}
+
+function getPath(obj, path) {
+  return path.split(".").reduce((acc, key) => (acc && acc[key] !== undefined ? acc[key] : undefined), obj);
+}
+
+function applyLanguage(lang) {
+  const dict = I18N[lang] ? lang : "en";
+  const table = I18N[dict];
+
+  document.querySelectorAll("[data-i18n]").forEach(el => {
+    const val = getPath(table, el.dataset.i18n);
+    if (val !== undefined) el.textContent = val;
+  });
+  document.querySelectorAll("[data-i18n-placeholder]").forEach(el => {
+    const val = getPath(table, el.dataset.i18nPlaceholder);
+    if (val !== undefined) el.setAttribute("placeholder", val);
+  });
+  const headlinePre = document.querySelector("[data-hero-headline-pre]");
+  const headlineEm = document.querySelector("[data-hero-headline-em]");
+  if (headlinePre) headlinePre.textContent = table.hero.headline_pre;
+  if (headlineEm) headlineEm.textContent = table.hero.headline_em;
+
+  root.setAttribute("lang", dict);
+  root.setAttribute("dir", RTL_LANGS.has(dict) ? "rtl" : "ltr");
+
+  document.querySelectorAll("[data-lang-btn]").forEach(btn => {
+    btn.classList.toggle("is-active", btn.dataset.langBtn === dict);
+  });
+  const currentLabel = document.querySelector("[data-current-lang]");
+  if (currentLabel) currentLabel.textContent = dict.toUpperCase();
+
+  safeStorage.set("rt-lang", dict);
+}
+
+function initLanguageEngine() {
+  const saved = safeStorage.get("rt-lang", null);
+  const browserLang = (navigator.language || "en").slice(0, 2).toLowerCase();
+  const initialLang = saved || (I18N[browserLang] ? browserLang : "en");
+  applyLanguage(I18N[initialLang] ? initialLang : "en");
+
+  document.querySelectorAll("[data-lang-btn]").forEach(btn => {
+    btn.addEventListener("click", () => {
+      applyLanguage(btn.dataset.langBtn);
+      const dropdown = document.querySelector("[data-lang-dropdown]");
+      if (dropdown) dropdown.classList.remove("is-open");
+    });
+  });
+
+  const langToggle = document.querySelector("[data-lang-toggle]");
+  const langDropdown = document.querySelector("[data-lang-dropdown]");
+  if (langToggle && langDropdown) {
+    langToggle.addEventListener("click", () => langDropdown.classList.toggle("is-open"));
+    document.addEventListener("click", (e) => {
+      if (!langToggle.contains(e.target) && !langDropdown.contains(e.target)) langDropdown.classList.remove("is-open");
+    });
+  }
+}
+
+function initMobileNav() {
+  const toggle = document.querySelector("[data-nav-toggle]");
+  const panel = document.querySelector("[data-nav-panel]");
+  if (!toggle || !panel) return;
+  toggle.addEventListener("click", () => {
+    const isOpen = panel.classList.toggle("is-open");
+    toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    document.body.classList.toggle("nav-lock", isOpen);
+  });
+  panel.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+      panel.classList.remove("is-open");
+      toggle.setAttribute("aria-expanded", "false");
+      document.body.classList.remove("nav-lock");
+    });
+  });
+}
+
+function initGalleryLightbox() {
+  const items = document.querySelectorAll("[data-gallery-item]");
+  const lightbox = document.querySelector("[data-lightbox]");
+  if (!items.length || !lightbox) return;
+  const img = lightbox.querySelector("img");
+  const caption = lightbox.querySelector("[data-lightbox-caption]");
+  function open(src, alt) {
+    img.setAttribute("src", src); img.setAttribute("alt", alt); caption.textContent = alt;
+    lightbox.classList.add("is-open"); document.body.classList.add("nav-lock");
+  }
+  function close() { lightbox.classList.remove("is-open"); document.body.classList.remove("nav-lock"); }
+  items.forEach(item => {
+    item.addEventListener("click", () => {
+      const fullImg = item.querySelector("img");
+      open(fullImg.getAttribute("src"), fullImg.getAttribute("alt"));
+    });
+  });
+  lightbox.addEventListener("click", (e) => { if (e.target === lightbox || e.target.hasAttribute("data-lightbox-close")) close(); });
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape") close(); });
+}
+
+function initReservationForm() {
+  const form = document.querySelector("[data-reservation-form]");
+  if (!form) return;
+  const dateInput = form.querySelector('input[type="date"]');
+  if (dateInput) dateInput.setAttribute("min", new Date().toISOString().split("T")[0]);
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    if (!form.checkValidity()) { form.reportValidity(); return; }
+    const successEl = document.querySelector("[data-reservation-success]");
+    form.hidden = true;
+    if (successEl) successEl.hidden = false;
+  });
+}
+
+function initScrollReveal() {
+  const targets = document.querySelectorAll("[data-reveal]");
+  const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (prefersReduced || !("IntersectionObserver" in window)) { targets.forEach(t => t.classList.add("is-visible")); return; }
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add("is-visible"); observer.unobserve(entry.target); } });
+  }, { threshold: 0.15, rootMargin: "0px 0px -40px 0px" });
+  targets.forEach(t => observer.observe(t));
+}
+
+function initHeaderScroll() {
+  const header = document.querySelector("[data-site-header]");
+  if (!header) return;
+  const onScroll = () => header.classList.toggle("is-scrolled", window.scrollY > 24);
+  onScroll();
+  window.addEventListener("scroll", onScroll, { passive: true });
+}
+
+function initFooterYear() {
+  const el = document.querySelector("[data-current-year]");
+  if (el) el.textContent = new Date().getFullYear();
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  initThemeEngine();
+  initLanguageEngine();
+  initMobileNav();
+  initGalleryLightbox();
+  initReservationForm();
+  initScrollReveal();
+  initHeaderScroll();
+  initFooterYear();
+});
+
+</script>
 </body>
 </html>

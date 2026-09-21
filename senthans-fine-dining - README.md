@@ -126,8 +126,8 @@ reservation form, responsive down to mobile.
 ## License
 
 Standard Codester license terms apply — see your purchase receipt. Contact
-Senthan & Co (jonathanrivers0414@gmail.com) with any questions about usage rights.
+Senthan & Co (hello@senthan-co.example) with any questions about usage rights.
 
 ---
 
-Template crafted by **Senthan & Co** — jonathanrivers0414@gmail.com · +256 754069314
+Template crafted by **Senthan & Co** — hello@senthan-co.example · +256 700 000 000

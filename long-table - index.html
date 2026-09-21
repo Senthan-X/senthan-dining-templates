@@ -18,7 +18,244 @@
 })();
 </script>
 
-<link rel="stylesheet" href="long-table - style.css">
+<style>
+/* ===================================================================
+   THE LONG TABLE — stylesheet
+   Warm, communal, family-style. One signature "Harvest Clay" palette,
+   dark/light mode via <html data-theme="dark|light">.
+   Fonts: Lora (display) + Mulish (body) — distinct from Fine Dining
+   (Fraunces/Karla), Ember Kitchen (Bricolage Grotesque/Instrument Sans),
+   and Root & Table (Newsreader/Work Sans).
+   Signature elements: a rotated stamp badge in the hero, a torn-edge
+   "recipe card" aside, ticket-stub menu cards, and a tilted photo-wall
+   gallery — all distinct from the previous three builds.
+   =================================================================== */
+
+:root {
+  --font-display: 'Lora', 'Georgia', serif;
+  --font-body: 'Mulish', -apple-system, sans-serif;
+
+  --radius-sm: 8px; --radius-md: 16px; --radius-lg: 26px; --radius-pill: 999px;
+  --space-xs: .5rem; --space-sm: 1rem; --space-md: 1.75rem; --space-lg: 3rem; --space-xl: 5rem; --space-2xl: 7.5rem;
+  --container: 1240px;
+  --transition-fast: .2s ease; --transition-med: .4s cubic-bezier(.22,1,.36,1);
+  --shadow-sm: 0 2px 10px rgba(0,0,0,.14); --shadow-md: 0 14px 34px rgba(0,0,0,.2); --shadow-lg: 0 22px 55px rgba(0,0,0,.3);
+}
+html[lang="ar"] { --font-display: 'Noto Sans Arabic', var(--font-body); --font-body: 'Noto Sans Arabic', sans-serif; }
+html[lang="zh"] { --font-display: 'Lora', 'Noto Sans SC', serif; --font-body: 'Noto Sans SC', 'Mulish', sans-serif; }
+
+html[data-theme="dark"] {
+  --bg: #1A1611; --surface: #221C15; --surface-2: #2B231A; --surface-raise: #322920;
+  --text: #F1E9DD; --text-muted: #C4B39F; --heading: #FBF3E7;
+  --accent: #C1652E; --accent-strong: #D97D42; --accent-contrast: #1A1611; --green: #7CA06C;
+  --border: #3A2F23; --overlay: rgba(15,11,7,.75);
+}
+html[data-theme="light"] {
+  --bg: #FAF4EC; --surface: #FFFFFF; --surface-2: #F0E6D6; --surface-raise: #FFFFFF;
+  --text: #1E1810; --text-muted: #6E5C48; --heading: #17120C;
+  --accent: #A8501F; --accent-strong: #8A4118; --accent-contrast: #FAF4EC; --green: #4F6F45;
+  --border: #E6D8C3; --overlay: rgba(30,24,16,.6);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { animation-duration: .001ms !important; transition-duration: .001ms !important; animation-iteration-count: 1 !important; }
+}
+body { margin:0; background:var(--bg); color:var(--text); font-family:var(--font-body); line-height:1.65; transition: background-color var(--transition-med), color var(--transition-med); overflow-x:hidden; }
+body.nav-lock { overflow:hidden; }
+img { max-width:100%; display:block; }
+a { color:inherit; text-decoration:none; }
+ul { list-style:none; margin:0; padding:0; }
+h1,h2,h3,h4 { font-family:var(--font-display); color:var(--heading); margin:0; line-height:1.2; font-weight:600; }
+p { margin:0; }
+button { font-family:inherit; cursor:pointer; }
+input, select, textarea { font-family:inherit; }
+:focus-visible { outline:2px solid var(--accent-strong); outline-offset:3px; }
+
+.container { max-width:var(--container); margin:0 auto; padding:0 1.5rem; }
+.section { padding:var(--space-2xl) 0; }
+.eyebrow { display:inline-block; font-weight:800; font-size:.78rem; letter-spacing:.12em; text-transform:uppercase; color:var(--accent-strong); margin-bottom:var(--space-xs); }
+.section-head { max-width:640px; margin-bottom:var(--space-lg); }
+.section-head.center { margin-left:auto; margin-right:auto; text-align:center; }
+.section-head h2 { font-size:clamp(2rem,4vw,2.8rem); font-style:italic; font-weight:500; margin-top:.4rem; }
+.section-head p { color:var(--text-muted); margin-top:var(--space-sm); font-size:1.05rem; max-width:54ch; }
+.section-head.center p { margin-left:auto; margin-right:auto; }
+
+.btn { display:inline-flex; align-items:center; justify-content:center; gap:.5rem; padding:.9rem 1.8rem; border-radius:var(--radius-pill); font-weight:700; font-size:.95rem; border:1px solid transparent; transition: all var(--transition-fast); white-space:nowrap; }
+.btn-solid { background:var(--accent); color:#fff; }
+.btn-solid:hover { background:var(--accent-strong); transform:translateY(-2px); }
+.btn-outline { background:transparent; color:var(--heading); border-color:var(--border); }
+.btn-outline:hover { border-color:var(--accent-strong); color:var(--accent-strong); transform:translateY(-2px); }
+.btn-block { width:100%; }
+
+[data-reveal] { opacity:0; transform:translateY(26px); transition:opacity .7s ease, transform .7s ease; }
+[data-reveal].is-visible { opacity:1; transform:translateY(0); }
+
+/* HEADER */
+.site-header { position:fixed; top:0; left:0; right:0; z-index:100; padding:1.4rem 0; border-bottom:1px solid transparent; transition: all var(--transition-med); }
+.site-header.is-scrolled { padding:.85rem 0; background:color-mix(in srgb, var(--surface) 90%, transparent); backdrop-filter:blur(14px); border-bottom-color:var(--border); }
+.site-header .container { display:flex; align-items:center; justify-content:space-between; gap:1rem; }
+.logo { font-family:var(--font-display); font-style:italic; font-size:1.4rem; font-weight:600; color:var(--heading); }
+.logo span { color:var(--accent-strong); }
+.nav-panel { display:flex; align-items:center; gap:2.1rem; }
+.nav-links { display:flex; gap:1.9rem; }
+.nav-links a { font-size:.94rem; font-weight:600; opacity:.8; }
+.nav-links a:hover { opacity:1; color:var(--accent-strong); }
+.nav-tools { display:flex; align-items:center; gap:.6rem; }
+.icon-btn { width:40px; height:40px; border-radius:50%; border:1px solid var(--border); background:var(--surface); color:var(--heading); display:flex; align-items:center; justify-content:center; transition: all var(--transition-fast); }
+.icon-btn:hover { border-color:var(--accent-strong); transform:translateY(-2px); }
+.icon-btn svg { width:18px; height:18px; }
+.icon-btn .icon-moon { display:none; }
+html[data-theme="light"] .icon-btn .icon-sun { display:none; }
+html[data-theme="light"] .icon-btn .icon-moon { display:block; }
+.lang-switch { position:relative; }
+.lang-toggle { display:flex; align-items:center; gap:.35rem; height:40px; padding:0 .9rem; border-radius:var(--radius-pill); border:1px solid var(--border); background:var(--surface); color:var(--heading); font-weight:800; font-size:.82rem; }
+.lang-dropdown { position:absolute; top:calc(100% + 10px); right:0; min-width:190px; background:var(--surface-raise); border:1px solid var(--border); border-radius:var(--radius-md); box-shadow:var(--shadow-md); padding:.5rem; display:grid; gap:.15rem; opacity:0; visibility:hidden; transform:translateY(-6px); transition:all var(--transition-fast); }
+html[dir="rtl"] .lang-dropdown { right:auto; left:0; }
+.lang-dropdown.is-open { opacity:1; visibility:visible; transform:translateY(0); }
+.lang-dropdown button { display:flex; justify-content:space-between; gap:.6rem; width:100%; text-align:left; padding:.55rem .75rem; border-radius:var(--radius-sm); border:none; background:transparent; color:var(--text); font-size:.9rem; }
+html[dir="rtl"] .lang-dropdown button { text-align:right; }
+.lang-dropdown button:hover { background:var(--surface-2); }
+.lang-dropdown button.is-active { color:var(--accent-strong); font-weight:700; }
+.nav-toggle { display:none; }
+@media (max-width:980px) {
+  .nav-links { display:none; }
+  .nav-toggle { display:flex; align-items:center; justify-content:center; width:42px; height:42px; border-radius:50%; border:1px solid var(--border); background:var(--surface); color:var(--heading); }
+  .nav-toggle svg { width:20px; height:20px; }
+  .nav-panel-mobile { position:fixed; inset:0; background:var(--bg); z-index:90; padding:6.5rem 1.5rem 2rem; transform:translateY(-100%); transition:transform var(--transition-med); overflow-y:auto; }
+  .nav-panel-mobile.is-open { transform:translateY(0); }
+  .nav-panel-mobile .nav-links { flex-direction:column; gap:.3rem; }
+  .nav-panel-mobile .nav-links a { display:block; padding:1rem 0; border-bottom:1px solid var(--border); font-size:1.15rem; }
+}
+
+/* HERO — full photo, rotated stamp badge */
+.hero { position:relative; min-height:100vh; display:flex; align-items:center; overflow:hidden; }
+.hero-media { position:absolute; inset:0; z-index:0; }
+.hero-media img { width:100%; height:100%; object-fit:cover; object-position:center 40%; }
+.hero-media::after { content:""; position:absolute; inset:0; background:linear-gradient(180deg, var(--overlay) 0%, rgba(0,0,0,.5) 55%, var(--overlay) 100%); }
+.hero-content { position:relative; z-index:1; padding-top:6rem; max-width:640px; }
+.hero-text { color:#FBF3E7; }
+.hero-text .eyebrow { color:var(--accent-strong); }
+.hero-text h1 { font-size:clamp(2.6rem,6vw,4.2rem); font-style:italic; font-weight:600; color:#FBF3E7; margin:.5rem 0 1.3rem; }
+.hero-text h1 em { font-style:normal; color:var(--accent-strong); font-weight:700; }
+.hero-text p { font-size:1.12rem; color:rgba(251,243,231,.88); max-width:46ch; margin-bottom:2rem; }
+.hero-actions { display:flex; gap:1rem; flex-wrap:wrap; }
+
+.stamp-badge {
+  position:absolute; z-index:2; right:8%; bottom:12%; width:150px; height:150px; border-radius:50%;
+  border:2px dashed rgba(251,243,231,.7); display:flex; align-items:center; justify-content:center; text-align:center;
+  transform:rotate(-9deg); padding:1.2rem;
+}
+.stamp-badge-inner { color:#FBF3E7; }
+.stamp-line1 { font-family:var(--font-display); font-style:italic; font-weight:700; font-size:1.05rem; display:block; }
+.stamp-line2 { font-size:.62rem; letter-spacing:.1em; text-transform:uppercase; display:block; margin-top:.3rem; opacity:.85; }
+@media (max-width:760px) { .stamp-badge { width:110px; height:110px; right:6%; bottom:8%; } .stamp-line1 { font-size:.85rem; } .stamp-line2 { font-size:.52rem; } }
+
+/* ABOUT — recipe card aside */
+.about-grid { display:grid; grid-template-columns:1.1fr .9fr; gap:4rem; align-items:start; }
+.about-text p { color:var(--text-muted); font-size:1.08rem; margin-bottom:1.1rem; }
+.recipe-card {
+  background:var(--surface-raise); border:1px solid var(--border); border-radius:var(--radius-md);
+  padding:2rem 1.8rem 1.8rem; box-shadow:var(--shadow-md); position:relative; transform:rotate(1.5deg);
+}
+.recipe-card::before {
+  content:""; position:absolute; top:-10px; left:20px; right:20px; height:20px;
+  background:repeating-linear-gradient(90deg, transparent, transparent 8px, var(--bg) 8px, var(--bg) 16px);
+  border-radius:4px;
+}
+.recipe-card-label { font-size:.75rem; font-weight:800; letter-spacing:.1em; text-transform:uppercase; color:var(--accent-strong); margin-bottom:.8rem; display:block; }
+.recipe-card-text { font-family:var(--font-display); font-style:italic; font-size:1.5rem; color:var(--heading); line-height:1.4; }
+@media (max-width:900px) { .about-grid { grid-template-columns:1fr; gap:2.5rem; } .recipe-card { transform:rotate(0); } }
+
+/* MENU — grouped by sharing size, ticket-stub cards */
+.menu-tabs { display:flex; flex-wrap:wrap; gap:.7rem; margin-bottom:var(--space-lg); }
+.menu-tab { padding:.7rem 1.4rem; border-radius:var(--radius-pill); border:1px solid var(--border); background:var(--surface); color:var(--text-muted); font-weight:700; font-size:.92rem; transition:all var(--transition-fast); }
+.menu-tab[aria-selected="true"] { background:var(--accent); color:#fff; border-color:var(--accent); }
+.menu-tab:hover { border-color:var(--accent-strong); }
+.menu-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 1fr)); gap:1.6rem; }
+.ticket-card { background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-md); overflow:hidden; position:relative; transition: transform var(--transition-fast), box-shadow var(--transition-fast); }
+.ticket-card:hover { transform:translateY(-5px); box-shadow:var(--shadow-md); }
+.ticket-media { aspect-ratio:4/3; overflow:hidden; }
+.ticket-media img { width:100%; height:100%; object-fit:cover; transition:transform .6s ease; }
+.ticket-card:hover .ticket-media img { transform:scale(1.06); }
+.ticket-perforation { height:0; border-top:2px dashed var(--border); position:relative; }
+.ticket-perforation::before, .ticket-perforation::after { content:""; position:absolute; top:-8px; width:16px; height:16px; border-radius:50%; background:var(--bg); }
+.ticket-perforation::before { left:-8px; } .ticket-perforation::after { right:-8px; }
+.ticket-body { padding:1.2rem 1.3rem 1.4rem; }
+.ticket-top { display:flex; justify-content:space-between; align-items:baseline; gap:.7rem; }
+.ticket-name { font-family:var(--font-display); font-size:1.1rem; font-weight:600; color:var(--heading); }
+.ticket-price { font-family:var(--font-display); font-weight:700; color:var(--accent-strong); white-space:nowrap; }
+.ticket-desc { color:var(--text-muted); font-size:.9rem; margin-top:.45rem; line-height:1.5; }
+.serves-pill { display:inline-block; margin-top:.6rem; font-size:.72rem; font-weight:800; letter-spacing:.05em; text-transform:uppercase; color:var(--green); background:color-mix(in srgb, var(--green) 15%, transparent); padding:.25rem .6rem; border-radius:var(--radius-pill); }
+
+/* GALLERY — tilted photo wall */
+.photo-wall { display:flex; flex-wrap:wrap; gap:1.8rem 1.4rem; justify-content:center; padding:1rem 0; }
+.wall-photo { position:relative; width:200px; cursor:pointer; border:none; padding:0; background:none; transition:transform var(--transition-fast); }
+.wall-photo:hover { transform:scale(1.05) rotate(0deg) !important; z-index:5; }
+.wall-photo:nth-child(1) { transform:rotate(-4deg); } .wall-photo:nth-child(2) { transform:rotate(3deg); margin-top:1.5rem; }
+.wall-photo:nth-child(3) { transform:rotate(-2deg); } .wall-photo:nth-child(4) { transform:rotate(5deg); margin-top:.8rem; }
+.wall-photo:nth-child(5) { transform:rotate(-5deg); margin-top:1.2rem; } .wall-photo:nth-child(6) { transform:rotate(2deg); }
+.wall-photo:nth-child(7) { transform:rotate(-3deg); margin-top:.5rem; }
+.wall-photo-frame { background:var(--surface); padding:.7rem .7rem 1.6rem; border-radius:2px; box-shadow:var(--shadow-md); }
+.wall-photo-frame img { width:100%; aspect-ratio:1/1; object-fit:cover; }
+.wall-tape { position:absolute; top:-10px; left:50%; transform:translateX(-50%) rotate(-2deg); width:56px; height:22px; background:rgba(217,125,66,.55); border:1px solid rgba(217,125,66,.7); }
+@media (max-width:700px) { .wall-photo { width:150px; } }
+
+.lightbox { position:fixed; inset:0; z-index:200; background:rgba(12,9,6,.92); display:flex; align-items:center; justify-content:center; padding:2rem; opacity:0; visibility:hidden; transition:all var(--transition-fast); }
+.lightbox.is-open { opacity:1; visibility:visible; }
+.lightbox-inner { max-width:880px; width:100%; position:relative; }
+.lightbox-inner img { width:100%; max-height:76vh; object-fit:contain; border-radius:var(--radius-md); }
+.lightbox-caption { color:#F1E9DD; text-align:center; margin-top:1rem; font-family:var(--font-display); font-style:italic; }
+.lightbox-close { position:absolute; top:-3.2rem; right:0; width:44px; height:44px; border-radius:50%; background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.25); color:#fff; display:flex; align-items:center; justify-content:center; }
+
+/* TESTIMONIALS */
+.testimonial-grid { display:grid; grid-template-columns:repeat(3, 1fr); gap:1.6rem; }
+.testimonial-card { background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-md); padding:1.8rem; }
+.testimonial-quote { font-family:var(--font-display); font-style:italic; font-size:1.1rem; color:var(--heading); line-height:1.5; }
+.testimonial-author { margin-top:1.1rem; font-size:.85rem; color:var(--text-muted); font-weight:700; }
+@media (max-width:900px) { .testimonial-grid { grid-template-columns:1fr; } }
+
+/* RESERVATION */
+.reservation-wrap { display:grid; grid-template-columns:1fr 1.15fr; gap:3rem; background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-lg); padding:3rem; }
+.reservation-info h3 { font-size:1.3rem; margin-bottom:1rem; font-style:italic; }
+.info-row { margin-bottom:1.1rem; color:var(--text-muted); }
+.info-row strong { color:var(--heading); display:block; font-family:var(--font-body); font-size:.8rem; text-transform:uppercase; letter-spacing:.06em; margin-bottom:.15rem; }
+.info-divider { height:1px; background:var(--border); margin:1.4rem 0; }
+.form-grid { display:grid; grid-template-columns:1fr 1fr; gap:1.1rem; }
+.form-field { display:flex; flex-direction:column; gap:.4rem; }
+.form-field.full { grid-column:1/-1; }
+.form-field label { font-size:.8rem; font-weight:700; color:var(--text-muted); text-transform:uppercase; letter-spacing:.05em; }
+.form-field input, .form-field select, .form-field textarea { background:var(--surface-2); border:1px solid var(--border); border-radius:var(--radius-sm); padding:.8rem 1rem; color:var(--text); font-size:.98rem; transition:border-color var(--transition-fast); }
+.form-field input:focus, .form-field select:focus, .form-field textarea:focus { border-color:var(--accent-strong); outline:none; }
+.form-field textarea { resize:vertical; min-height:90px; }
+.reservation-success { background:var(--surface-2); border:1px solid var(--accent); border-radius:var(--radius-md); padding:2rem; text-align:center; font-size:1.05rem; }
+@media (max-width:900px) { .reservation-wrap { grid-template-columns:1fr; padding:1.8rem; } .form-grid { grid-template-columns:1fr; } }
+
+/* FOOTER */
+.site-footer { background:var(--surface); border-top:1px solid var(--border); padding:var(--space-xl) 0 var(--space-md); }
+.footer-grid { display:grid; grid-template-columns:1.4fr 1fr 1fr 1.2fr; gap:2.5rem; padding-bottom:var(--space-lg); }
+.footer-logo { font-family:var(--font-display); font-style:italic; font-size:1.35rem; margin-bottom:.9rem; }
+.footer-about { color:var(--text-muted); font-size:.94rem; max-width:32ch; }
+.footer-col h4 { font-size:.85rem; text-transform:uppercase; letter-spacing:.06em; margin-bottom:1.1rem; color:var(--heading); font-family:var(--font-body); font-weight:700; }
+.footer-col ul { display:grid; gap:.65rem; }
+.footer-col a { color:var(--text-muted); font-size:.94rem; }
+.footer-col a:hover { color:var(--accent-strong); }
+.newsletter-form { display:flex; gap:.5rem; margin-top:.9rem; }
+.newsletter-form input { flex:1; background:var(--surface-2); border:1px solid var(--border); border-radius:var(--radius-sm); padding:.7rem .9rem; color:var(--text); min-width:0; }
+.footer-switches { display:flex; align-items:center; gap:1.5rem; padding:var(--space-md) 0; border-top:1px solid var(--border); border-bottom:1px solid var(--border); margin-bottom:var(--space-md); }
+.footer-switch-group { display:flex; align-items:center; gap:.7rem; }
+.footer-switch-group span { font-size:.82rem; font-weight:700; color:var(--text-muted); text-transform:uppercase; letter-spacing:.05em; }
+.theme-pill-group { display:flex; border:1px solid var(--border); border-radius:var(--radius-pill); padding:.25rem; gap:.2rem; }
+.theme-pill { padding:.4rem .9rem; border-radius:var(--radius-pill); font-size:.82rem; font-weight:700; color:var(--text-muted); border:none; background:transparent; }
+.theme-pill[aria-pressed="true"] { background:var(--accent); color:#fff; }
+.footer-bottom { display:flex; justify-content:space-between; flex-wrap:wrap; gap:.6rem; color:var(--text-muted); font-size:.85rem; padding-top:var(--space-md); }
+.footer-bottom a { color:var(--accent-strong); font-weight:700; }
+@media (max-width:900px) { .footer-grid { grid-template-columns:1fr 1fr; } .footer-grid > :first-child { grid-column:1/-1; } }
+@media (max-width:560px) { .footer-grid { grid-template-columns:1fr; } }
+
+</style>
 </head>
 <body>
 
@@ -49,10 +286,11 @@
             <button type="button" data-lang-btn="en" class="is-active">English <span>EN</span></button>
             <button type="button" data-lang-btn="es">Español <span>ES</span></button>
             <button type="button" data-lang-btn="fr">Français <span>FR</span></button>
+            <button type="button" data-lang-btn="de">Deutsch <span>DE</span></button>
+            <button type="button" data-lang-btn="pt">Português <span>PT</span></button>
             <button type="button" data-lang-btn="sw">Kiswahili <span>SW</span></button>
             <button type="button" data-lang-btn="zh">中文 <span>ZH</span></button>
             <button type="button" data-lang-btn="ar">العربية <span>AR</span></button>
-            <button type="button" data-lang-btn="la">Latina <span>LA</span></button>
           </div>
         </div>
         <button type="button" class="nav-toggle" data-nav-toggle aria-expanded="false" aria-label="Open menu">
@@ -506,11 +744,219 @@
     </div>
     <div class="footer-bottom">
       <span>© <span data-current-year>2026</span> The Long Table. <span data-i18n="footer.rights">All rights reserved.</span></span>
-      <span><span data-i18n="footer.credit">Crafted by</span> <a href="mailto:jonathanrivers0414@gmail.com">Senthan &amp; Co</a></span>
+      <span><span data-i18n="footer.credit">Crafted by</span> <a href="mailto:hello@example.test">Senthan &amp; Co</a></span>
     </div>
   </div>
 </footer>
 
-<script src="long-table - script.js"></script>
+<script>
+/* ===================================================================
+   THE LONG TABLE — main script
+   Same proven i18n/storage/reveal architecture as the other three
+   builds; new copy throughout, menu grouped by sharing size instead
+   of course type.
+   =================================================================== */
+
+const I18N = {"en":{"nav":{"home":"Home","menu":"Menu","about":"About","gallery":"Gallery","testimonials":"Reviews","reservations":"Reserve","contact":"Contact"},"hero":{"eyebrow":"A Seat For Everyone","headline_pre":"Good Food, ","headline_em":"Shared.","subheadline":"Family recipes served the way they're meant to be — passed around, fought over, and never quite enough of.","cta_menu":"See What's Cooking","cta_reserve":"Pull Up A Chair","badge_line1":"Family Table","badge_line2":"A Seat For Everyone"},"about":{"eyebrow":"Our Table","heading":"Cooking the way it's always been done","paragraph":"The Long Table started as a Sunday habit — too much food, too many chairs pulled up, nobody leaving hungry. We kept that habit and opened the doors. Every recipe here has been made a hundred times before it ever touched a menu.","card_label":"House Rule №1","card_text":"Always cook enough for one more plate."},"menu":{"eyebrow":"What's Cooking","heading":"Made for passing around","subheading":"Organized by how many hands you'll need — not by course.","group_solo":"Just for You","group_table":"For the Table","group_spread":"The Full Spread"},"gallery":{"eyebrow":"The Photo Wall","heading":"Snapshots from the table","subheading":"Pinned up exactly like they'd be on our kitchen wall."},"testimonials":{"eyebrow":"From Our Regulars","heading":"Why people keep coming back"},"reservation":{"eyebrow":"Join Us","heading":"Pull up a chair","subheading":"Tell us how many, and we'll set the table.","label_name":"Full Name","label_email":"Email Address","label_phone":"Phone Number","label_date":"Date","label_time":"Time","label_guests":"Guests","label_notes":"Special Requests","placeholder_notes":"Allergies, celebrations, seating preference…","submit":"Set My Place","success":"You're on the list — we'll confirm shortly by phone or email.","hours_heading":"Hours","hours_weekday":"Wed – Sun: 12:00 – 22:00","hours_weekend":"Mon – Tue: Closed","address_label":"Address","phone_label":"Phone","email_label":"Email"},"footer":{"about_blurb":"A family table for sharing plates and second helpings — cooked the way it's always been done, and always enough for one more.","quicklinks_heading":"Explore","menu_heading":"Menu","contact_heading":"Contact","newsletter_heading":"Sunday Invite List","newsletter_placeholder":"Your email","newsletter_button":"Count Me In","theme_label":"Mode","light":"Light","dark":"Dark","rights":"All rights reserved.","credit":"Crafted by"}},"es":{"nav":{"home":"Inicio","menu":"Menú","about":"Nosotros","gallery":"Galería","testimonials":"Opiniones","reservations":"Reservar","contact":"Contacto"},"hero":{"eyebrow":"Un Lugar Para Todos","headline_pre":"Buena Comida, ","headline_em":"Compartida.","subheadline":"Recetas familiares servidas como deben ser — que se pasan de mano en mano, que se pelean, y de las que nunca hay suficiente.","cta_menu":"Ver Qué Se Cocina","cta_reserve":"Toma Asiento","badge_line1":"Mesa Familiar","badge_line2":"Un Lugar Para Todos"},"about":{"eyebrow":"Nuestra Mesa","heading":"Cocinando como siempre se ha hecho","paragraph":"The Long Table nació como una costumbre de domingo — demasiada comida, demasiadas sillas acercadas, nadie se iba con hambre. Mantuvimos esa costumbre y abrimos las puertas. Cada receta aquí se ha preparado cien veces antes de llegar al menú.","card_label":"Regla de la Casa Nº1","card_text":"Siempre cocina para un plato más."},"menu":{"eyebrow":"Qué Se Cocina","heading":"Hecho para compartir","subheading":"Organizado según cuántas manos necesitarás — no por tipo de plato.","group_solo":"Solo Para Ti","group_table":"Para la Mesa","group_spread":"El Banquete Completo"},"gallery":{"eyebrow":"El Muro de Fotos","heading":"Instantáneas de la mesa","subheading":"Clavadas tal como estarían en la pared de nuestra cocina."},"testimonials":{"eyebrow":"De Nuestros Habituales","heading":"Por qué la gente vuelve"},"reservation":{"eyebrow":"Únete","heading":"Toma asiento","subheading":"Dinos cuántos son y prepararemos la mesa.","label_name":"Nombre Completo","label_email":"Correo Electrónico","label_phone":"Número de Teléfono","label_date":"Fecha","label_time":"Hora","label_guests":"Comensales","label_notes":"Peticiones Especiales","placeholder_notes":"Alergias, celebraciones, preferencia de asiento…","submit":"Reservar Mi Lugar","success":"Ya estás en la lista — confirmaremos pronto por teléfono o correo.","hours_heading":"Horario","hours_weekday":"Mié – Dom: 12:00 – 22:00","hours_weekend":"Lun – Mar: Cerrado","address_label":"Dirección","phone_label":"Teléfono","email_label":"Correo"},"footer":{"about_blurb":"Una mesa familiar para compartir platos y repetir — cocinada como siempre se ha hecho, con espacio siempre para uno más.","quicklinks_heading":"Explorar","menu_heading":"Menú","contact_heading":"Contacto","newsletter_heading":"Lista de Domingos","newsletter_placeholder":"Tu correo","newsletter_button":"Apúntame","theme_label":"Modo","light":"Claro","dark":"Oscuro","rights":"Todos los derechos reservados.","credit":"Creado por"}},"fr":{"nav":{"home":"Accueil","menu":"Menu","about":"À Propos","gallery":"Galerie","testimonials":"Avis","reservations":"Réserver","contact":"Contact"},"hero":{"eyebrow":"Une Place Pour Tous","headline_pre":"Bonne Cuisine, ","headline_em":"Partagée.","subheadline":"Des recettes familiales servies comme il se doit — qu'on se passe, qu'on se dispute, et dont il n'y en a jamais assez.","cta_menu":"Voir Ce Qui Mijote","cta_reserve":"Prenez Place","badge_line1":"Table Familiale","badge_line2":"Une Place Pour Tous"},"about":{"eyebrow":"Notre Table","heading":"Cuisiné comme on l'a toujours fait","paragraph":"The Long Table est né d'une habitude du dimanche — trop de nourriture, trop de chaises rapprochées, personne ne repartait le ventre vide. Nous avons gardé cette habitude et ouvert les portes. Chaque recette ici a été préparée cent fois avant de figurer au menu.","card_label":"Règle Maison Nº1","card_text":"Toujours cuisiner pour une assiette de plus."},"menu":{"eyebrow":"Ce Qui Mijote","heading":"Fait pour être partagé","subheading":"Organisé selon le nombre de mains nécessaires — pas par type de plat.","group_solo":"Juste Pour Vous","group_table":"Pour la Table","group_spread":"Le Grand Festin"},"gallery":{"eyebrow":"Le Mur de Photos","heading":"Instantanés de la table","subheading":"Épinglées comme elles le seraient sur notre mur de cuisine."},"testimonials":{"eyebrow":"Nos Habitués","heading":"Pourquoi on revient toujours"},"reservation":{"eyebrow":"Rejoignez-Nous","heading":"Prenez place","subheading":"Dites-nous combien vous êtes, et la table sera prête.","label_name":"Nom Complet","label_email":"Adresse E-mail","label_phone":"Numéro de Téléphone","label_date":"Date","label_time":"Heure","label_guests":"Convives","label_notes":"Demandes Spéciales","placeholder_notes":"Allergies, célébrations, préférence de place…","submit":"Réserver Ma Place","success":"C'est noté — nous confirmerons bientôt par téléphone ou e-mail.","hours_heading":"Horaires","hours_weekday":"Mer – Dim : 12h00 – 22h00","hours_weekend":"Lun – Mar : Fermé","address_label":"Adresse","phone_label":"Téléphone","email_label":"E-mail"},"footer":{"about_blurb":"Une table familiale pour partager et se resservir — cuisinée comme on l'a toujours fait, avec toujours de la place pour un de plus.","quicklinks_heading":"Explorer","menu_heading":"Menu","contact_heading":"Contact","newsletter_heading":"Liste des Dimanches","newsletter_placeholder":"Votre e-mail","newsletter_button":"Je M'inscris","theme_label":"Mode","light":"Clair","dark":"Sombre","rights":"Tous droits réservés.","credit":"Conçu par"}},"sw":{"nav":{"home":"Nyumbani","menu":"Menyu","about":"Kuhusu","gallery":"Picha","testimonials":"Maoni","reservations":"Hifadhi","contact":"Wasiliana"},"hero":{"eyebrow":"Nafasi Kwa Kila Mtu","headline_pre":"Chakula Kizuri, ","headline_em":"Kilichoshirikiwa.","subheadline":"Mapishi ya kifamilia yanayotolewa jinsi yanavyostahili — yanayopitishwa mkono kwa mkono, yanayogombewa, na ambayo hayatoshi kamwe.","cta_menu":"Angalia Kinachopikwa","cta_reserve":"Chukua Kiti","badge_line1":"Meza ya Familia","badge_line2":"Nafasi Kwa Kila Mtu"},"about":{"eyebrow":"Meza Yetu","heading":"Kupika jinsi ilivyokuwa daima","paragraph":"The Long Table ilianza kama desturi ya Jumapili — chakula kingi mno, viti vingi vilivyovutwa karibu, hakuna aliyeondoka na njaa. Tulidumisha desturi hiyo na kufungua milango. Kila mapishi hapa yametayarishwa mara mia kabla ya kufika kwenye menyu.","card_label":"Kanuni ya Nyumbani Na. 1","card_text":"Daima pika ya kutosha kwa sahani moja zaidi."},"menu":{"eyebrow":"Kinachopikwa","heading":"Kimetengenezwa kwa kushirikiana","subheading":"Kimepangwa kwa idadi ya mikono utakayohitaji — si kwa aina ya mlo.","group_solo":"Kwa Ajili Yako Tu","group_table":"Kwa Meza","group_spread":"Karamu Kamili"},"gallery":{"eyebrow":"Ukuta wa Picha","heading":"Picha kutoka mezani","subheading":"Zimebandikwa kama zilivyo ukutani mwa jiko letu."},"testimonials":{"eyebrow":"Kutoka kwa Wateja Wetu wa Kudumu","heading":"Kwa nini watu wanaendelea kurudi"},"reservation":{"eyebrow":"Jiunge Nasi","heading":"Chukua kiti","subheading":"Tuambie ni wangapi, nasi tutaandaa meza.","label_name":"Jina Kamili","label_email":"Barua Pepe","label_phone":"Namba ya Simu","label_date":"Tarehe","label_time":"Muda","label_guests":"Wageni","label_notes":"Maombi Maalum","placeholder_notes":"Mzio, sherehe, upendeleo wa kiti…","submit":"Hifadhi Nafasi Yangu","success":"Uko kwenye orodha — tutathibitisha hivi karibuni kwa simu au barua pepe.","hours_heading":"Saa za Kufanya Kazi","hours_weekday":"Jumatano – Jumapili: 12:00 – 22:00","hours_weekend":"Jumatatu – Jumanne: Imefungwa","address_label":"Anwani","phone_label":"Simu","email_label":"Barua Pepe"},"footer":{"about_blurb":"Meza ya kifamilia kwa sahani za kushirikiana na kuongeza tena — imepikwa jinsi ilivyokuwa daima, na nafasi ya kutosha kwa mmoja zaidi.","quicklinks_heading":"Gundua","menu_heading":"Menyu","contact_heading":"Mawasiliano","newsletter_heading":"Orodha ya Jumapili","newsletter_placeholder":"Barua pepe yako","newsletter_button":"Niandikishe","theme_label":"Hali","light":"Nuru","dark":"Giza","rights":"Haki zote zimehifadhiwa.","credit":"Imebuniwa na"}},"zh":{"nav":{"home":"首页","menu":"菜单","about":"关于我们","gallery":"图库","testimonials":"顾客评价","reservations":"预订","contact":"联系我们"},"hero":{"eyebrow":"人人都有一席之地","headline_pre":"美味佳肴,","headline_em":"与你分享。","subheadline":"家常菜就该这样上桌——传递分享、争相品尝,永远不嫌多。","cta_menu":"看看在做什么","cta_reserve":"入座就坐","badge_line1":"家庭餐桌","badge_line2":"人人都有一席之地"},"about":{"eyebrow":"我们的餐桌","heading":"一直以来的做法","paragraph":"The Long Table 源于一个周日的习惯——食物太多,拉来的椅子太多,没有人饿着肚子离开。我们保留了这个习惯,并打开了大门。这里的每一道菜,在登上菜单之前都已经做过上百次。","card_label":"家规第一条","card_text":"永远多煮一份的量。"},"menu":{"eyebrow":"在做什么","heading":"为分享而生","subheading":"按需要多少人手来分类——而不是按菜式种类。","group_solo":"一人食","group_table":"餐桌共享","group_spread":"全家盛宴"},"gallery":{"eyebrow":"照片墙","heading":"餐桌上的瞬间","subheading":"就像钉在我们厨房墙上的样子。"},"testimonials":{"eyebrow":"常客的声音","heading":"人们为何一再回来"},"reservation":{"eyebrow":"加入我们","heading":"入座就坐","subheading":"告诉我们有多少人,我们会备好餐桌。","label_name":"姓名","label_email":"电子邮箱","label_phone":"电话号码","label_date":"日期","label_time":"时间","label_guests":"人数","label_notes":"特殊要求","placeholder_notes":"过敏信息、庆祝活动、座位偏好……","submit":"确认我的座位","success":"您已在名单上——我们会尽快通过电话或邮件确认。","hours_heading":"营业时间","hours_weekday":"周三至周日:12:00 – 22:00","hours_weekend":"周一至周二:休息","address_label":"地址","phone_label":"电话","email_label":"邮箱"},"footer":{"about_blurb":"一张家庭餐桌,盛满可以分享、可以再添一份的菜肴——一直以来的做法,永远为多一人留有余地。","quicklinks_heading":"探索","menu_heading":"菜单","contact_heading":"联系方式","newsletter_heading":"周日邀请名单","newsletter_placeholder":"您的电子邮箱","newsletter_button":"算我一个","theme_label":"模式","light":"浅色","dark":"深色","rights":"版权所有。","credit":"制作者"}},"ar":{"nav":{"home":"الرئيسية","menu":"القائمة","about":"من نحن","gallery":"معرض الصور","testimonials":"آراء الزبائن","reservations":"الحجز","contact":"تواصل معنا"},"hero":{"eyebrow":"مكان لكل شخص","headline_pre":"طعام شهي، ","headline_em":"يُقتسم.","subheadline":"وصفات عائلية تُقدَّم كما ينبغي — تتناقلها الأيدي، يتنافس عليها الجميع، ولا يكفي منها أبدًا.","cta_menu":"شاهد ما يُطهى","cta_reserve":"خذ مقعدك","badge_line1":"مائدة العائلة","badge_line2":"مكان لكل شخص"},"about":{"eyebrow":"مائدتنا","heading":"نطهو كما اعتدنا دائمًا","paragraph":"بدأت The Long Table كعادة يوم أحد — طعام أكثر من اللازم، كراسٍ كثيرة تُقرَّب، ولا أحد يغادر جائعًا. حافظنا على تلك العادة وفتحنا الأبواب. كل وصفة هنا طُهيت مئة مرة قبل أن تصل إلى القائمة.","card_label":"قاعدة البيت رقم ١","card_text":"اطهُ دائمًا ما يكفي لطبق إضافي."},"menu":{"eyebrow":"ما يُطهى","heading":"صُنع للمشاركة","subheading":"مرتّب بحسب عدد الأيدي التي ستحتاجها — لا بحسب نوع الطبق.","group_solo":"لك وحدك","group_table":"لمائدتكم","group_spread":"المأدبة الكاملة"},"gallery":{"eyebrow":"جدار الصور","heading":"لقطات من المائدة","subheading":"معلَّقة تمامًا كما لو كانت على جدار مطبخنا."},"testimonials":{"eyebrow":"من رواد المكان","heading":"لماذا يعود الناس دائمًا"},"reservation":{"eyebrow":"انضم إلينا","heading":"خذ مقعدك","subheading":"أخبرنا كم عددكم، وسنجهّز المائدة.","label_name":"الاسم الكامل","label_email":"البريد الإلكتروني","label_phone":"رقم الهاتف","label_date":"التاريخ","label_time":"الوقت","label_guests":"عدد الضيوف","label_notes":"طلبات خاصة","placeholder_notes":"حساسية غذائية، مناسبة، تفضيل مكان الجلوس…","submit":"احجز مكاني","success":"أنت الآن على القائمة — سنؤكد قريبًا عبر الهاتف أو البريد الإلكتروني.","hours_heading":"ساعات العمل","hours_weekday":"الأربعاء – الأحد: 12:00 – 22:00","hours_weekend":"الاثنين – الثلاثاء: مغلق","address_label":"العنوان","phone_label":"الهاتف","email_label":"البريد الإلكتروني"},"footer":{"about_blurb":"مائدة عائلية لأطباق المشاركة والحصص الإضافية — تُطهى كما اعتدنا دائمًا، ومكان دائم لشخص إضافي.","quicklinks_heading":"استكشف","menu_heading":"القائمة","contact_heading":"تواصل معنا","newsletter_heading":"قائمة دعوات الأحد","newsletter_placeholder":"بريدك الإلكتروني","newsletter_button":"سجّلني","theme_label":"الوضع","light":"فاتح","dark":"داكن","rights":"جميع الحقوق محفوظة.","credit":"صمّمه"}},"la":{"nav":{"home":"Domus","menu":"Index Ciborum","about":"De Nobis","gallery":"Imagines","testimonials":"Testimonia","reservations":"Reservationes","contact":"Contactus"},"hero":{"eyebrow":"Locus Omnibus","headline_pre":"Cibus Bonus, ","headline_em":"Communis.","subheadline":"Recipes familiares sicut decet datae — quae de manu in manum traduntur, de quibus certatur, et quarum numquam satis est.","cta_menu":"Quid Coquatur Vide","cta_reserve":"Sedem Cape","badge_line1":"Mensa Familiae","badge_line2":"Locus Omnibus"},"about":{"eyebrow":"Mensa Nostra","heading":"Coquentes sicut semper factum est","paragraph":"The Long Table a consuetudine Solis die coepit — cibus nimius, sedes nimiae adductae, nemo esuriens abiit. Hanc consuetudinem servavimus et ianuas aperuimus. Quodque hic recipe centies parata est antequam indicem tetigit.","card_label":"Regula Domus Prima","card_text":"Semper satis coque pro uno ferculo amplius."},"menu":{"eyebrow":"Quid Coquatur","heading":"Ad communicandum factum","subheading":"Secundum manuum numerum quas opus erit ordinatum — non secundum ferculi genus.","group_solo":"Tibi Soli","group_table":"Pro Mensa","group_spread":"Convivium Plenum"},"gallery":{"eyebrow":"Paries Imaginum","heading":"Momenta a mensa","subheading":"Sicut in pariete culinae nostrae affixa."},"testimonials":{"eyebrow":"Ab Hospitibus Assiduis","heading":"Cur homines semper redeant"},"reservation":{"eyebrow":"Nobiscum Iunge","heading":"Sedem Cape","subheading":"Nobis dic quot sitis, et mensam parabimus.","label_name":"Nomen Plenum","label_email":"Inscriptio Electronica","label_phone":"Numerus Telephonicus","label_date":"Dies","label_time":"Hora","label_guests":"Hospites","label_notes":"Petitiones Speciales","placeholder_notes":"Allergiae, celebrationes, sedis optio…","submit":"Locum Meum Reserva","success":"In indice es — mox per telephonum vel litteras electronicas confirmabimus.","hours_heading":"Horae Apertionis","hours_weekday":"Mercurii – Solis: 12:00 – 22:00","hours_weekend":"Lunae – Martis: Clausum","address_label":"Inscriptio","phone_label":"Telephonum","email_label":"Littera Electronica"},"footer":{"about_blurb":"Mensa familiae ferculis communicandis et iterum sumendis — coquens sicut semper factum est, semper locum pro uno amplius habens.","quicklinks_heading":"Explora","menu_heading":"Index","contact_heading":"Contactus","newsletter_heading":"Index Invitationum Solis","newsletter_placeholder":"Inscriptio tua electronica","newsletter_button":"Me Adde","theme_label":"Modus","light":"Lucidum","dark":"Obscurum","rights":"Omnia iura reservata.","credit":"Factum ab"}},"de":{"nav":{"home":"Zuhause","menu":"Menü","about":"Über","gallery":"Galerie","testimonials":"Rezensionen","reservations":"Reservieren","contact":"Kontakt"},"hero":{"eyebrow":"Ein Sitzplatz für alle","headline_pre":"Gutes Essen,","headline_em":"Geteilt.","subheadline":"Familienrezepte dienten genau so, wie sie sein sollten – sie wurden herumgereicht, umworben und nie genug davon.","cta_menu":"Sehen Sie, was gerade gekocht wird","cta_reserve":"Ziehen Sie einen Stuhl hoch","badge_line1":"Familientisch","badge_line2":"Ein Sitzplatz für alle"},"about":{"eyebrow":"Unser Tisch","heading":"Kochen, wie es schon immer gemacht wurde","paragraph":"Der lange Tisch begann als Sonntagsgewohnheit – zu viel Essen, zu viele Stühle wurden herangezogen, niemand ging hungrig weg. Diese Gewohnheit haben wir beibehalten und die Türen geöffnet. Jedes Rezept hier wurde hundert Mal zubereitet, bevor es jemals auf einer Speisekarte erschien.","card_label":"Hausordnung Nr. 1","card_text":"Kochen Sie immer genug für einen weiteren Teller."},"menu":{"eyebrow":"Was ist Kochen?","heading":"Zum Weitergeben gemacht","subheading":"Sortiert nach der Anzahl der benötigten Hände – nicht nach Kurs.","group_solo":"Nur für Dich","group_table":"Für den Tisch","group_spread":"Die volle Verbreitung"},"gallery":{"eyebrow":"Die Fotowand","heading":"Schnappschüsse vom Tisch","subheading":"Genau so aufgesteckt, wie sie an unserer Küchenwand hängen würden."},"testimonials":{"eyebrow":"Von unseren Stammgästen","heading":"Warum die Leute immer wieder zurückkommen"},"reservation":{"eyebrow":"Machen Sie mit","heading":"Ziehen Sie einen Stuhl hoch","subheading":"Sagen Sie uns, wie viele es sind, und wir decken den Tisch.","label_name":"Vollständiger Name","label_email":"E-Mail-Adresse","label_phone":"Telefonnummer","label_date":"Datum","label_time":"Zeit","label_guests":"Gäste","label_notes":"Sonderwünsche","placeholder_notes":"Allergien, Feiern, Sitzplatzvorlieben…","submit":"Legen Sie meinen Platz fest","success":"Sie sind auf der Liste – wir bestätigen Ihnen in Kürze per Telefon oder E-Mail.","hours_heading":"Stunden","hours_weekday":"Mi – So: 12:00 – 22:00 Uhr","hours_weekend":"Mo – Di: Geschlossen","address_label":"Adresse","phone_label":"Telefon","email_label":"E-Mail"},"footer":{"about_blurb":"Ein Familientisch zum Teilen von Tellern und Nachspeisen – zubereitet wie immer und immer genug für einen weiteren.","quicklinks_heading":"Entdecken","menu_heading":"Menü","contact_heading":"Kontakt","newsletter_heading":"Sonntagseinladungsliste","newsletter_placeholder":"Ihre E-Mail","newsletter_button":"Zähle mich ein","theme_label":"Modus","light":"Licht","dark":"Dunkel","rights":"Alle Rechte vorbehalten.","credit":"Hergestellt von"}},"pt":{"nav":{"home":"Página inicial","menu":"Cardápio","about":"Sobre","gallery":"Galeria","testimonials":"Avaliações","reservations":"Reserva","contact":"Contato"},"hero":{"eyebrow":"Um assento para todos","headline_pre":"Boa comida,","headline_em":"Compartilhado.","subheadline":"Receitas de família servidas como deveriam ser - distribuídas, disputadas e nunca o suficiente.","cta_menu":"Veja o que está cozinhando","cta_reserve":"Puxe uma cadeira","badge_line1":"Mesa Familiar","badge_line2":"Um assento para todos"},"about":{"eyebrow":"Nossa Mesa","heading":"Cozinhando como sempre foi feito","paragraph":"A Mesa Longa começou como um hábito dominical – muita comida, muitas cadeiras puxadas, ninguém saindo com fome. Mantivemos esse hábito e abrimos as portas. Cada receita aqui foi feita centenas de vezes antes de chegar ao menu.","card_label":"Regra da Casa nº 1","card_text":"Cozinhe sempre o suficiente para mais um prato."},"menu":{"eyebrow":"O que está cozinhando","heading":"Feito para passar","subheading":"Organizado por quantas mãos você precisa - não por curso.","group_solo":"Só para você","group_table":"Para a mesa","group_spread":"A propagação completa"},"gallery":{"eyebrow":"A parede de fotos","heading":"Instantâneos da mesa","subheading":"Fixados exatamente como estariam na parede da nossa cozinha."},"testimonials":{"eyebrow":"Dos nossos frequentadores","heading":"Por que as pessoas continuam voltando"},"reservation":{"eyebrow":"Junte-se a nós","heading":"Puxe uma cadeira","subheading":"Diga-nos quantos e colocaremos a mesa.","label_name":"Nome Completo","label_email":"Endereço de e-mail","label_phone":"Número de telefone","label_date":"Data","label_time":"Hora","label_guests":"Convidados","label_notes":"Pedidos Especiais","placeholder_notes":"Alergias, comemorações, preferência de assento…","submit":"Definir meu lugar","success":"Você está na lista – confirmaremos em breve por telefone ou e-mail.","hours_heading":"Horas","hours_weekday":"Quarta – Dom: 12h00 – 22h00","hours_weekend":"Seg – Ter: Fechado","address_label":"Endereço","phone_label":"Telefone","email_label":"E-mail"},"footer":{"about_blurb":"Uma mesa familiar para partilhar pratos e segundas porções — cozinhada como sempre foi feita e sempre suficiente para mais uma.","quicklinks_heading":"Explorar","menu_heading":"Cardápio","contact_heading":"Contato","newsletter_heading":"Lista de convidados de domingo","newsletter_placeholder":"Seu e-mail","newsletter_button":"Conte comigo","theme_label":"Modo","light":"Luz","dark":"Escuro","rights":"Todos os direitos reservados.","credit":"Feito por"}}};
+
+const RTL_LANGS = new Set(["ar"]);
+
+const memoryStore = {};
+const safeStorage = {
+  get(key, fallback) {
+    try { const v = window.localStorage.getItem(key); return v === null ? fallback : v; }
+    catch (e) { return key in memoryStore ? memoryStore[key] : fallback; }
+  },
+  set(key, value) {
+    try { window.localStorage.setItem(key, value); }
+    catch (e) { memoryStore[key] = value; }
+  }
+};
+
+const root = document.documentElement;
+const VALID_THEMES = ["dark", "light"];
+
+function applyTheme(theme) {
+  root.setAttribute("data-theme", theme);
+  document.querySelectorAll("[data-theme-btn]").forEach(btn => {
+    btn.setAttribute("aria-pressed", btn.dataset.themeBtn === theme ? "true" : "false");
+  });
+  safeStorage.set("lt-theme", theme);
+}
+
+function initThemeEngine() {
+  const theme = VALID_THEMES.includes(safeStorage.get("lt-theme", "")) ? safeStorage.get("lt-theme", "dark") : "dark";
+  applyTheme(theme);
+  document.querySelectorAll("[data-theme-toggle], [data-theme-btn]").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const next = btn.dataset.themeBtn || (root.getAttribute("data-theme") === "dark" ? "light" : "dark");
+      applyTheme(next);
+    });
+  });
+}
+
+function getPath(obj, path) {
+  return path.split(".").reduce((acc, key) => (acc && acc[key] !== undefined ? acc[key] : undefined), obj);
+}
+
+function applyLanguage(lang) {
+  const dict = I18N[lang] ? lang : "en";
+  const table = I18N[dict];
+
+  document.querySelectorAll("[data-i18n]").forEach(el => {
+    const val = getPath(table, el.dataset.i18n);
+    if (val !== undefined) el.textContent = val;
+  });
+  document.querySelectorAll("[data-i18n-placeholder]").forEach(el => {
+    const val = getPath(table, el.dataset.i18nPlaceholder);
+    if (val !== undefined) el.setAttribute("placeholder", val);
+  });
+  const headlinePre = document.querySelector("[data-hero-headline-pre]");
+  const headlineEm = document.querySelector("[data-hero-headline-em]");
+  if (headlinePre) headlinePre.textContent = table.hero.headline_pre;
+  if (headlineEm) headlineEm.textContent = table.hero.headline_em;
+  const badge1 = document.querySelector("[data-badge-line1]");
+  const badge2 = document.querySelector("[data-badge-line2]");
+  if (badge1) badge1.textContent = table.hero.badge_line1;
+  if (badge2) badge2.textContent = table.hero.badge_line2;
+
+  root.setAttribute("lang", dict);
+  root.setAttribute("dir", RTL_LANGS.has(dict) ? "rtl" : "ltr");
+
+  document.querySelectorAll("[data-lang-btn]").forEach(btn => {
+    btn.classList.toggle("is-active", btn.dataset.langBtn === dict);
+  });
+  const currentLabel = document.querySelector("[data-current-lang]");
+  if (currentLabel) currentLabel.textContent = dict.toUpperCase();
+
+  safeStorage.set("lt-lang", dict);
+}
+
+function initLanguageEngine() {
+  const saved = safeStorage.get("lt-lang", null);
+  const browserLang = (navigator.language || "en").slice(0, 2).toLowerCase();
+  const initialLang = saved || (I18N[browserLang] ? browserLang : "en");
+  applyLanguage(I18N[initialLang] ? initialLang : "en");
+
+  document.querySelectorAll("[data-lang-btn]").forEach(btn => {
+    btn.addEventListener("click", () => {
+      applyLanguage(btn.dataset.langBtn);
+      const dropdown = document.querySelector("[data-lang-dropdown]");
+      if (dropdown) dropdown.classList.remove("is-open");
+    });
+  });
+
+  const langToggle = document.querySelector("[data-lang-toggle]");
+  const langDropdown = document.querySelector("[data-lang-dropdown]");
+  if (langToggle && langDropdown) {
+    langToggle.addEventListener("click", () => langDropdown.classList.toggle("is-open"));
+    document.addEventListener("click", (e) => {
+      if (!langToggle.contains(e.target) && !langDropdown.contains(e.target)) langDropdown.classList.remove("is-open");
+    });
+  }
+}
+
+function initMobileNav() {
+  const toggle = document.querySelector("[data-nav-toggle]");
+  const panel = document.querySelector("[data-nav-panel]");
+  if (!toggle || !panel) return;
+  toggle.addEventListener("click", () => {
+    const isOpen = panel.classList.toggle("is-open");
+    toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    document.body.classList.toggle("nav-lock", isOpen);
+  });
+  panel.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+      panel.classList.remove("is-open");
+      toggle.setAttribute("aria-expanded", "false");
+      document.body.classList.remove("nav-lock");
+    });
+  });
+}
+
+function initMenuTabs() {
+  const tabs = document.querySelectorAll("[data-menu-tab]");
+  const panels = document.querySelectorAll("[data-menu-panel]");
+  tabs.forEach(tab => {
+    tab.addEventListener("click", () => {
+      tabs.forEach(t => t.setAttribute("aria-selected", "false"));
+      tab.setAttribute("aria-selected", "true");
+      const target = tab.dataset.menuTab;
+      panels.forEach(panel => panel.toggleAttribute("hidden", panel.dataset.menuPanel !== target));
+    });
+  });
+}
+
+function initGalleryLightbox() {
+  const items = document.querySelectorAll("[data-gallery-item]");
+  const lightbox = document.querySelector("[data-lightbox]");
+  if (!items.length || !lightbox) return;
+  const img = lightbox.querySelector("img");
+  const caption = lightbox.querySelector("[data-lightbox-caption]");
+  function open(src, alt) {
+    img.setAttribute("src", src); img.setAttribute("alt", alt); caption.textContent = alt;
+    lightbox.classList.add("is-open"); document.body.classList.add("nav-lock");
+  }
+  function close() { lightbox.classList.remove("is-open"); document.body.classList.remove("nav-lock"); }
+  items.forEach(item => {
+    item.addEventListener("click", () => {
+      const fullImg = item.querySelector("img");
+      open(fullImg.getAttribute("src"), fullImg.getAttribute("alt"));
+    });
+  });
+  lightbox.addEventListener("click", (e) => { if (e.target === lightbox || e.target.hasAttribute("data-lightbox-close")) close(); });
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape") close(); });
+}
+
+function initReservationForm() {
+  const form = document.querySelector("[data-reservation-form]");
+  if (!form) return;
+  const dateInput = form.querySelector('input[type="date"]');
+  if (dateInput) dateInput.setAttribute("min", new Date().toISOString().split("T")[0]);
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    if (!form.checkValidity()) { form.reportValidity(); return; }
+    const successEl = document.querySelector("[data-reservation-success]");
+    form.hidden = true;
+    if (successEl) successEl.hidden = false;
+  });
+}
+
+function initScrollReveal() {
+  const targets = document.querySelectorAll("[data-reveal]");
+  const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (prefersReduced || !("IntersectionObserver" in window)) { targets.forEach(t => t.classList.add("is-visible")); return; }
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add("is-visible"); observer.unobserve(entry.target); } });
+  }, { threshold: 0.15, rootMargin: "0px 0px -40px 0px" });
+  targets.forEach(t => observer.observe(t));
+}
+
+function initHeaderScroll() {
+  const header = document.querySelector("[data-site-header]");
+  if (!header) return;
+  const onScroll = () => header.classList.toggle("is-scrolled", window.scrollY > 24);
+  onScroll();
+  window.addEventListener("scroll", onScroll, { passive: true });
+}
+
+function initFooterYear() {
+  const el = document.querySelector("[data-current-year]");
+  if (el) el.textContent = new Date().getFullYear();
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  initThemeEngine();
+  initLanguageEngine();
+  initMobileNav();
+  initMenuTabs();
+  initGalleryLightbox();
+  initReservationForm();
+  initScrollReveal();
+  initHeaderScroll();
+  initFooterYear();
+});
+
+</script>
 </body>
 </html>
