@@ -1,0 +1,29 @@
+name: Phase 3 import
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.phase3-upload/**'
+      - '.github/workflows/phase3-import.yml'
+permissions:
+  contents: write
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Import verified Phase 3 commit
+        shell: bash
+        run: |
+          set -euo pipefail
+          cat .phase3-upload/part-* > /tmp/phase3.bundle
+          git bundle verify /tmp/phase3.bundle
+          git fetch /tmp/phase3.bundle HEAD:refs/remotes/phase3/import
+          git config user.name "Senthan & Co"
+          git config user.email "actions@users.noreply.github.com"
+          git cherry-pick refs/remotes/phase3/import
+          git rm -r .phase3-upload .github/workflows/phase3-import.yml
+          git commit --amend --no-edit
+          git push origin HEAD:main
