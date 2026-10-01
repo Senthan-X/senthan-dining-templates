@@ -1,6 +1,6 @@
 # Restaurant & Dining — Senthan & Co
 
-Seven self-contained restaurant website templates, each with embedded Base64 WebP photography, inline CSS and JavaScript, responsive layouts, light and dark themes, and eight languages: English, Spanish, French, German, Portuguese, Arabic, Chinese, and Swahili.
+Eight self-contained restaurant website templates, each with embedded Base64 WebP photography, inline CSS and JavaScript, responsive layouts, light and dark themes, and eight languages: English, Spanish, French, German, Portuguese, Arabic, Chinese, and Swahili.
 
 ## Live collection
 
@@ -15,6 +15,7 @@ Seven self-contained restaurant website templates, each with embedded Base64 Web
 | Copper & Clay V2 | [Open demo](https://senthan-x.github.io/senthan-dining-templates/Copper-and-Clay-V2.html) | Modern East African kitchen, 20-item menu, editorial image viewer |
 | Saffron Tide V4 | [Open demo](https://senthan-x.github.io/senthan-dining-templates/saffron-tide%20-%20index.html) | Coastal supper club, 16-item menu and split dish preview |
 | Tamarind House V3 | [Open demo](https://senthan-x.github.io/senthan-dining-templates/Tamarind-House-V3.html) | East African supper club, 28-item catalog, reservation flow and cinematic image viewer |
+| Sunrise Pantry V5 | [Open demo](https://senthan-x.github.io/senthan-dining-templates/sunrise-pantry%20-%20index.html) | Arusha market kitchen, 40-dish menu, dietary filters, and full-bleed dish viewer |
 
 Each `*- index.html` file is a standalone demo. Matching `*- style.css` and `*- script.js` files are also included as separate customization references; the live demos do not depend on them. Each template folder’s README is named with the same flat root filename convention.
 
