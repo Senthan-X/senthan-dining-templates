@@ -1,6 +1,6 @@
 # Restaurant & Dining — Senthan & Co
 
-Eight self-contained restaurant website templates, each with embedded Base64 WebP photography, inline CSS and JavaScript, responsive layouts, light and dark themes, and eight languages: English, Spanish, French, German, Portuguese, Arabic, Chinese, and Swahili.
+Nine self-contained restaurant website templates, each with embedded Base64 WebP photography, inline CSS and JavaScript, responsive layouts, light and dark themes, and eight languages: English, Spanish, French, German, Portuguese, Arabic, Chinese, and Swahili.
 
 ## Live collection
 
@@ -16,8 +16,9 @@ Eight self-contained restaurant website templates, each with embedded Base64 Web
 | Saffron Tide V4 | [Open demo](https://senthan-x.github.io/senthan-dining-templates/saffron-tide%20-%20index.html) | Coastal supper club, 16-item menu and split dish preview |
 | Tamarind House V3 | [Open demo](https://senthan-x.github.io/senthan-dining-templates/Tamarind-House-V3.html) | East African supper club, 28-item catalog, reservation flow and cinematic image viewer |
 | Sunrise Pantry V5 | [Open demo](https://senthan-x.github.io/senthan-dining-templates/sunrise-pantry%20-%20index.html) | Arusha market kitchen, 40-dish menu, dietary filters, and full-bleed dish viewer |
+| Soko Social V6 | [Open demo](https://senthan-x.github.io/senthan-dining-templates/Soko-Social-V6.html) | Kampala street-food hall, 52-dish menu, live group tray calculator, and dish preview |
 
-Each `*- index.html` file is a standalone demo. Matching `*- style.css` and `*- script.js` files are also included as separate customization references; the live demos do not depend on them. Each template folder’s README is named with the same flat root filename convention.
+Every template is a standalone HTML demo. Selected projects also include matching CSS and JavaScript customization references; the live demos do not depend on them. Soko Social V6 is delivered as one self-contained file.
 
 All restaurant contact information in the demos is fictional, varied across East Africa, and intended for replacement. The pages include theme and language controls, image close-up previews, scroll reveals, and a Back-to-Top Button.
 
