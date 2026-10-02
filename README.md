@@ -1,6 +1,6 @@
 # Restaurant & Dining — Senthan & Co
 
-Eleven self-contained restaurant website templates, each with embedded Base64 WebP photography, inline CSS and JavaScript, responsive layouts, light and dark themes, and eight languages: English, Spanish, French, German, Portuguese, Arabic, Chinese, and Swahili.
+Thirteen self-contained restaurant website templates, each with embedded Base64 WebP photography, inline CSS and JavaScript, responsive layouts, light and dark themes, and eight languages: English, Spanish, French, German, Portuguese, Arabic, Chinese, and Swahili.
 
 ## Live collection
 
@@ -19,8 +19,10 @@ Eleven self-contained restaurant website templates, each with embedded Base64 We
 | Sunrise Pantry V5 | [Open demo](https://senthan-x.github.io/senthan-dining-templates/sunrise-pantry%20-%20index.html) | Arusha market kitchen, 40-dish menu, dietary filters, and full-bleed dish viewer |
 | Soko Social V6 | [Open demo](https://senthan-x.github.io/senthan-dining-templates/Soko-Social-V6.html) | Kampala street-food hall, 52-dish menu, live group tray calculator, and dish preview |
 | Mizani Kitchen V7 | [Open demo](https://senthan-x.github.io/senthan-dining-templates/Mizani-Kitchen-V7.html) | Kigali bowl kitchen, 36 translated dishes, dietary filters, interactive bowl builder, and split dish preview |
+| Nyota & Smoke V9 | [Open demo](https://senthan-x.github.io/senthan-dining-templates/Nyota-and-Smoke-V9.html) | Fictional Mwanza lakeside fire kitchen, 36-dish searchable menu, dietary filters, tasting-table builder, and editorial split preview |
+| Kora & Clay V10 | [Open demo](https://senthan-x.github.io/senthan-dining-templates/Kora-and-Clay-V10.html) | Addis Ababa coffee house, 32-dish searchable menu, dietary filters, interactive buna tasting flight, and editorial previews |
 
-Every template is a standalone HTML demo. Selected projects also include matching CSS and JavaScript customization references; the live demos do not depend on them. Soko Social V6 is delivered as one self-contained file.
+Every template is a standalone HTML demo. Selected projects also include matching CSS and JavaScript customization references; the live demos do not depend on them. Soko Social V6, Nyota & Smoke V9, and Kora & Clay V10 are delivered as self-contained files.
 
 All restaurant contact information in the demos is fictional, varied across East Africa, and intended for replacement. The pages include theme and language controls, image close-up previews, scroll reveals, and a Back-to-Top Button.
 
