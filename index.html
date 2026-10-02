@@ -7,7 +7,7 @@
 <meta name="description" content="Explore two collections of twelve distinctive restaurant and dinner website templates by Senthan & Co.">
 <title>Restaurant &amp; Dinner — Senthan &amp; Co Collections</title>
 <script>
-(function(){try{var t=localStorage.getItem('sc-dining-theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t}catch(e){}})();
+(function(){try{var t=localStorage.getItem('sc-dining-theme');if(t==='light'||t==='dark'){document.documentElement.dataset.theme=t;return}}catch(e){}try{if(window.matchMedia&&window.matchMedia('(prefers-color-scheme: light)').matches)document.documentElement.dataset.theme='light'}catch(e){}})();
 </script>
 <style>
 :root{color-scheme:dark;--page:#17181d;--surface:#202127;--surface-2:#27282e;--ink:#f4efe8;--muted:#b7b1aa;--line:rgba(244,239,232,.14);--accent:#e2a46f;--accent-2:#f0c995;--hero-ink:#fffaf3;--shadow:0 28px 80px rgba(0,0,0,.28)}
@@ -18,6 +18,7 @@ body{margin:0;background:var(--page);color:var(--ink);font-family:Inter,ui-sans-
 a{color:inherit}
 button,select{font:inherit}
 button:focus-visible,a:focus-visible,select:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+.sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 .site-nav{position:absolute;z-index:5;top:0;left:0;width:100%;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:24px clamp(20px,5vw,76px);color:#fffaf3}
 .brand{display:flex;align-items:center;gap:11px;text-decoration:none;font-size:.78rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;white-space:nowrap}
 .brand-mark{width:30px;height:30px;border:1px solid rgba(255,250,243,.7);border-radius:50%;display:grid;place-items:center;font-family:Georgia,serif;font-size:1rem;letter-spacing:0}
@@ -167,7 +168,7 @@ var TEMPLATES=[
 {v:"V12",name:"Isaro",file:"Isaro-V12.html",tag:12,desc:12,group:2}
 ];
 function t(key){return (I18N[document.documentElement.lang]||I18N.en)[key]||I18N.en[key]||key}
-function translate(){var lang=document.documentElement.lang;document.documentElement.dir=lang==="ar"?"rtl":"ltr";document.querySelectorAll("[data-i18n]").forEach(function(el){var value=t(el.dataset.i18n);if(el.dataset.i18n==="heroTitle"||el.dataset.i18n==="introTitle")el.innerHTML=value;else el.textContent=value});document.getElementById("theme-toggle").textContent=document.documentElement.dataset.theme==="dark"?t("themeLight"):t("themeDark");document.getElementById("theme-toggle").setAttribute("aria-label",t("themeDark"))}
+function translate(){var lang=document.documentElement.lang;document.documentElement.dir=lang==="ar"?"rtl":"ltr";document.querySelectorAll("[data-i18n]").forEach(function(el){var value=t(el.dataset.i18n);if(el.dataset.i18n==="heroTitle"||el.dataset.i18n==="introTitle")el.innerHTML=value;else el.textContent=value});document.getElementById("theme-toggle").textContent=document.documentElement.dataset.theme==="dark"?t("themeLight"):t("themeDark");document.getElementById("theme-toggle").setAttribute("aria-label",document.documentElement.dataset.theme==="dark"?t("themeLight"):t("themeDark"))}
 function makeCard(item,index){var article=document.createElement("article");article.className="template-card reveal";article.style.transitionDelay=(index%3)*70+"ms";article.innerHTML='<div class="preview"><span class="preview-label">'+item.v+' · '+t("collectionLabel")+' 0'+item.group+'</span><iframe title="'+item.name+' live preview" src="'+item.file+'" loading="lazy" tabindex="-1" aria-hidden="true"></iframe></div><div class="card-body"><div class="card-overline"><span>'+t("release")+' '+item.v+'</span><span>'+String(index+1).padStart(2,"0")+' / 12</span></div><h3>'+item.name+'</h3><p>'+t("d"+item.desc)+'</p><div class="card-tags"><span>'+t("tag"+item.tag)+'</span><span>HTML</span></div><a class="card-link" href="'+item.file+'"><span>'+t("openDemo")+'</span><span aria-hidden="true">↗</span></a></div>';return article}
 function renderCards(){document.getElementById("grid-one").replaceChildren();document.getElementById("grid-two").replaceChildren();var a=0,b=0;TEMPLATES.forEach(function(item){var card=makeCard(item,item.group===1?a++:b++);document.getElementById(item.group===1?"grid-one":"grid-two").appendChild(card)});scaleFrames();observeReveals()}
 function scaleFrames(){document.querySelectorAll(".preview").forEach(function(box){var iframe=box.querySelector("iframe");var scale=box.clientWidth/1366;iframe.style.transform="scale("+scale+")";iframe.style.height=(box.clientHeight/scale)+"px"})}
