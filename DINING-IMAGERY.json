@@ -1,0 +1,3419 @@
+{
+  "origin": "Original AI-generated images created for the Senthan dining website previews, November 2026. Each source is identified by the SHA-256 of its generated PNG. Cell numbers run from left to right and top to bottom. The customer ZIPs provide editable empty photo slots.",
+  "sources": {
+    "v1-0": {
+      "promptSubjects": [
+        "Garden Market Board",
+        "Pepper Fries & Herbs",
+        "The Cook’s Counter",
+        "Sunrise Rice Bowl",
+        "Coastal Spice Pilau",
+        "Banana Leaf Fish",
+        "Harvest Grain Bowl",
+        "Plantain Breakfast Plate",
+        "Garden Brunch Board",
+        "Mirembe Grill Plate",
+        "Slow Sunday Rice",
+        "Avocado Garden Bowl"
+      ],
+      "sourcePngSha256": "b7132167a7ca543a59bc379e29c969a1ad896e0ab1dc27ea59196221c5099b8e"
+    },
+    "v1-12": {
+      "promptSubjects": [
+        "Crisp Cassava & Grill",
+        "Smoky Bean Pot",
+        "Tomato Stew Bowl",
+        "House Roast Chicken",
+        "Shared Brunch Table",
+        "Banana Leaf Curry",
+        "Chapati & Market Stew",
+        "Coconut Rice & Greens",
+        "Golden Lentil Bowl",
+        "Charred Chicken Plate",
+        "Market Greens & Grains",
+        "Sweet Potato Harvest"
+      ],
+      "sourcePngSha256": "e677cb09749d51cc239d0293cae88f22458ccfef7ccbef6699345cec326ec9fe"
+    },
+    "v1-24": {
+      "promptSubjects": [
+        "Hearthside Rice Plate",
+        "Citrus Garden Bowl",
+        "Flatbread & Spiced Mince",
+        "Green Garden Plate",
+        "Roasted Root Bowl",
+        "The Long Lunch Board",
+        "Fire & Fruit Salad",
+        "Coconut Chicken Stew",
+        "Chapati Roll & Curry",
+        "Seasonal Veg Pot",
+        "The House Salad",
+        "Sunday Roast Plate"
+      ],
+      "sourcePngSha256": "dc5047f1fdd13cec1a0204ac147a0b17b9d0a418dccbebb82dc77bb36c853c48"
+    },
+    "v1-36": {
+      "promptSubjects": [
+        "Matooke & Groundnut",
+        "Sunshine Fruit Bowl",
+        "Smoked Fish & Cassava",
+        "Garden Herb Chicken",
+        "Warm Plantain Bowl",
+        "Coastal Fish & Rice",
+        "Pepper Chicken Plate",
+        "Pilau & Garden Salad",
+        "Crisp Plantain Share",
+        "Avocado & Egg Bowl",
+        "The Feast Platter",
+        "Creamy Lentil Pot"
+      ],
+      "sourcePngSha256": "2c46a915bf84e5bb2949b47e3cc838d88f7bb18ac71dbff12a62cd24d7ee4879"
+    },
+    "v1-48": {
+      "promptSubjects": [
+        "Grilled Market Feast",
+        "Citrus Shrimp Plate",
+        "Garden Table Salad",
+        "Golden Rice & Greens",
+        "Spiced Bean Bowl",
+        "Market Day Chapati",
+        "Coconut Fish Curry",
+        "Hearth-roasted Vegetables",
+        "The Shared Table",
+        "Tomato & Herb Rice",
+        "Roast Chicken & Roots",
+        "Bright Market Bowl"
+      ],
+      "sourcePngSha256": "dead98f7e24de843009f0c7708b7ef968f8b5be1f5489fdfa7f4452282ff306e"
+    },
+    "v1-60": {
+      "promptSubjects": [
+        "Banana Leaf Supper",
+        "Crisp Cassava Plate",
+        "The Sunday Spread",
+        "Pepper Sauce Chicken",
+        "Coastal Pilau Bowl",
+        "Garden Feast Plate",
+        "Fresh Fruit & Seeds",
+        "Charred Fish Supper",
+        "Warm Millet & Greens",
+        "Plantain & Bean Bowl",
+        "House Rice & Stew",
+        "The Market Harvest"
+      ],
+      "sourcePngSha256": "92cbcc90fccdfdc3d5eb66ed5b70f863ca2ad81e2922bc71b689b00ac87806e8"
+    },
+    "v1-72": {
+      "promptSubjects": [
+        "Mirembe Signature Feast",
+        "Supper Club Sharing Board"
+      ],
+      "sourcePngSha256": "8edb7ab43f642fd45ff663bd5d06ca75b918a9d64d3be278b2c993748ca4764a"
+    },
+    "v1-hero": {
+      "promptSubjects": [
+        "Hero"
+      ],
+      "sourcePngSha256": "679fee169639b880d564ac17bcee4b8c3adf33de2575f89683040f9e57132d0d"
+    },
+    "v2-0": {
+      "promptSubjects": [
+        "Nyama Choma Platter",
+        "Lake Victoria Tilapia",
+        "Smoky Matoke Bowl",
+        "Kampala Market Pilau",
+        "Coconut Bean Stew",
+        "Charred Garden Skewers",
+        "Banana Leaf Chicken",
+        "Avocado & Millet Bowl",
+        "Fire-Roasted Sweet Potato",
+        "Cassava Crisps & Pili Pili",
+        "Samosa Trio",
+        "Market Greens"
+      ],
+      "sourcePngSha256": "7e880475e637d9c4bfe5f521fe26c05f33504ad01e27f4c0ae2d1b8564245533"
+    },
+    "v2-12": {
+      "promptSubjects": [
+        "Passion Fruit Tart",
+        "Cardamom Mandazi",
+        "Cocoa & Banana Pudding",
+        "Seasonal Fruit Plate",
+        "Ginger Tamarind Cooler",
+        "Spiced Hibiscus Fizz",
+        "Citrus Mint Spritz",
+        "House Coffee"
+      ],
+      "sourcePngSha256": "33abd726452cca661bfcd0127a8ee9269bd05b9f16ed1a858c936826c1af37a0"
+    },
+    "v2-hero": {
+      "promptSubjects": [
+        "Hero"
+      ],
+      "sourcePngSha256": "8f11a14da0682b7a855d3015bb9b7f9af27033342d7ac42feef2b510df5ebf77"
+    },
+    "v3-0": {
+      "promptSubjects": [
+        "Lake Victoria grill board",
+        "Sunday pilau",
+        "Market garden bowl",
+        "Clay-pot chicken",
+        "Matoke & groundnut",
+        "Crisp market vegetables",
+        "Crispy chickpea bites",
+        "Plantain & house fries",
+        "Heritage beef rice",
+        "Tamarind fish curry",
+        "Roasted pumpkin bowl",
+        "Chicken & chapati plate"
+      ],
+      "sourcePngSha256": "13308bafefd41eff705653046591daad5bbaae14f0d44301598053c9b8bfee85"
+    },
+    "v3-12": {
+      "promptSubjects": [
+        "The family table",
+        "Pepper braised beans",
+        "Long-table sampler",
+        "Lake fish & greens",
+        "Charred plantain",
+        "Spiced rice & eggs",
+        "Slow-braised beef",
+        "Golden cassava chips",
+        "Samosa & chai set",
+        "Ember-roasted ribs",
+        "Pilau supper bowl",
+        "Celebration spread"
+      ],
+      "sourcePngSha256": "195b498f0134c6ccc1b187a3abeaf3036377f5b82a125c0025d13c867228d2fb"
+    },
+    "v3-24": {
+      "promptSubjects": [
+        "Ugali, greens & stew",
+        "Coconut lentil curry",
+        "Chapati & bean stew",
+        "The host’s platter"
+      ],
+      "sourcePngSha256": "d055eec9b0747da0841822da69454a6d92c89a5182d07a31997d28d69e23b9ad"
+    },
+    "v3-hero": {
+      "promptSubjects": [
+        "Hero"
+      ],
+      "sourcePngSha256": "21bca11c5b4862cb0fd44fd6d069c3790f5385b202a6f8a5581482e5686ed9cf"
+    },
+    "v4-0": {
+      "promptSubjects": [
+        "Charred coast fish — Tamarind butter · cassava crisp · lime",
+        "Swahili pilau — Coconut rice · clove · kachumbari",
+        "Coconut fish stew — Market catch · coconut · warm chapati",
+        "Banana-leaf supper — Slow-cooked meat · herb oil · chapati",
+        "Ember-roasted chicken — Matoke · avocado · toasted spice",
+        "Nyama ya jiko — Charred beef · cabbage · pepper relish",
+        "Pepper-pot potatoes — Creamed potato · garden herbs · chili oil",
+        "Pilau & roast — Spiced rice · roast meat · tomato salad",
+        "Peanut garden greens — Pumpkin · greens · roasted groundnut",
+        "Garden pea curry — Green pea · coconut · soft chapati",
+        "Matoke in peanut sauce — Steamed matoke · groundnut · garden veg",
+        "Sukuma & ugali — Sautéed sukuma · maize ugali · tomato"
+      ],
+      "sourcePngSha256": "74a638b675e33f733962e9901265c97900147207bef8d0a7f351a5ecc5aa8734"
+    },
+    "v4-12": {
+      "promptSubjects": [
+        "Cardamom mandazi — Warm mandazi · spiced chai cream",
+        "Coast breakfast plate — Egg · plantain · cassava · tomato relish",
+        "Sunday pilau pudding — Coconut rice · cinnamon · caramel banana",
+        "Shared catch platter — Fish · pilau · greens · three sauces"
+      ],
+      "sourcePngSha256": "66524c2eb362f7bcdc7cbfd557f6792520f11de0b0d859891a3a9e906dc56e55"
+    },
+    "v4-hero": {
+      "promptSubjects": [
+        "Hero"
+      ],
+      "sourcePngSha256": "f267e008f3911cc2557418c5d994d85a56da9a0f76a3cbbadfd952a2e67ba3a9"
+    },
+    "v5-0": {
+      "promptSubjects": [
+        "Kampala sunrise plate",
+        "Matoke & groundnut",
+        "Millet porridge, honey",
+        "Garden bowl, market greens",
+        "Slow-cooked beans & chapati",
+        "Smoky tilapia, citrus",
+        "Market garden platter",
+        "Spiced chickpeas & tomato",
+        "Charcoal chicken, pilau rice",
+        "Coast-to-highland pilau",
+        "Sunday fish stew",
+        "Small plates at first light"
+      ],
+      "sourcePngSha256": "342934dd8b2da77f08d63d24acf208328d00eaf4d3775438bb3f2f2589483569"
+    },
+    "v5-12": {
+      "promptSubjects": [
+        "Sweet potato rösti & eggs",
+        "Cassava leaf stew & chapati",
+        "Tomato linguine, market herbs",
+        "The pantry breakfast board",
+        "A table for the morning",
+        "Crisp cassava & tamarind dip",
+        "Avocado, fruit & millet bowl",
+        "Roast pumpkin & greens",
+        "Coconut samosas",
+        "Grilled chicken, garden plate",
+        "Tamarind-glazed plantain",
+        "Kuku wa kupaka"
+      ],
+      "sourcePngSha256": "e593708c8c85838e10a2c97bc38777115a70fb3da9fe46067d47b1d4c8a13d74"
+    },
+    "v5-24": {
+      "promptSubjects": [
+        "Seasonal fruit & yoghurt",
+        "Chapati, beans & greens",
+        "Coconut lentil curry",
+        "Spiced goat, soft flatbread",
+        "Sweet potato & peanut stew",
+        "Roast banana, cardamom cream",
+        "Pan-fried tilapia & kachumbari",
+        "Mushroom, herb & egg skillet",
+        "Crispy plantain breakfast",
+        "Chapati roll, slow beans",
+        "Sukuma wiki & avocado",
+        "Grilled market vegetables"
+      ],
+      "sourcePngSha256": "76e23e003c32dcb95722deaf5a69de436c7324a48935ff4d4ddd009a13b0ac62"
+    },
+    "v5-36": {
+      "promptSubjects": [
+        "Chicken pilau, family style",
+        "Seasonal fruit, yoghurt & oats",
+        "Crisp potato bhajia",
+        "Tamarind bean pot"
+      ],
+      "sourcePngSha256": "fa7c6ce61d571840c572c88856789d69b4f107fe509035aa02343af732a733f5"
+    },
+    "v5-hero": {
+      "promptSubjects": [
+        "Hero"
+      ],
+      "sourcePngSha256": "9dc29a9e4e451ad2f10b30f5de65e9c8b042312ead1e1aeb5eaeaba55e920884"
+    },
+    "v6-0": {
+      "promptSubjects": [
+        "Kampala rolex",
+        "Market day rolex",
+        "Smoky chicken chapati roll",
+        "Charred beef kikomando",
+        "Crispy cassava chips",
+        "Matoke samosa trio",
+        "Street corn with pili pili",
+        "Grilled mushroom skewer",
+        "Ginger chicken skewers",
+        "Plantain & peanut crunch",
+        "Chapati pocket — garden",
+        "Chapati pocket — fire"
+      ],
+      "sourcePngSha256": "126029ad0f296c9eaa3fb6489d4921f81e46db87d5feb62d1f6bda41c7caeafe"
+    },
+    "v6-12": {
+      "promptSubjects": [
+        "Crispy fish chapati bite",
+        "Avocado bean samosa",
+        "Market grill chicken plate",
+        "Slow-cooked beef & pilau",
+        "Lake fish, lemon & greens",
+        "Garden bean bowl",
+        "Matoke & groundnut stew",
+        "Charred tilapia plate",
+        "Coconut rice & grilled veg",
+        "Smoky goat, market greens",
+        "Chicken luwombo bowl",
+        "Peanut mushroom stew"
+      ],
+      "sourcePngSha256": "98247ab32e0189c84d6f1139e67427f102a28d872e444f54a82629dda7d8cdbd"
+    },
+    "v6-24": {
+      "promptSubjects": [
+        "Sunday-style pilau bowl",
+        "Fresh catch, tomato relish",
+        "Crisp cassava",
+        "Sweet plantain coins",
+        "Market greens & lemon",
+        "Pili pili slaw",
+        "Charred maize",
+        "Kachumbari, extra lime",
+        "Ginger turmeric rice",
+        "Avocado & tomato salad",
+        "Passion fruit fizz",
+        "Fresh sugarcane & lime"
+      ],
+      "sourcePngSha256": "8c7fc51c7cc7cad46fab1938ad7b9142b0ba49441bb8f6021d2a33bb80ff2170"
+    },
+    "v6-36": {
+      "promptSubjects": [
+        "Spiced hibiscus cooler",
+        "Mango ginger smoothie",
+        "Iced tamarind tea",
+        "Coffee, market roast",
+        "Pineapple mint crush",
+        "Avocado cocoa shake",
+        "Warm mandazi & honey",
+        "Cardamom dough bites",
+        "Passion fruit cheesecake cup",
+        "Coconut cassava cake",
+        "Banana caramel chapati",
+        "Mango & lime fruit bowl"
+      ],
+      "sourcePngSha256": "8367a3c2be1e71b7e7d266501cd954b998113334a5daa19eb4701a4b6e022cbe"
+    },
+    "v6-48": {
+      "promptSubjects": [
+        "Chocolate chilli brownie",
+        "Roasted groundnut brittle",
+        "Spiced pineapple plate",
+        "Market doughnut, today’s glaze"
+      ],
+      "sourcePngSha256": "df0e6291ae74314a5d2ab1886a8a382e03b64ff1d5539938e9ec6957d454d471"
+    },
+    "v6-hero": {
+      "promptSubjects": [
+        "Hero"
+      ],
+      "sourcePngSha256": "a73b8b0ab7571ccf0500bc1b06a893ad78b5e5ef633767eeca98b22064445748"
+    },
+    "v7-0": {
+      "promptSubjects": [
+        "Ginger chicken bowl",
+        "Pilau beef bowl",
+        "Citrus tilapia bowl",
+        "Peanut greens bowl",
+        "Coconut chickpea bowl",
+        "Roasted pumpkin grains",
+        "Plantain bean bowl",
+        "Charred goat bowl",
+        "Market egg bowl",
+        "Matoke & lake fish",
+        "Turmeric chicken plate",
+        "Smoky beef plate"
+      ],
+      "sourcePngSha256": "c1184c78eb97ec4f8e09fc065bf1a7c060b97b8b1a1e567cac36f4b0be8c0652"
+    },
+    "v7-12": {
+      "promptSubjects": [
+        "Garden bean stew",
+        "Tomato fish curry",
+        "Roast chicken lunch",
+        "Coconut lentils & rice",
+        "Peanut greens & rice",
+        "Avocado tomato salad",
+        "Spiced chickpeas",
+        "Cassava chilli bites",
+        "Sweet plantain",
+        "Charred maize",
+        "Market greens",
+        "Passion fruit fizz"
+      ],
+      "sourcePngSha256": "69a5846adf3b774cbb437fe385e77d8b814a880450a56e364a530e1cc7a6ce30"
+    },
+    "v7-24": {
+      "promptSubjects": [
+        "Iced tamarind tea",
+        "Mango ginger shake",
+        "Hibiscus cooler",
+        "Coconut lime water",
+        "Mandazi & fruit",
+        "Banana caramel chapati",
+        "Coconut cassava cake",
+        "Mango market bowl",
+        "Date peanut bites",
+        "Cardamom yoghurt cup",
+        "Chocolate chilli brownie",
+        "Pineapple lime plate"
+      ],
+      "sourcePngSha256": "ba2a8ab68fcb6086406c980f08ac6ee9e28ae7ac7b675eb410c9a54d13b4e523"
+    },
+    "v7-hero": {
+      "promptSubjects": [
+        "Hero"
+      ],
+      "sourcePngSha256": "e83462175a03178222b75b3f9de98d5bea56a36c3f8e58b150f9df9b9b5d5b84"
+    },
+    "v8-0": {
+      "promptSubjects": [
+        "Ginger chicken bowl",
+        "Pilau beef bowl",
+        "Citrus tilapia bowl",
+        "Peanut greens bowl",
+        "Coconut chickpea bowl",
+        "Roasted pumpkin grains",
+        "Plantain bean bowl",
+        "Charred goat bowl",
+        "Market egg bowl",
+        "Matoke & lake fish",
+        "Turmeric chicken plate",
+        "Smoky beef plate"
+      ],
+      "sourcePngSha256": "b2342f8576da1ac741aa1003bfa02872a02f45530cb4df25d7aab645b357ec11"
+    },
+    "v8-12": {
+      "promptSubjects": [
+        "Garden bean stew",
+        "Tomato fish curry",
+        "Roast chicken lunch",
+        "Coconut lentils & rice",
+        "Peanut greens & rice",
+        "Avocado tomato salad",
+        "Spiced chickpeas",
+        "Cassava chilli bites",
+        "Sweet plantain",
+        "Charred maize",
+        "Market greens",
+        "Passion fruit fizz"
+      ],
+      "sourcePngSha256": "10b8b43cc0c491676b73d4b596c4bd4b232f8ef28ee2e073ab7f84f3c1eb41a1"
+    },
+    "v8-24": {
+      "promptSubjects": [
+        "Iced tamarind tea",
+        "Mango ginger shake",
+        "Hibiscus cooler",
+        "Coconut lime water",
+        "Mandazi & fruit",
+        "Banana caramel chapati",
+        "Coconut cassava cake",
+        "Mango market bowl",
+        "Date peanut bites",
+        "Cardamom yoghurt cup",
+        "Chocolate chilli brownie",
+        "Pineapple lime plate"
+      ],
+      "sourcePngSha256": "a2de67a74c77f9826bf19bec8aae5fdeedc8224e6974132cbba1ab731ede4472"
+    },
+    "v8-hero": {
+      "promptSubjects": [
+        "Hero"
+      ],
+      "sourcePngSha256": "dca1915e0465128344e277a429d8b1c26f3524c0206abdab45fe84de479af717"
+    },
+    "v9-0": {
+      "promptSubjects": [
+        "Lake Victoria tilapia",
+        "Charcoal chicken & pilau",
+        "Mwanza market vegetable bowl",
+        "Coconut bean stew",
+        "Pan-seared Nile perch",
+        "Smoked aubergine with tahini",
+        "Cassava crisps & pili pili",
+        "Fire-roasted sweet plantain",
+        "Tamarind-glazed chicken",
+        "Crisp sambusa trio",
+        "Mchuzi wa samaki",
+        "Charred corn, lime & chilli"
+      ],
+      "sourcePngSha256": "fad7a6a9b737453c261595c59cedb8bcbe9a74550868a88861e3d8bed7c9e45d"
+    },
+    "v9-12": {
+      "promptSubjects": [
+        "Lake prawns in coconut",
+        "Slow-cooked goat pilau",
+        "Avocado kachumbari",
+        "Market greens with sesame",
+        "Grilled fish tacos, pili pili",
+        "Crispy cassava & tomato relish",
+        "Warm chapati & coconut dhal",
+        "Pepper steak & spiced potatoes",
+        "Roast squash, chickpeas & herbs",
+        "Smoky tomato soup",
+        "Charcoal chicken skewers",
+        "Mango, avocado & lime salad"
+      ],
+      "sourcePngSha256": "c7a95c06eb54cbe0281f961d276c1caf6e1433a05942aee47bc8c99dd5032a64"
+    },
+    "v9-24": {
+      "promptSubjects": [
+        "Coconut rice with green peas",
+        "Spiced lentil fritters",
+        "Fried plantain & peanut sauce",
+        "Grilled lake fish, ginger broth",
+        "Tamarind-glazed carrots",
+        "Mango & cardamom cake",
+        "Coconut cassava pudding",
+        "Charred pineapple, lime cream",
+        "Ginger hibiscus cooler",
+        "Tamarind soda with mint",
+        "Lake breeze passionfruit spritz",
+        "Spiced Swahili coffee"
+      ],
+      "sourcePngSha256": "b43ace39ff81dad0571c5eb22bef0d9885d7a9e792f75855a571f2d3ebfe5df3"
+    },
+    "v9-hero": {
+      "promptSubjects": [
+        "Hero"
+      ],
+      "sourcePngSha256": "37ed6ba1221f0c06b66201c6f113d4c9122a923dc0baf7888a306121567d5014"
+    },
+    "v10-0": {
+      "promptSubjects": [
+        "Ful with warm kita",
+        "Spiced scrambled eggs & injera",
+        "Honey butter chechebsa",
+        "Shiro breakfast bowl",
+        "Avocado, tomato & toasted barley",
+        "Buna granola with mango",
+        "Injera rolls with awaze",
+        "Sambusa trio, lentil & herb",
+        "Gomen with garlic oil",
+        "Roasted beetroot & mitmita",
+        "Ayib with green chilli honey",
+        "Crisp chickpeas & berbere"
+      ],
+      "sourcePngSha256": "c604cd64559f3a9e76f0fe05b683071cb307698063bb84a27f2d9d6993a73014"
+    },
+    "v10-12": {
+      "promptSubjects": [
+        "Doro tibs with rosemary",
+        "Mushroom tibs, smoked paprika",
+        "Slow braised beef wot",
+        "Berbere roast chicken",
+        "Lentil misir wot",
+        "Charred cauliflower & tahini",
+        "Red lentil sambusa plate",
+        "Kik alicha with turmeric oil",
+        "Tibs wat with caramelized onion",
+        "Teff injera & house stew",
+        "Crispy potato, rosemary & awaze",
+        "Market greens with lemon"
+      ],
+      "sourcePngSha256": "34ab5d5b8dc8ccf51c90c9766055cdc10bca1ad165c03b128deadc552fe203a2"
+    },
+    "v10-24": {
+      "promptSubjects": [
+        "Orange & cardamom cake",
+        "Teff brownie with coffee cream",
+        "Warm honey dumplings",
+        "Mango sorbet with lime",
+        "Spiced hibiscus iced tea",
+        "Lime, ginger & mint fizz",
+        "Fresh buna, jebena pour",
+        "Ethiopian coffee macchiato"
+      ],
+      "sourcePngSha256": "27d975f68ded0721dc750d4fc581c9062ba51bd06a5124cd6de69d50c45782e2"
+    },
+    "v10-hero": {
+      "promptSubjects": [
+        "Hero"
+      ],
+      "sourcePngSha256": "3ee664f576b9a55e0737a779d0d12542d177bf2231ac8d04662280010c53db11"
+    },
+    "tamu-0": {
+      "promptSubjects": [
+        "Charcoal reef fish",
+        "Coconut prawns",
+        "Zanzibar octopus pilau",
+        "Tamarind-glazed catch",
+        "Swahili crab curry",
+        "Crisp cassava & pili pili",
+        "Coconut greens with lime",
+        "Coastal chicken mishkaki"
+      ],
+      "sourcePngSha256": "2ec88b9cc809df63e2ae81d6ea607d3dda475c014a8437ba56fcf7cbf7290765"
+    },
+    "tamu-8": {
+      "promptSubjects": [
+        "Market tomato kachumbari",
+        "Grilled plantain & peanut",
+        "Mango-chilli snapper",
+        "Slow-cooked beef mishkaki",
+        "Cardamom pilau rice",
+        "Coconut bean stew",
+        "Tandoori reef fish",
+        "Lime-coconut prawns"
+      ],
+      "sourcePngSha256": "3ab9a8eb9a1bb74bdb34161bd281328f86987de2e331c7e2dd4edda7b409e5cd"
+    },
+    "tamu-16": {
+      "promptSubjects": [
+        "Spiced pumpkin & chickpeas",
+        "Charred corn with pili pili",
+        "Sea-salt mandazi",
+        "Passionfruit & cardamom tart",
+        "Chai ice cream",
+        "Tamarind ginger fizz",
+        "Baobab lime cooler",
+        "Spiced coastal coffee"
+      ],
+      "sourcePngSha256": "36395c41e8b5d3d9fa3e945adbc74496bd2a68692445f46e0ba9d61efa7c95cd"
+    },
+    "tamu-24": {
+      "promptSubjects": [
+        "Coconut fish moilee",
+        "Pili pili calamari",
+        "Tamarind reef prawns",
+        "Roasted aubergine with tahini",
+        "Spiced lentil fritters",
+        "Coconut flatbread",
+        "Cucumber lime salad",
+        "Goat and coconut stew"
+      ],
+      "sourcePngSha256": "f5f8a0aee37865e09c598265fb966418a06dade1735e89e98808e517806ec61c"
+    },
+    "tamu-32": {
+      "promptSubjects": [
+        "Pineapple ginger sorbet",
+        "Mango coconut pudding",
+        "Hibiscus lime cooler",
+        "Vanilla chai pot"
+      ],
+      "sourcePngSha256": "497054ad5c362e8ba77b4c23bb30102788a154a4108d072d50b170f31ece132a"
+    },
+    "tamu-hero": {
+      "promptSubjects": [
+        "Hero"
+      ],
+      "sourcePngSha256": "db4a7b04e80846f9d3937f03c717bf5c9096212412bd6367179fd2831520712a"
+    },
+    "isaro-first": {
+      "promptSubjects": [
+        "Lake tilapia over charcoal",
+        "Pepper prawns",
+        "Lake fish pilau",
+        "Tamarind grilled fish"
+      ],
+      "sourcePngSha256": "f7c108ae6f041d992f5fb03d0cf3e8b475fafdcec6e278026a1dbf5e541bec86"
+    },
+    "isaro-4": {
+      "promptSubjects": [
+        "Bean stew with cassava leaves",
+        "Crisp cassava & pili pili",
+        "Highland greens with groundnuts",
+        "Fire-roasted chicken brochettes",
+        "Tomato & tree tomato salad",
+        "Grilled plantain & groundnuts",
+        "Lake perch with mango chilli",
+        "Slow-cooked beef brochettes"
+      ],
+      "sourcePngSha256": "609787e18d08d38df9fca7aee6f1b1f2496b3cd69403df5128653cc14da45ea1"
+    },
+    "isaro-12": {
+      "promptSubjects": [
+        "Cardamom pilau rice",
+        "Coconut bean stew",
+        "Smoked lake sardines",
+        "Lime & pepper lake prawns",
+        "Spiced pumpkin & chickpeas",
+        "Charred maize with pili pili",
+        "Honey mandazi",
+        "Passionfruit & cardamom tart"
+      ],
+      "sourcePngSha256": "377dc97470f550241ef71f2211014ea13cb14a34ec923ca79630fc39fb3aacbc"
+    },
+    "isaro-20": {
+      "promptSubjects": [
+        "Chai ice cream",
+        "Tamarind ginger fizz",
+        "Baobab lime cooler",
+        "Spiced highland coffee"
+      ],
+      "sourcePngSha256": "63777212521a3cf396bd4ce17652079ec7fe3672427aa1d5f4c64fd4fde83655"
+    },
+    "isaro-hero": {
+      "promptSubjects": [
+        "Hero"
+      ],
+      "sourcePngSha256": "5848144a5d1511b9dfae8dab48adf0d23a72186410146dc3efc63f2ce0eab069"
+    },
+    "collection": {
+      "promptSubjects": [
+        "Dining collection hero"
+      ],
+      "sourcePngSha256": "fb65aaf9e5a9a2c110e4588ebe3e956f27ebae3169a7159f6fc3b691a5b6428b"
+    }
+  },
+  "assignments": {
+    "Mirembe-Table-V1.html": [
+      {
+        "role": "Garden Market Board",
+        "source": "v1-0",
+        "cell": 1,
+        "sha256": "0a7b18104562aa63e0f7627548f1110a8718baae3d970c57f09ac039c4356f09"
+      },
+      {
+        "role": "Pepper Fries & Herbs",
+        "source": "v1-0",
+        "cell": 2,
+        "sha256": "3fe6df434f5b8aacf7d54b5715d1fd4d95654c8aa3dfdf41e804d1623d74105f"
+      },
+      {
+        "role": "The Cook’s Counter",
+        "source": "v1-0",
+        "cell": 3,
+        "sha256": "e97387ff444bddfe96c9b17fd3dc38879edcb72469f9681e1d286c58bbbb05d9"
+      },
+      {
+        "role": "Sunrise Rice Bowl",
+        "source": "v1-0",
+        "cell": 4,
+        "sha256": "4d2e3ae0d52f9e6e64e2b2b42f72ea621564ebaa2c3486b30b238b5499914bd2"
+      },
+      {
+        "role": "Coastal Spice Pilau",
+        "source": "v1-0",
+        "cell": 5,
+        "sha256": "f2934cfc07ecbf0ffd525a76e511cbf93ff75ca26d427c1a3bc2477aea88b4e6"
+      },
+      {
+        "role": "Banana Leaf Fish",
+        "source": "v1-0",
+        "cell": 6,
+        "sha256": "070e0901fc9275fe42ee787bf2994d7a9fee5ef15dfeb76560636adccc119937"
+      },
+      {
+        "role": "Harvest Grain Bowl",
+        "source": "v1-0",
+        "cell": 7,
+        "sha256": "568f5d27f6ca909b354e7381057dfd23931932a26c8c9e466322c067cd12cbd2"
+      },
+      {
+        "role": "Plantain Breakfast Plate",
+        "source": "v1-0",
+        "cell": 8,
+        "sha256": "4599a3a1ee491862f0e6f768cdcd0c50e9eeab9e235e495d745955d15dc66363"
+      },
+      {
+        "role": "Garden Brunch Board",
+        "source": "v1-0",
+        "cell": 9,
+        "sha256": "0d972318e2be373915cd10534742099be6ada83058725a001b12deaa4a6bc09e"
+      },
+      {
+        "role": "Mirembe Grill Plate",
+        "source": "v1-0",
+        "cell": 10,
+        "sha256": "79254a224f162e7a0d80a5a474e8d96704c7175efcbee1618bcc22e315f4bb49"
+      },
+      {
+        "role": "Slow Sunday Rice",
+        "source": "v1-0",
+        "cell": 11,
+        "sha256": "2f35e5cb8cb35c24fe7109bb58c2d39c4cd8d69bf4e43b80cfcbca66d384e84d"
+      },
+      {
+        "role": "Avocado Garden Bowl",
+        "source": "v1-0",
+        "cell": 12,
+        "sha256": "cd62741e139747a01cce6df3cab8b1a66c943cbdbd0e39b6a229ff15ab006078"
+      },
+      {
+        "role": "Crisp Cassava & Grill",
+        "source": "v1-12",
+        "cell": 1,
+        "sha256": "4f62015c9592469c4bfaa0f3aedb14d72e51f7d5eaddb383c5c54eda66a7717d"
+      },
+      {
+        "role": "Smoky Bean Pot",
+        "source": "v1-12",
+        "cell": 2,
+        "sha256": "3431b4534ff436ab2c9824a1ef5525842725ddea8eb7ff8e9978101d7b3bf2d2"
+      },
+      {
+        "role": "Tomato Stew Bowl",
+        "source": "v1-12",
+        "cell": 3,
+        "sha256": "ae299c6868e635dc62272f4d6415ad77a44cc96e3db9ddd42a7e38468f097d1b"
+      },
+      {
+        "role": "House Roast Chicken",
+        "source": "v1-12",
+        "cell": 4,
+        "sha256": "586e44d5c684ee65fe320cf506289290c87f0d9525619e676286982cc0eed525"
+      },
+      {
+        "role": "Shared Brunch Table",
+        "source": "v1-12",
+        "cell": 5,
+        "sha256": "287f79c326229e2477037ce6b76ebf2169e1b0f2f824fc1cc43e1b01be3a351b"
+      },
+      {
+        "role": "Banana Leaf Curry",
+        "source": "v1-12",
+        "cell": 6,
+        "sha256": "ade5901892231847a0f16ccfa7297c5c221b77a11a08ff1bdaa5358db1ad1ecb"
+      },
+      {
+        "role": "Chapati & Market Stew",
+        "source": "v1-12",
+        "cell": 7,
+        "sha256": "eb07c337608f3f0bd264611668ad05a2d24fb7e69557bc12f6bb3fcc4b7a60e7"
+      },
+      {
+        "role": "Coconut Rice & Greens",
+        "source": "v1-12",
+        "cell": 8,
+        "sha256": "28f7b92b1e9c037bafa73f092cf263659f84bb44259afcc64aa07e1a07b26d99"
+      },
+      {
+        "role": "Golden Lentil Bowl",
+        "source": "v1-12",
+        "cell": 9,
+        "sha256": "6b9007e5ae911e509b38e1e22e3f3387c5883ab2eaf9e675a8b9822251b3440a"
+      },
+      {
+        "role": "Charred Chicken Plate",
+        "source": "v1-12",
+        "cell": 10,
+        "sha256": "d3df6cfdd05739007535af3b446acdb7bea30cf0e5d354b8a5cc43aefe80c85a"
+      },
+      {
+        "role": "Market Greens & Grains",
+        "source": "v1-12",
+        "cell": 11,
+        "sha256": "2640349ff17a0f8b34c27ff0600d03d4e8291449d02c58af766583da3e89acbc"
+      },
+      {
+        "role": "Sweet Potato Harvest",
+        "source": "v1-12",
+        "cell": 12,
+        "sha256": "3b968aa2563e16993bc7786246f7b942092ac350dd9f58566bee58c08af1ff4f"
+      },
+      {
+        "role": "Hearthside Rice Plate",
+        "source": "v1-24",
+        "cell": 1,
+        "sha256": "222f86ce29f42512fdb6bfa5514b32d89876fbb743d7f3cbf79d25e449fda018"
+      },
+      {
+        "role": "Citrus Garden Bowl",
+        "source": "v1-24",
+        "cell": 2,
+        "sha256": "7cd43edde1a937571195aec6ca4339525a2e5e67f85e071788286831d0089cb7"
+      },
+      {
+        "role": "Flatbread & Spiced Mince",
+        "source": "v1-24",
+        "cell": 3,
+        "sha256": "d5a52a41640f487e71fca80961d13e7a205f7767ee874bfd12b2e834e934a0fe"
+      },
+      {
+        "role": "Green Garden Plate",
+        "source": "v1-24",
+        "cell": 4,
+        "sha256": "42223f410985c183d923f97ff934a8d72cd015b7b13b26815c57c77185f818e8"
+      },
+      {
+        "role": "Roasted Root Bowl",
+        "source": "v1-24",
+        "cell": 5,
+        "sha256": "2e30f4c00aece118211d16c8a26a7795a52c01cf6f9fc4bfe052d2cdb454b1ba"
+      },
+      {
+        "role": "The Long Lunch Board",
+        "source": "v1-24",
+        "cell": 6,
+        "sha256": "036cdf42c6d19f221c667d12f7cd59e538938bd890be3f25b78e7670a44e2f90"
+      },
+      {
+        "role": "Fire & Fruit Salad",
+        "source": "v1-24",
+        "cell": 7,
+        "sha256": "3e56b20c487dc27fd79439b0d0ee11e54870aa571d714f6b901408c258111c48"
+      },
+      {
+        "role": "Coconut Chicken Stew",
+        "source": "v1-24",
+        "cell": 8,
+        "sha256": "4936c2957cb764bce8ca29fee0bf77dfd438e4ad33f48aedbe911ad75c3c2481"
+      },
+      {
+        "role": "Chapati Roll & Curry",
+        "source": "v1-24",
+        "cell": 9,
+        "sha256": "c1d40c4bc654ba3b3c423492aba48f8fb1adccfe0340c15238c0771aa1648f0a"
+      },
+      {
+        "role": "Seasonal Veg Pot",
+        "source": "v1-24",
+        "cell": 10,
+        "sha256": "4e1cc8025f26474657708197f6c8d5062c5a506a034c4cd5e5ffec8a69c8284a"
+      },
+      {
+        "role": "The House Salad",
+        "source": "v1-24",
+        "cell": 11,
+        "sha256": "442159297de6ce2e7e8d929477f5a7278260ce7a347f603596b3b1ecf44945a6"
+      },
+      {
+        "role": "Sunday Roast Plate",
+        "source": "v1-24",
+        "cell": 12,
+        "sha256": "2da219edbc84fc0fe494f3099a1b5024c7ef4c23abaa0093a815348782aa3c20"
+      },
+      {
+        "role": "Matooke & Groundnut",
+        "source": "v1-36",
+        "cell": 1,
+        "sha256": "fbeb92ed026831477720287db81cfa77f331bfb322981800af1bf27b3acab67d"
+      },
+      {
+        "role": "Sunshine Fruit Bowl",
+        "source": "v1-36",
+        "cell": 2,
+        "sha256": "2c830a9805e2e21d484ee733335e2398dc9df604042d0134f20b40124eeb73b0"
+      },
+      {
+        "role": "Smoked Fish & Cassava",
+        "source": "v1-36",
+        "cell": 3,
+        "sha256": "05b251a60e8665aea67d0b8d5bbc7c962081545c758314e393f3cba8ad944903"
+      },
+      {
+        "role": "Garden Herb Chicken",
+        "source": "v1-36",
+        "cell": 4,
+        "sha256": "f5492a04e63fadf505204e3f65a1ab4f96ec9c91efa3535f9fc5c68d003cb539"
+      },
+      {
+        "role": "Warm Plantain Bowl",
+        "source": "v1-36",
+        "cell": 5,
+        "sha256": "48214506c5ce11cd14aa591060d0c3d7e27347bda3c8bf8816ded85249fb03ec"
+      },
+      {
+        "role": "Coastal Fish & Rice",
+        "source": "v1-36",
+        "cell": 6,
+        "sha256": "90ecc5a275f3ca1ca142de40ec9b926b8d5b7ef391f6340f62dce62755dab71c"
+      },
+      {
+        "role": "Pepper Chicken Plate",
+        "source": "v1-36",
+        "cell": 7,
+        "sha256": "f0e09a07d38d37d2f71e404d1be34ec84aeaef19129333ac29a378d32a0d1892"
+      },
+      {
+        "role": "Pilau & Garden Salad",
+        "source": "v1-36",
+        "cell": 8,
+        "sha256": "d0f376fb2ff523d359e5918355dad3fec4bbd35fa01cac0230116bcfa190163f"
+      },
+      {
+        "role": "Crisp Plantain Share",
+        "source": "v1-36",
+        "cell": 9,
+        "sha256": "9c3d779e7a08a09a1ac597458d58dabe45f63cf1baa2e40aed9ab5ced5589840"
+      },
+      {
+        "role": "Avocado & Egg Bowl",
+        "source": "v1-36",
+        "cell": 10,
+        "sha256": "941d9f9837cc52e33092c949afbe312be38c76d050be358aa651f3d49db0267c"
+      },
+      {
+        "role": "The Feast Platter",
+        "source": "v1-36",
+        "cell": 11,
+        "sha256": "f4b25962bc2e9356d7a8e1c2908d82028053d08221a19be2fccca1daa2004e67"
+      },
+      {
+        "role": "Creamy Lentil Pot",
+        "source": "v1-36",
+        "cell": 12,
+        "sha256": "00cfcafbdea97341073c47fc4014c31decdf3dc6d974ab8dac1f27d85415eecb"
+      },
+      {
+        "role": "Grilled Market Feast",
+        "source": "v1-48",
+        "cell": 1,
+        "sha256": "2473a75e8c1712bfc9823f531b50ca9f93e32a4eaf7e27088213550b90131a8f"
+      },
+      {
+        "role": "Citrus Shrimp Plate",
+        "source": "v1-48",
+        "cell": 2,
+        "sha256": "cbee36bff3c247aac093ac25d73799f42c8f4a16cd3236ca957b45ce5feb6827"
+      },
+      {
+        "role": "Garden Table Salad",
+        "source": "v1-48",
+        "cell": 3,
+        "sha256": "4eca1649e5ecb38f20db0a0c7b4ee5b4079473e0e25ec18163dcaf0928083eec"
+      },
+      {
+        "role": "Golden Rice & Greens",
+        "source": "v1-48",
+        "cell": 4,
+        "sha256": "2eef66514b4c7071bfaad4f538802868e6122025c638006dd8cf40cbcf1d4f1e"
+      },
+      {
+        "role": "Spiced Bean Bowl",
+        "source": "v1-48",
+        "cell": 5,
+        "sha256": "b80302d80be4d4d94798e3dd27e4752161215122f1048fc3b2479daae2c1ceb4"
+      },
+      {
+        "role": "Market Day Chapati",
+        "source": "v1-48",
+        "cell": 6,
+        "sha256": "f1ec9150fe1dfaa4d6d23e39fbea3aa92e0785661f2b3a09f6227774bb2229e6"
+      },
+      {
+        "role": "Coconut Fish Curry",
+        "source": "v1-48",
+        "cell": 7,
+        "sha256": "8873bc805db2db90c2919485f41f87ca44fe2f23bff539679e2a1abcc516578c"
+      },
+      {
+        "role": "Hearth-roasted Vegetables",
+        "source": "v1-48",
+        "cell": 8,
+        "sha256": "ad83d059e23c64467f8bc6742e76e8689212488dde07b4ce7eca6d9e905600c2"
+      },
+      {
+        "role": "The Shared Table",
+        "source": "v1-48",
+        "cell": 9,
+        "sha256": "2e5ce15bc548fe7de6722a846792a0e67ac8dd0690acfa21374eb5203a39be42"
+      },
+      {
+        "role": "Tomato & Herb Rice",
+        "source": "v1-48",
+        "cell": 10,
+        "sha256": "b08222913bafb53d24d360b797d7e95a83dcf8205f4a3bbf35752d4a99554dd3"
+      },
+      {
+        "role": "Roast Chicken & Roots",
+        "source": "v1-48",
+        "cell": 11,
+        "sha256": "0ffbc6f8c165b8cfeed38e3ad8098814481724e81b56ade6b55253481d65abfe"
+      },
+      {
+        "role": "Bright Market Bowl",
+        "source": "v1-48",
+        "cell": 12,
+        "sha256": "26527d4775a5025d16d850c655aac0c8ec21d979955df6d1fe123e6ce65611fa"
+      },
+      {
+        "role": "Banana Leaf Supper",
+        "source": "v1-60",
+        "cell": 1,
+        "sha256": "17467d77bd2fb574231d0f42457f639008e26ca01d8302eb5e7338778b6a2887"
+      },
+      {
+        "role": "Crisp Cassava Plate",
+        "source": "v1-60",
+        "cell": 2,
+        "sha256": "68cb88f1bf9ec2137747549846fdea52dcc6479f9d20a4403ebca2355de8b5bf"
+      },
+      {
+        "role": "The Sunday Spread",
+        "source": "v1-60",
+        "cell": 3,
+        "sha256": "b9c373cfb4926d3f906a3e020306d4d5039bc96d5359ff530b2c36340698b4c0"
+      },
+      {
+        "role": "Pepper Sauce Chicken",
+        "source": "v1-60",
+        "cell": 4,
+        "sha256": "04209241160f6109ec680a9eb548a1fb0ab49dfd05029dab35a20695950625e4"
+      },
+      {
+        "role": "Coastal Pilau Bowl",
+        "source": "v1-60",
+        "cell": 5,
+        "sha256": "c8ce95ebdd2abc4d18fe8b118da91f510fe6798db415acd98e844bb60a9b9915"
+      },
+      {
+        "role": "Garden Feast Plate",
+        "source": "v1-60",
+        "cell": 6,
+        "sha256": "95eb1cb216a2afdd1ab78cfde2738ac98029626fbe57e84d8e13d2351abecf27"
+      },
+      {
+        "role": "Fresh Fruit & Seeds",
+        "source": "v1-60",
+        "cell": 7,
+        "sha256": "81d5c57cad01133efcbc0408a98a8ede3fbac0950744ffbf0eb1037390185848"
+      },
+      {
+        "role": "Charred Fish Supper",
+        "source": "v1-60",
+        "cell": 8,
+        "sha256": "ee889d34683100b35d240c56cba4af6606e662992183d9f6db15c098c3155706"
+      },
+      {
+        "role": "Warm Millet & Greens",
+        "source": "v1-60",
+        "cell": 9,
+        "sha256": "bdd1a10abb5f52634d213c57f430d1d9c1b8e18077c2f08d670733c164f02b70"
+      },
+      {
+        "role": "Plantain & Bean Bowl",
+        "source": "v1-60",
+        "cell": 10,
+        "sha256": "572043d55d140d6e7705438c70404466e2ec98ba338f6c2dd35a126ff07f371a"
+      },
+      {
+        "role": "House Rice & Stew",
+        "source": "v1-60",
+        "cell": 11,
+        "sha256": "4241ed4c18ecbeb2689181dd697074359c20b39aa07bfb45106e547078dbf334"
+      },
+      {
+        "role": "The Market Harvest",
+        "source": "v1-60",
+        "cell": 12,
+        "sha256": "20dc55df5b5b048ea6686830c331626da12b568b8bc6075bad9faa179116fca7"
+      },
+      {
+        "role": "Mirembe Signature Feast",
+        "source": "v1-72",
+        "cell": 1,
+        "sha256": "515f00a24bc796a6d329a2fbe4bd724efee27869432b8ab828d7d5987dd96374"
+      },
+      {
+        "role": "Supper Club Sharing Board",
+        "source": "v1-72",
+        "cell": 2,
+        "sha256": "081fb51aa1211430f319dc05f96348e8ca3cc87df80a98e4c3a24d2e6032b3b9"
+      },
+      {
+        "role": "Hero",
+        "source": "v1-hero",
+        "cell": null,
+        "sha256": "6e4f0d51d0e31dbc98dfa72abe6c432186fd7873cf6d81416a808cdde52fc11b"
+      }
+    ],
+    "Copper-and-Clay-V2.html": [
+      {
+        "role": "Nyama Choma Platter",
+        "source": "v2-0",
+        "cell": 1,
+        "sha256": "54563ba75053bc46d7ed3093093a2756321a9a416ffb5eee49cf76159bb4a968"
+      },
+      {
+        "role": "Lake Victoria Tilapia",
+        "source": "v2-0",
+        "cell": 2,
+        "sha256": "3276569159306a5f68231a418a26cce9b73f2630d958fb2f3b0f06956e02ee5d"
+      },
+      {
+        "role": "Smoky Matoke Bowl",
+        "source": "v2-0",
+        "cell": 3,
+        "sha256": "2227434fb3a57a8f0225b5fcedae0f11ce6acaf46dbccf540b99bd484e6a8e8b"
+      },
+      {
+        "role": "Kampala Market Pilau",
+        "source": "v2-0",
+        "cell": 4,
+        "sha256": "074e875483ddc3d1ff94463acaae2df6c871eb0476c7d73d434d18b246446877"
+      },
+      {
+        "role": "Coconut Bean Stew",
+        "source": "v2-0",
+        "cell": 5,
+        "sha256": "4d556865f84f6c75e5680120492b493f21f004c6a83d76f406ce12db7a14e6d8"
+      },
+      {
+        "role": "Charred Garden Skewers",
+        "source": "v2-0",
+        "cell": 6,
+        "sha256": "d6d8233f5f50086e8722aa29dda0dffafa7972e695b14f36d3e45b09d5b0fb05"
+      },
+      {
+        "role": "Banana Leaf Chicken",
+        "source": "v2-0",
+        "cell": 7,
+        "sha256": "029ade7a9473965acc194fb8d0bdb268ad61657a276547ce30a27bb702afae70"
+      },
+      {
+        "role": "Avocado & Millet Bowl",
+        "source": "v2-0",
+        "cell": 8,
+        "sha256": "e9646c38f24d9426ad89866c10a9379757de0b07abdd03633df5ef8cd64b9e7a"
+      },
+      {
+        "role": "Fire-Roasted Sweet Potato",
+        "source": "v2-0",
+        "cell": 9,
+        "sha256": "5ca1ffa5c2fe0c4471094293298afc4eee1804d9256c9f4f65b1ad12c3f14b47"
+      },
+      {
+        "role": "Cassava Crisps & Pili Pili",
+        "source": "v2-0",
+        "cell": 10,
+        "sha256": "47a95837af4b3742852bf443564d87de97e5821cf73cbd965d53b361afe16543"
+      },
+      {
+        "role": "Samosa Trio",
+        "source": "v2-0",
+        "cell": 11,
+        "sha256": "86ea502c29fba43bda21cb1b9e25a9516f6afa7f19a9ab200c71d7883d6cb95d"
+      },
+      {
+        "role": "Market Greens",
+        "source": "v2-0",
+        "cell": 12,
+        "sha256": "1ef618a8b4babeb8d8c499d3b448cb9906347db46cb0d4c7df353b72a39c4b1a"
+      },
+      {
+        "role": "Passion Fruit Tart",
+        "source": "v2-12",
+        "cell": 1,
+        "sha256": "5f39bbd8724400fd2cefafdc3fd7e102450f1d295e430cceaf969130cf5ba2fd"
+      },
+      {
+        "role": "Cardamom Mandazi",
+        "source": "v2-12",
+        "cell": 2,
+        "sha256": "28e0b0f46765f89855f9b330ae1315c4fc21dd9a1889ceefa9d2bfee7a41e612"
+      },
+      {
+        "role": "Cocoa & Banana Pudding",
+        "source": "v2-12",
+        "cell": 3,
+        "sha256": "96e0efb436b50f6945cffa408ea67a1960c6d971f1604e77b963d48863f0070e"
+      },
+      {
+        "role": "Seasonal Fruit Plate",
+        "source": "v2-12",
+        "cell": 4,
+        "sha256": "956327e2344ffbef29e895b81825603af62a4a0e444491b1e93c7e5c4665e321"
+      },
+      {
+        "role": "Ginger Tamarind Cooler",
+        "source": "v2-12",
+        "cell": 5,
+        "sha256": "0da0c81765c9c3488155e120045cedd3c9e0f58c5cb296452fcd33e4d9bc9fb7"
+      },
+      {
+        "role": "Spiced Hibiscus Fizz",
+        "source": "v2-12",
+        "cell": 6,
+        "sha256": "75a962dddd2bf0b670e76a26d8fa0c4b4292b688aa41e0cb6f87204954aff9d7"
+      },
+      {
+        "role": "Citrus Mint Spritz",
+        "source": "v2-12",
+        "cell": 7,
+        "sha256": "94ec95067a9bb82778cd6dd716ba3944438688eb9b747a6b95e93b18d9c63d68"
+      },
+      {
+        "role": "House Coffee",
+        "source": "v2-12",
+        "cell": 8,
+        "sha256": "322659f2d6941bdfd5b0f618b0e9391a3d5ac79e13b4f3bf20f0b6509d4793ab"
+      },
+      {
+        "role": "Hero",
+        "source": "v2-hero",
+        "cell": null,
+        "sha256": "20d4ddba19dc7fb98abac2b02dd4034176aeffeb97bbffe65579e643e6215cfe"
+      }
+    ],
+    "Tamarind-House-V3.html": [
+      {
+        "role": "Lake Victoria grill board",
+        "source": "v3-0",
+        "cell": 1,
+        "sha256": "df7b379dcfa8a41d8ac16dab589642fa9907da5ebaf9e0d11f2fcb72f936e804"
+      },
+      {
+        "role": "Sunday pilau",
+        "source": "v3-0",
+        "cell": 2,
+        "sha256": "2989d1b2b9886fa2ffc0c620ee11afe480440d2ca1d79b738638b20eec8ee1fe"
+      },
+      {
+        "role": "Market garden bowl",
+        "source": "v3-0",
+        "cell": 3,
+        "sha256": "cc6884b0c4f1764ac3b90da55c2b85698b3549a228631a6b5c34c25e1d9a1316"
+      },
+      {
+        "role": "Clay-pot chicken",
+        "source": "v3-0",
+        "cell": 4,
+        "sha256": "8986c0f6f156cdf369e132f12598db7a83918354306f20276efa558d2ceafcf1"
+      },
+      {
+        "role": "Matoke & groundnut",
+        "source": "v3-0",
+        "cell": 5,
+        "sha256": "389e654909a4dd16ecb4165b77e80836cf8a6909ec37f9ae0b3830f8499f88b6"
+      },
+      {
+        "role": "Crisp market vegetables",
+        "source": "v3-0",
+        "cell": 6,
+        "sha256": "492b91cee338e53ccf52bc0c72ee4c864e77226f6d84e6ba4489aeb4ac35d6c2"
+      },
+      {
+        "role": "Crispy chickpea bites",
+        "source": "v3-0",
+        "cell": 7,
+        "sha256": "0eb8ebb0359fefc26222d2a745d983dde94bd9461671ea6712f4d4e9f12c0d11"
+      },
+      {
+        "role": "Plantain & house fries",
+        "source": "v3-0",
+        "cell": 8,
+        "sha256": "44302d0661ca1ff16ca2b699ef8a4aefac951ea5b3115bb57af8c45a9e36edd4"
+      },
+      {
+        "role": "Heritage beef rice",
+        "source": "v3-0",
+        "cell": 9,
+        "sha256": "1b094f22bebbb0aacc0dabc40da24842fd7f3351b4fc4a2c843aedcd0dde1b06"
+      },
+      {
+        "role": "Tamarind fish curry",
+        "source": "v3-0",
+        "cell": 10,
+        "sha256": "aa39bc4d8a1d8636e6fa18dad56e59a9aa50be60f38d1660e758c56cf0a207bb"
+      },
+      {
+        "role": "Roasted pumpkin bowl",
+        "source": "v3-0",
+        "cell": 11,
+        "sha256": "e7d9f1d62d687be0d965d40052cdb94165851e2bf3bb430456e48ff117246ab9"
+      },
+      {
+        "role": "Chicken & chapati plate",
+        "source": "v3-0",
+        "cell": 12,
+        "sha256": "644398cdc6418341856037453c43495437097532910f576a6d61d97abdcd4dd4"
+      },
+      {
+        "role": "The family table",
+        "source": "v3-12",
+        "cell": 1,
+        "sha256": "5e9916b4cb9be0b5b66e49cdc22e38e8a8ecc764f17db7347ce69ca90efff2c1"
+      },
+      {
+        "role": "Pepper braised beans",
+        "source": "v3-12",
+        "cell": 2,
+        "sha256": "ed685137e8b56385acaf7cd6929972dcde0aa119620b09ef67b63ceaab0bbf8a"
+      },
+      {
+        "role": "Long-table sampler",
+        "source": "v3-12",
+        "cell": 3,
+        "sha256": "8537e837ddb903facc45cb8da890f03591463a8406ef06295057271b1d539466"
+      },
+      {
+        "role": "Lake fish & greens",
+        "source": "v3-12",
+        "cell": 4,
+        "sha256": "75e121967573b99d651a862e84cea900d59660a3e43900975e85dffb125e5912"
+      },
+      {
+        "role": "Charred plantain",
+        "source": "v3-12",
+        "cell": 5,
+        "sha256": "1452fa4e31c002d6112bfae1621bd9a9de2e688737b316be0c4d5337a1be8920"
+      },
+      {
+        "role": "Spiced rice & eggs",
+        "source": "v3-12",
+        "cell": 6,
+        "sha256": "cd443aee12ab18d64e1c2f5214caeb9e62c6260e6b3322972545cd6c4263f6cf"
+      },
+      {
+        "role": "Slow-braised beef",
+        "source": "v3-12",
+        "cell": 7,
+        "sha256": "b051ced321d76d54f62be76a17f4fae32e5871eb40a22cb4a19c159dc610fec9"
+      },
+      {
+        "role": "Golden cassava chips",
+        "source": "v3-12",
+        "cell": 8,
+        "sha256": "785e3900b4040a248fcefa8fc018a18c2c977275d89ce138a593c0670d5441f5"
+      },
+      {
+        "role": "Samosa & chai set",
+        "source": "v3-12",
+        "cell": 9,
+        "sha256": "82738659ff2b8eea9cecae1321817a232d2a3c20ec39c22c727a142e45b0fabc"
+      },
+      {
+        "role": "Ember-roasted ribs",
+        "source": "v3-12",
+        "cell": 10,
+        "sha256": "0e481a269886ea50f9266c2119f0ed3c3df29f617deee1f064dade5f0e77f2e8"
+      },
+      {
+        "role": "Pilau supper bowl",
+        "source": "v3-12",
+        "cell": 11,
+        "sha256": "13fe28622d2081e6e9cbb020c21e3b874c229111c7e652ce5e613b795c4cfb4e"
+      },
+      {
+        "role": "Celebration spread",
+        "source": "v3-12",
+        "cell": 12,
+        "sha256": "0a02cdc161f00a95d3a518f1b6d4b992a5bd321ed7b460d30aa514da34a32c9f"
+      },
+      {
+        "role": "Ugali, greens & stew",
+        "source": "v3-24",
+        "cell": 1,
+        "sha256": "088d657ee5a53390d06a2b96d03e2ea39c61e520ccaa560e36e7ebe495f73639"
+      },
+      {
+        "role": "Coconut lentil curry",
+        "source": "v3-24",
+        "cell": 2,
+        "sha256": "d267a17a53f2a5402a606b6e5d66406cbc234979cdeaeaaabc4225aede4932f9"
+      },
+      {
+        "role": "Chapati & bean stew",
+        "source": "v3-24",
+        "cell": 3,
+        "sha256": "1507279601dbbd7dcf15c93d26e60167a9f67dc043047b29645c36c6cc795a4c"
+      },
+      {
+        "role": "The host’s platter",
+        "source": "v3-24",
+        "cell": 4,
+        "sha256": "753e9d17be378dead46f1494f950643d200bd345fa53575d05c4c423504332a8"
+      },
+      {
+        "role": "Hero",
+        "source": "v3-hero",
+        "cell": null,
+        "sha256": "da8521ba7dfb3ea2dd81ea9b5fcff5658bf599c84ab17526a848424d539d146a"
+      }
+    ],
+    "saffron-tide - index.html": [
+      {
+        "role": "Charred coast fish — Tamarind butter · cassava crisp · lime",
+        "source": "v4-0",
+        "cell": 1,
+        "sha256": "b3dab1b15b4947abe8744a449936a57b1e97584165293b36b289ecbbead06c57"
+      },
+      {
+        "role": "Swahili pilau — Coconut rice · clove · kachumbari",
+        "source": "v4-0",
+        "cell": 2,
+        "sha256": "8a57cd0ca215aacc6b958dc84f08a1793c42749f5c8b65beb4fa66144601ddee"
+      },
+      {
+        "role": "Coconut fish stew — Market catch · coconut · warm chapati",
+        "source": "v4-0",
+        "cell": 3,
+        "sha256": "3f37f9df97f5dcea51f59e20d47fa425de29d2ece230210d6d6834e468803093"
+      },
+      {
+        "role": "Banana-leaf supper — Slow-cooked meat · herb oil · chapati",
+        "source": "v4-0",
+        "cell": 4,
+        "sha256": "be0ee41db0fdc39573046e3858db7c9fc236525885e86b1ed95d674d6107de71"
+      },
+      {
+        "role": "Ember-roasted chicken — Matoke · avocado · toasted spice",
+        "source": "v4-0",
+        "cell": 5,
+        "sha256": "fce7d580ce524297ae0584b2494865645c52a7d187d1f172b8ae14284c0041d4"
+      },
+      {
+        "role": "Nyama ya jiko — Charred beef · cabbage · pepper relish",
+        "source": "v4-0",
+        "cell": 6,
+        "sha256": "4e9a91efd8466638705ea42e1eaf85e516a4b9d81bf88b8430845b2c09931625"
+      },
+      {
+        "role": "Pepper-pot potatoes — Creamed potato · garden herbs · chili oil",
+        "source": "v4-0",
+        "cell": 7,
+        "sha256": "c43a3a6cb3896558a9fa5c8de8d9c0602d8973f93a961cc36fdfd4bcd523ed9d"
+      },
+      {
+        "role": "Pilau & roast — Spiced rice · roast meat · tomato salad",
+        "source": "v4-0",
+        "cell": 8,
+        "sha256": "94d38b1162c116ec0b10022eacbeab14327ce6588dadc152b906c0cb445d8f5b"
+      },
+      {
+        "role": "Peanut garden greens — Pumpkin · greens · roasted groundnut",
+        "source": "v4-0",
+        "cell": 9,
+        "sha256": "d1da3608a2b106dfb422a8d0e4b3d9b04e9e60460ff69c0990e317a8099a5bc1"
+      },
+      {
+        "role": "Garden pea curry — Green pea · coconut · soft chapati",
+        "source": "v4-0",
+        "cell": 10,
+        "sha256": "e15a1fc72e51a3fa17a5f92e1a0c6b7f402fba03ce6e9369611121b46732431b"
+      },
+      {
+        "role": "Matoke in peanut sauce — Steamed matoke · groundnut · garden veg",
+        "source": "v4-0",
+        "cell": 11,
+        "sha256": "704ce1f1131fe5ab29ffd94f41ea26f48e0fed9e28db106646386e23b51edcce"
+      },
+      {
+        "role": "Sukuma & ugali — Sautéed sukuma · maize ugali · tomato",
+        "source": "v4-0",
+        "cell": 12,
+        "sha256": "a5fd48264584cc1e3b75b07ea5ecc8101a7989eb2e48cfa5eb13733d375de102"
+      },
+      {
+        "role": "Cardamom mandazi — Warm mandazi · spiced chai cream",
+        "source": "v4-12",
+        "cell": 1,
+        "sha256": "4ae4882cbd9c8fdd82a3da6c76ca0073c3cc76137e54c5187317a48414d82482"
+      },
+      {
+        "role": "Coast breakfast plate — Egg · plantain · cassava · tomato relish",
+        "source": "v4-12",
+        "cell": 2,
+        "sha256": "4c46a02f5bb4cf7945fc87fa8ca1c89d37838e734db6a2dcfc28cb0ad7b957d3"
+      },
+      {
+        "role": "Sunday pilau pudding — Coconut rice · cinnamon · caramel banana",
+        "source": "v4-12",
+        "cell": 3,
+        "sha256": "c11672bb1ca5a7e366215eec7fad963578998703e50e08650a07d03f2c7dce67"
+      },
+      {
+        "role": "Shared catch platter — Fish · pilau · greens · three sauces",
+        "source": "v4-12",
+        "cell": 4,
+        "sha256": "fafed9b5d132c29bb94fa86cd2e87ba3c58236de7f85a7bca63756758b47f0e3"
+      },
+      {
+        "role": "Hero",
+        "source": "v4-hero",
+        "cell": null,
+        "sha256": "0fbb330244f18c7e424522e07313c73ff2cbb8cc6fdcb2711330dfed96853a74"
+      }
+    ],
+    "sunrise-pantry - index.html": [
+      {
+        "role": "Kampala sunrise plate",
+        "source": "v5-0",
+        "cell": 1,
+        "sha256": "f79280dcb4da91dad9289236126b5129bbed30c23f8062a5f38fa5b674c8e7a0"
+      },
+      {
+        "role": "Matoke & groundnut",
+        "source": "v5-0",
+        "cell": 2,
+        "sha256": "141c65a611c72cbaad8c753d242b213168a7ff6099d834f22f8365ab3a497b21"
+      },
+      {
+        "role": "Millet porridge, honey",
+        "source": "v5-0",
+        "cell": 3,
+        "sha256": "4fc30c09d050016e1783c8f9b5fdd767f7116592683c599dd5d995d0b6710b2f"
+      },
+      {
+        "role": "Garden bowl, market greens",
+        "source": "v5-0",
+        "cell": 4,
+        "sha256": "7a9323cd8c330055527d91d4214b561d88bcabcc8c13c277c06f7b65581ea258"
+      },
+      {
+        "role": "Slow-cooked beans & chapati",
+        "source": "v5-0",
+        "cell": 5,
+        "sha256": "e25776e06c6979a00c9ffffafe705c99e337b3205e9f9325a5930b56f30bd4d8"
+      },
+      {
+        "role": "Smoky tilapia, citrus",
+        "source": "v5-0",
+        "cell": 6,
+        "sha256": "4484ad34170d800645d2ddd05425bf31b0a8a5c42bac4a43ae1127d326affad7"
+      },
+      {
+        "role": "Market garden platter",
+        "source": "v5-0",
+        "cell": 7,
+        "sha256": "adf6515b4465c3afd0d6e4819cb15d4e9b3c3d1e4c6ca69cd8e7c683b53f0b41"
+      },
+      {
+        "role": "Spiced chickpeas & tomato",
+        "source": "v5-0",
+        "cell": 8,
+        "sha256": "30f09f491dcd4ec435b0afb7a0fa83cb3fbad6178cec3b91871fcb67a2f1cf7a"
+      },
+      {
+        "role": "Charcoal chicken, pilau rice",
+        "source": "v5-0",
+        "cell": 9,
+        "sha256": "b3a1899d24df6037b16c11caa1ce54aeb8f672a1fc7965147380e5ec48a8bfd1"
+      },
+      {
+        "role": "Coast-to-highland pilau",
+        "source": "v5-0",
+        "cell": 10,
+        "sha256": "8bb40d05a1356eec7e6f430302133c56897264908b472456ffd32137bf362e0d"
+      },
+      {
+        "role": "Sunday fish stew",
+        "source": "v5-0",
+        "cell": 11,
+        "sha256": "099c3446add4630361a744af9713490453e908ac8cd2d18d05712dfd31f8b551"
+      },
+      {
+        "role": "Small plates at first light",
+        "source": "v5-0",
+        "cell": 12,
+        "sha256": "4a317979571bca15158f0825aa4930482154f5c67fe54055befdfe1111ae6460"
+      },
+      {
+        "role": "Sweet potato rösti & eggs",
+        "source": "v5-12",
+        "cell": 1,
+        "sha256": "82cc92a63f36daad671bd6f1966e34b46e67753f37ea6602542352c37bd28406"
+      },
+      {
+        "role": "Cassava leaf stew & chapati",
+        "source": "v5-12",
+        "cell": 2,
+        "sha256": "172a58608a4cde783190fe3b0b4236989255596881426ac21fed1154358528f5"
+      },
+      {
+        "role": "Tomato linguine, market herbs",
+        "source": "v5-12",
+        "cell": 3,
+        "sha256": "bab9e3bf0dcf94cf3076a575cbe78e7bd97669ecaa388bcc94521905e0065e13"
+      },
+      {
+        "role": "The pantry breakfast board",
+        "source": "v5-12",
+        "cell": 4,
+        "sha256": "990e0b3ef94a388ab4a77bbcaffef7b787bec5ed7ab4e513ec17eac34df4374b"
+      },
+      {
+        "role": "A table for the morning",
+        "source": "v5-12",
+        "cell": 5,
+        "sha256": "872ec15151ba2dd7ac4798019a215f393622fce2ac5282c47ae07f5a2892c376"
+      },
+      {
+        "role": "Crisp cassava & tamarind dip",
+        "source": "v5-12",
+        "cell": 6,
+        "sha256": "ac3cef10cb87b666a1796263f0a4899345fc708c28fa3eda15968806e489a9cd"
+      },
+      {
+        "role": "Avocado, fruit & millet bowl",
+        "source": "v5-12",
+        "cell": 7,
+        "sha256": "f8d2b1852f822746c2901ba4ad496a14263599a6fb83b9808130464eb3b23839"
+      },
+      {
+        "role": "Roast pumpkin & greens",
+        "source": "v5-12",
+        "cell": 8,
+        "sha256": "e19cea3b8dc05c7f7e860e63ab7402f3d9d44b3a5a9f9c2c89304b2adb9bb545"
+      },
+      {
+        "role": "Coconut samosas",
+        "source": "v5-12",
+        "cell": 9,
+        "sha256": "78f5f713791332cc9bd9aae4d062abbf1f39fd0b07ca5858452c23e62e517b87"
+      },
+      {
+        "role": "Grilled chicken, garden plate",
+        "source": "v5-12",
+        "cell": 10,
+        "sha256": "8243df0ca8293481e7ee0185cba8b1f541cf866f7b10c8ff4803027b409782c5"
+      },
+      {
+        "role": "Tamarind-glazed plantain",
+        "source": "v5-12",
+        "cell": 11,
+        "sha256": "34685a5d4959727b8f55ae8532198a35993079e7fc814aac47db718430784775"
+      },
+      {
+        "role": "Kuku wa kupaka",
+        "source": "v5-12",
+        "cell": 12,
+        "sha256": "79a753c9ed541897203087c09fddd5825d440d0f08c5d7817a3a393d7dddc011"
+      },
+      {
+        "role": "Seasonal fruit & yoghurt",
+        "source": "v5-24",
+        "cell": 1,
+        "sha256": "dc78b2e3cab28ae8cc57250662ee88d99c48eef00174e9b1101e7eb9c2dc79d3"
+      },
+      {
+        "role": "Chapati, beans & greens",
+        "source": "v5-24",
+        "cell": 2,
+        "sha256": "372e2290d06a46b3cec101c1d882cd2a09432824fc35b9d2a0bced3aef0d9703"
+      },
+      {
+        "role": "Coconut lentil curry",
+        "source": "v5-24",
+        "cell": 3,
+        "sha256": "b819d3eb4cff924deb4a612d65d2afa69181a7138afab4317c7e9a8c828c714c"
+      },
+      {
+        "role": "Spiced goat, soft flatbread",
+        "source": "v5-24",
+        "cell": 4,
+        "sha256": "8f9a0b6deba78e3c2c95434375f9b9ff2f409b66d2e6756be880ac680aa87f5a"
+      },
+      {
+        "role": "Sweet potato & peanut stew",
+        "source": "v5-24",
+        "cell": 5,
+        "sha256": "f253293fb7665069f0dabb4af34ec2f6e38d21daa98fd7910559a24bae91eeaa"
+      },
+      {
+        "role": "Roast banana, cardamom cream",
+        "source": "v5-24",
+        "cell": 6,
+        "sha256": "71ff699564a8792d161251b012e5ea1e365850d6a2de4e4cdf2c4fec211e5e88"
+      },
+      {
+        "role": "Pan-fried tilapia & kachumbari",
+        "source": "v5-24",
+        "cell": 7,
+        "sha256": "96570e738a2277cfb2b10c6a40a9e80f7475f66ddbb6e954f076769fde760076"
+      },
+      {
+        "role": "Mushroom, herb & egg skillet",
+        "source": "v5-24",
+        "cell": 8,
+        "sha256": "10c6908c91a2831619ea9e42dbe2ee4e57c5440e826eb5f3396c968531cd922e"
+      },
+      {
+        "role": "Crispy plantain breakfast",
+        "source": "v5-24",
+        "cell": 9,
+        "sha256": "131747c2b650d4634b15c68b2c525ca4313827badcecd0ad64ca4e1a6e02f5ac"
+      },
+      {
+        "role": "Chapati roll, slow beans",
+        "source": "v5-24",
+        "cell": 10,
+        "sha256": "39c11969fa91d256c093b4d86450236b36ee2c96d5dcda7cb1cbd34ebebff16a"
+      },
+      {
+        "role": "Sukuma wiki & avocado",
+        "source": "v5-24",
+        "cell": 11,
+        "sha256": "a26798115fb970db423024414a193e8880af7ba2bacb3589eb74591f838dbf5c"
+      },
+      {
+        "role": "Grilled market vegetables",
+        "source": "v5-24",
+        "cell": 12,
+        "sha256": "dc4d566b75fbf5158e1ac8f8c98439ccefd925a2872a7099589b0ef6223f8309"
+      },
+      {
+        "role": "Chicken pilau, family style",
+        "source": "v5-36",
+        "cell": 1,
+        "sha256": "616ed6e0df962cba946604f30872e8e2707ab9b7968a982f0206696f1285d7d9"
+      },
+      {
+        "role": "Seasonal fruit, yoghurt & oats",
+        "source": "v5-36",
+        "cell": 2,
+        "sha256": "bc848a429aa5eb39a01a2b16943c7f990bb8e75858c11aa11588910c85b8358a"
+      },
+      {
+        "role": "Crisp potato bhajia",
+        "source": "v5-36",
+        "cell": 3,
+        "sha256": "7bf942918d60ca8c609028b503ee1c3e8bf6bf5fe4c0aed4cee9555bab6e9319"
+      },
+      {
+        "role": "Tamarind bean pot",
+        "source": "v5-36",
+        "cell": 4,
+        "sha256": "6d68f9d7102f95472df9b052345fe76e2d82c2f388483ac679052ac592287c8f"
+      },
+      {
+        "role": "Hero",
+        "source": "v5-hero",
+        "cell": null,
+        "sha256": "7083c64599b4f4d108893a32f3ec7f134514b48fc4a82a44ebb1eef4b41e6c80"
+      }
+    ],
+    "Soko-Social-V6.html": [
+      {
+        "role": "Kampala rolex",
+        "source": "v6-0",
+        "cell": 1,
+        "sha256": "05e0753dc4121aa8ec815dcf513cd3ab224c648a897a5cea43a43ca411e6a902"
+      },
+      {
+        "role": "Market day rolex",
+        "source": "v6-0",
+        "cell": 2,
+        "sha256": "958ddb79b887e7e7d42022869c83a5d02c103af81a76fa02122ea8a64d732c17"
+      },
+      {
+        "role": "Smoky chicken chapati roll",
+        "source": "v6-0",
+        "cell": 3,
+        "sha256": "bc0b8f6b38225502e430f37c68fed9151b2a8bea631f9cf3f9e2a3ef82ed320f"
+      },
+      {
+        "role": "Charred beef kikomando",
+        "source": "v6-0",
+        "cell": 4,
+        "sha256": "98df5676793e0cb8ebc1deb31b3c40910172f683955072a4edc0ab2ab1657392"
+      },
+      {
+        "role": "Crispy cassava chips",
+        "source": "v6-0",
+        "cell": 5,
+        "sha256": "a82db0f80b35b27fd0c0bbbc841caef3596400328df135eef72f24ed7511b2d0"
+      },
+      {
+        "role": "Matoke samosa trio",
+        "source": "v6-0",
+        "cell": 6,
+        "sha256": "854f1b8a3fa2e79cf010197d9120a984632c355b16cf88e0b9ce0d6e36335ce2"
+      },
+      {
+        "role": "Street corn with pili pili",
+        "source": "v6-0",
+        "cell": 7,
+        "sha256": "8a9f9acbf1f67854281a3d4368abd56f0e9bcc164a990b504414612dc946db6a"
+      },
+      {
+        "role": "Grilled mushroom skewer",
+        "source": "v6-0",
+        "cell": 8,
+        "sha256": "423b9cfc53a21f0c14dd36a93917acfcdb2668a7c0cacbc3c19917038b99e284"
+      },
+      {
+        "role": "Ginger chicken skewers",
+        "source": "v6-0",
+        "cell": 9,
+        "sha256": "4da3a268e8933fb56481288089225ef1576e0490c4d2605e81bad177591c5f71"
+      },
+      {
+        "role": "Plantain & peanut crunch",
+        "source": "v6-0",
+        "cell": 10,
+        "sha256": "5fe14eb7de0179cc8aca2fed11d4a7bff763d982297e8f2e6c915e868926e372"
+      },
+      {
+        "role": "Chapati pocket — garden",
+        "source": "v6-0",
+        "cell": 11,
+        "sha256": "dd98778ace4ab277ede3e0c7bd98b58e35a03cb02ef86539dc79b3c9aadaf333"
+      },
+      {
+        "role": "Chapati pocket — fire",
+        "source": "v6-0",
+        "cell": 12,
+        "sha256": "a601136e34b862106b9ce492dcdd374c43eab6e568dc247ea22a6cffd7e042f6"
+      },
+      {
+        "role": "Crispy fish chapati bite",
+        "source": "v6-12",
+        "cell": 1,
+        "sha256": "ae4497579d04dd688e11c0bb9c686f3c31fc9575cbd9d20c06ee24464a6a78ad"
+      },
+      {
+        "role": "Avocado bean samosa",
+        "source": "v6-12",
+        "cell": 2,
+        "sha256": "8e8409e471e7f19c6de1e9d835af9148cd7a2426fb4102a241a2a3ff0d65f7c8"
+      },
+      {
+        "role": "Market grill chicken plate",
+        "source": "v6-12",
+        "cell": 3,
+        "sha256": "edc43c14ca3a0388302b8c6a306b6d7ec2d0157a564ad937010549035ffa9c84"
+      },
+      {
+        "role": "Slow-cooked beef & pilau",
+        "source": "v6-12",
+        "cell": 4,
+        "sha256": "2d863db5aacea2a1b89408d4bcfabe103ceb50649c4888ab9cfcd98d3d7373e9"
+      },
+      {
+        "role": "Lake fish, lemon & greens",
+        "source": "v6-12",
+        "cell": 5,
+        "sha256": "46090e15f29c3265f0c2e4e7dd1973ff8ba055ad115c20b3b35280e1179fdb52"
+      },
+      {
+        "role": "Garden bean bowl",
+        "source": "v6-12",
+        "cell": 6,
+        "sha256": "93fce63be6d8b17d7d40ad9ff666af5a7744873147d2f51d74ae3bea22a0350d"
+      },
+      {
+        "role": "Matoke & groundnut stew",
+        "source": "v6-12",
+        "cell": 7,
+        "sha256": "51fe737c0196febfa4cf23567a3897cdc7829b755d55a96c13f92a0b3cf9bafc"
+      },
+      {
+        "role": "Charred tilapia plate",
+        "source": "v6-12",
+        "cell": 8,
+        "sha256": "6736ffc5e7370193b9d0137902f134f30bd935f6b5b972962aa255c404015261"
+      },
+      {
+        "role": "Coconut rice & grilled veg",
+        "source": "v6-12",
+        "cell": 9,
+        "sha256": "b69276854007c107fef7bf603399d46e6b6a69957870b0ac8c544f2f35f4c8fb"
+      },
+      {
+        "role": "Smoky goat, market greens",
+        "source": "v6-12",
+        "cell": 10,
+        "sha256": "3bd732e6e4f967911b20c6242144469dfac2ecc67b56a7e29614e4b1da688a47"
+      },
+      {
+        "role": "Chicken luwombo bowl",
+        "source": "v6-12",
+        "cell": 11,
+        "sha256": "540e91f8e745bd1c3bd0ea726fe23a0f101df4c920d87e26fe9d182fe00aacd9"
+      },
+      {
+        "role": "Peanut mushroom stew",
+        "source": "v6-12",
+        "cell": 12,
+        "sha256": "599b153801986e8dda17d2e100e69fddd52decc1a8b6bf19fa64ea0a06983e93"
+      },
+      {
+        "role": "Sunday-style pilau bowl",
+        "source": "v6-24",
+        "cell": 1,
+        "sha256": "debb35e2dce69096e8ba9fe588459fd04c51df22e0e9df07dc5398497f372b6e"
+      },
+      {
+        "role": "Fresh catch, tomato relish",
+        "source": "v6-24",
+        "cell": 2,
+        "sha256": "18afa8c2f11624e74ea9da89e58219f78ea3f58d789556f586d9baf1e911b284"
+      },
+      {
+        "role": "Crisp cassava",
+        "source": "v6-24",
+        "cell": 3,
+        "sha256": "3c04a2c2a6cecb4dc6f000c760d7b8ee6753fdb984f4fc7d4f89a1631d48e40c"
+      },
+      {
+        "role": "Sweet plantain coins",
+        "source": "v6-24",
+        "cell": 4,
+        "sha256": "66fd074f330292e5870758f6043563b3dd9ba13fb643d92c13c3a35c6c74215b"
+      },
+      {
+        "role": "Market greens & lemon",
+        "source": "v6-24",
+        "cell": 5,
+        "sha256": "1d6c62f122111fcedb6ec5ecb5567cf5da21a420e7a8175916dd2b803bbf2f17"
+      },
+      {
+        "role": "Pili pili slaw",
+        "source": "v6-24",
+        "cell": 6,
+        "sha256": "018efbe8a191e89822ad2cc9a34c49994ce5f19592ed1c65cf54eff0af7ccc50"
+      },
+      {
+        "role": "Charred maize",
+        "source": "v6-24",
+        "cell": 7,
+        "sha256": "ad350392a8e04acfa3ed3161fbbcedebde6a0c8290cec03c7ed88376bfc35ba3"
+      },
+      {
+        "role": "Kachumbari, extra lime",
+        "source": "v6-24",
+        "cell": 8,
+        "sha256": "00cb0bbe8c8c3c2574375ce08a2848380828091f08c609268b933272015f8355"
+      },
+      {
+        "role": "Ginger turmeric rice",
+        "source": "v6-24",
+        "cell": 9,
+        "sha256": "d9af3207e844f139588a12dedc553f9a62c777381402328803f1dcc5da42198c"
+      },
+      {
+        "role": "Avocado & tomato salad",
+        "source": "v6-24",
+        "cell": 10,
+        "sha256": "9f6723e813d9f74bf541ff23520efd5b151d9c60ef1527e8d18444dbf46c8d3a"
+      },
+      {
+        "role": "Passion fruit fizz",
+        "source": "v6-24",
+        "cell": 11,
+        "sha256": "2f13dd3199f847e115e58c88eaf269a38467b0233b4400e908259a8edd70626c"
+      },
+      {
+        "role": "Fresh sugarcane & lime",
+        "source": "v6-24",
+        "cell": 12,
+        "sha256": "e762740e1daf1668db3f57d65742ce09744fa5c60fb9b749d90c8bd8a4000a4e"
+      },
+      {
+        "role": "Spiced hibiscus cooler",
+        "source": "v6-36",
+        "cell": 1,
+        "sha256": "0e048dd7ea0439ae62e8f74f826fbf29d1ebf0c26dbf2793d5e8c1782bd02f48"
+      },
+      {
+        "role": "Mango ginger smoothie",
+        "source": "v6-36",
+        "cell": 2,
+        "sha256": "0c53dbdaf96b3411be6245d2750fc01df0468b00231741044ed084f94220a729"
+      },
+      {
+        "role": "Iced tamarind tea",
+        "source": "v6-36",
+        "cell": 3,
+        "sha256": "b4832e1a1e366670a0ca4ab6c2e2a72798f38941286675947385430e148c50c5"
+      },
+      {
+        "role": "Coffee, market roast",
+        "source": "v6-36",
+        "cell": 4,
+        "sha256": "412e60148155be20e691913cb008356f5f468bb0dcdb2977c62f4a194f03345f"
+      },
+      {
+        "role": "Pineapple mint crush",
+        "source": "v6-36",
+        "cell": 5,
+        "sha256": "fdd7ca83860c020a434dea56790e9b2420211b066617761bad8d531db670ca01"
+      },
+      {
+        "role": "Avocado cocoa shake",
+        "source": "v6-36",
+        "cell": 6,
+        "sha256": "830163e7689e3e6953f64edb76cce5b3b49c530a32b8179874bbbf8dd45d467d"
+      },
+      {
+        "role": "Warm mandazi & honey",
+        "source": "v6-36",
+        "cell": 7,
+        "sha256": "dd3dd5ee25c68f8dae1389ff82c19a17035242fc19ac5c9fcef34ddc81305b28"
+      },
+      {
+        "role": "Cardamom dough bites",
+        "source": "v6-36",
+        "cell": 8,
+        "sha256": "023c7629e71b625fae0ca50072a2b8cff857428d5a18ad069611af6df30096f4"
+      },
+      {
+        "role": "Passion fruit cheesecake cup",
+        "source": "v6-36",
+        "cell": 9,
+        "sha256": "ba75b626855160fe7d2faf3acaf95ca691f839febf9b7f333f8193ef5fd77ecd"
+      },
+      {
+        "role": "Coconut cassava cake",
+        "source": "v6-36",
+        "cell": 10,
+        "sha256": "93859b496844c7e331140ef8e57b26701f14584f4eeaa086a8b458a3179d8d5a"
+      },
+      {
+        "role": "Banana caramel chapati",
+        "source": "v6-36",
+        "cell": 11,
+        "sha256": "c60ccf033f104dab543b328516f0abce15b9c286621c7e9072fa9203f54e7fb6"
+      },
+      {
+        "role": "Mango & lime fruit bowl",
+        "source": "v6-36",
+        "cell": 12,
+        "sha256": "6027b9b38dbe1f52b79edf347e390a40da17551130d78571607bfe29e9186a08"
+      },
+      {
+        "role": "Chocolate chilli brownie",
+        "source": "v6-48",
+        "cell": 1,
+        "sha256": "d1d3d32703c772819b4e043ba15afa0d619e644e68e6801bbd7906a32de6f6bb"
+      },
+      {
+        "role": "Roasted groundnut brittle",
+        "source": "v6-48",
+        "cell": 2,
+        "sha256": "aa06af1ef2cef11bdfd757ce4e288003dace8fdc475b9db686e4b6492b399c14"
+      },
+      {
+        "role": "Spiced pineapple plate",
+        "source": "v6-48",
+        "cell": 3,
+        "sha256": "a1a6f3153863e771abea58cce5edb4022f6b2b1f7fc6734c0fc18fb515e80a75"
+      },
+      {
+        "role": "Market doughnut, today’s glaze",
+        "source": "v6-48",
+        "cell": 4,
+        "sha256": "a5aa013711d47e87ac22c4b6c8c45ec258edb6e69af5ed3f415ec34a8a8af678"
+      },
+      {
+        "role": "Hero",
+        "source": "v6-hero",
+        "cell": null,
+        "sha256": "df24548c06085d1693206d59ab80bde4f3704d55412e106ce553039c460257dd"
+      }
+    ],
+    "Mizani-Kitchen-V7.html": [
+      {
+        "role": "Ginger chicken bowl",
+        "source": "v7-0",
+        "cell": 1,
+        "sha256": "7afe819ba0ecfe914e1f4955bfa0802ae3b88434f338722e927fcffe87783264"
+      },
+      {
+        "role": "Pilau beef bowl",
+        "source": "v7-0",
+        "cell": 2,
+        "sha256": "7c0dee4c3bc527220ebe783b4240bdd2e3c610750ec2512ccf5d158fad64fe7d"
+      },
+      {
+        "role": "Citrus tilapia bowl",
+        "source": "v7-0",
+        "cell": 3,
+        "sha256": "58b456ea962eaf6797f46f4584038e2eae46cf77b082421caaeb9d1755beda5e"
+      },
+      {
+        "role": "Peanut greens bowl",
+        "source": "v7-0",
+        "cell": 4,
+        "sha256": "3a5650391fe877a21980436dde511f37190a73cf17f6eb919de58c9352d6e631"
+      },
+      {
+        "role": "Coconut chickpea bowl",
+        "source": "v7-0",
+        "cell": 5,
+        "sha256": "890e2ac66d177484dd74ed755b5f75638487bf88f4f3038bac94ded9036a2288"
+      },
+      {
+        "role": "Roasted pumpkin grains",
+        "source": "v7-0",
+        "cell": 6,
+        "sha256": "7a431367f39edca8373f1fd90a8a819b299929386efc42a2591fbdcfda92a9ee"
+      },
+      {
+        "role": "Plantain bean bowl",
+        "source": "v7-0",
+        "cell": 7,
+        "sha256": "2f4f22f2cda8a3e18ece548aeaad2816e3608ac3cd39afafd33247e570beca50"
+      },
+      {
+        "role": "Charred goat bowl",
+        "source": "v7-0",
+        "cell": 8,
+        "sha256": "a08edd7e9c31bd37ed8bf008ae6edf021cdf8bbf93911c0fad494d1dbd97db2b"
+      },
+      {
+        "role": "Market egg bowl",
+        "source": "v7-0",
+        "cell": 9,
+        "sha256": "22b2873f58f92fbb840555e6587202786c67f6eeb86ad425f281bd6b444ceab4"
+      },
+      {
+        "role": "Matoke & lake fish",
+        "source": "v7-0",
+        "cell": 10,
+        "sha256": "62af8109c0221fc28076bb2a424fcb13488bf893d7112b675f7b65fa1dfee8bf"
+      },
+      {
+        "role": "Turmeric chicken plate",
+        "source": "v7-0",
+        "cell": 11,
+        "sha256": "ed0644b0bd51d6029af508dfc668ee82b8d5542edebac4504332d475bc1e9dc0"
+      },
+      {
+        "role": "Smoky beef plate",
+        "source": "v7-0",
+        "cell": 12,
+        "sha256": "a199ce5da180dccd0af8c03c662c75b5f09ec3c3d0f0f1bc1f99ed66bd6ffc7b"
+      },
+      {
+        "role": "Garden bean stew",
+        "source": "v7-12",
+        "cell": 1,
+        "sha256": "160066195dce44b0000b951b0098ad5473fc5130fe8e321d549336d962202475"
+      },
+      {
+        "role": "Tomato fish curry",
+        "source": "v7-12",
+        "cell": 2,
+        "sha256": "d7dbeb3dcc82a2b7f1b305372ca4c31c9c02bf8eca7d6dbea35457de6b684f47"
+      },
+      {
+        "role": "Roast chicken lunch",
+        "source": "v7-12",
+        "cell": 3,
+        "sha256": "dc32e920b14a7b91f2f728a49a424427e71647b4f5c9e966b28d69d953a838e9"
+      },
+      {
+        "role": "Coconut lentils & rice",
+        "source": "v7-12",
+        "cell": 4,
+        "sha256": "a6d49d30ac25e4fd5a9b6e05844799942a348c13c625befec4c752e9e90be17e"
+      },
+      {
+        "role": "Peanut greens & rice",
+        "source": "v7-12",
+        "cell": 5,
+        "sha256": "99f32c7d84fb385ca8f251dddbac84249a23d6f395adc1a8ea3bad6d3540afb1"
+      },
+      {
+        "role": "Avocado tomato salad",
+        "source": "v7-12",
+        "cell": 6,
+        "sha256": "28ed2745f003f8d83b90b214e868823564212a598fdc9af07e6f75a55bb95607"
+      },
+      {
+        "role": "Spiced chickpeas",
+        "source": "v7-12",
+        "cell": 7,
+        "sha256": "13496bdc0d48f1fc61e107c672bd5d81580cfb16f2323a83653e61bfee72d2df"
+      },
+      {
+        "role": "Cassava chilli bites",
+        "source": "v7-12",
+        "cell": 8,
+        "sha256": "8fa0ce616ca0e06e4c423cb2cb8b59445503e51ff8cc56fab2129dde274f41b9"
+      },
+      {
+        "role": "Sweet plantain",
+        "source": "v7-12",
+        "cell": 9,
+        "sha256": "7a6775605dc9567a7f363c06adbba6a0f1874697e382ffc81d47e46abd5bfdbc"
+      },
+      {
+        "role": "Charred maize",
+        "source": "v7-12",
+        "cell": 10,
+        "sha256": "483b894f9d8bcd53b3b3f1b0bf9f4a3438dc20d59f770672b619b6dfb0dc98cd"
+      },
+      {
+        "role": "Market greens",
+        "source": "v7-12",
+        "cell": 11,
+        "sha256": "ce7efb365143dbd50c981e0fd53d4cca4a14e9a3d665eee9f88a22cabad2b37f"
+      },
+      {
+        "role": "Passion fruit fizz",
+        "source": "v7-12",
+        "cell": 12,
+        "sha256": "b87a52478c2a873d5aa41f86e0fcf61c31e70f1f272cc4f9ac9da9a69208154b"
+      },
+      {
+        "role": "Iced tamarind tea",
+        "source": "v7-24",
+        "cell": 1,
+        "sha256": "10bfbc8b5698c348a5d4e9a44132f60280b5a2ac30023d14ed582e7d7b769943"
+      },
+      {
+        "role": "Mango ginger shake",
+        "source": "v7-24",
+        "cell": 2,
+        "sha256": "d04a27503c12442b17f6386d24cfe3520563a0c55f119917ce02edf56e753876"
+      },
+      {
+        "role": "Hibiscus cooler",
+        "source": "v7-24",
+        "cell": 3,
+        "sha256": "c11b4e6bc48f74f40bb74f3d63eb86f7f1dfead306f0bb7b4742ba5c94748de0"
+      },
+      {
+        "role": "Coconut lime water",
+        "source": "v7-24",
+        "cell": 4,
+        "sha256": "cb539103e867261bb5978af216d0a2c66a687718ebf32f0be96944b6013f0a56"
+      },
+      {
+        "role": "Mandazi & fruit",
+        "source": "v7-24",
+        "cell": 5,
+        "sha256": "c267d7b8eb5c6e7de107d82b38af55bfc697d78f170790742d724baa3681f497"
+      },
+      {
+        "role": "Banana caramel chapati",
+        "source": "v7-24",
+        "cell": 6,
+        "sha256": "0af0c0a90621662c5165a81b9319965f6aa359de9184e3f722fff621c8f826e2"
+      },
+      {
+        "role": "Coconut cassava cake",
+        "source": "v7-24",
+        "cell": 7,
+        "sha256": "4695bb07f303f988699e417e123cef7bd5535be1219784a17fd5bf0f7272f452"
+      },
+      {
+        "role": "Mango market bowl",
+        "source": "v7-24",
+        "cell": 8,
+        "sha256": "30400b69b2d93bc5bfb90677ec0d6099926af4d4d71b74d0836eed47e4e25746"
+      },
+      {
+        "role": "Date peanut bites",
+        "source": "v7-24",
+        "cell": 9,
+        "sha256": "913276ab02920223bc5c9caa45b22a203171666b64abb9fbe38b4ec5038c143c"
+      },
+      {
+        "role": "Cardamom yoghurt cup",
+        "source": "v7-24",
+        "cell": 10,
+        "sha256": "945a35f67009fa280f3af69368ed97a298297398554af53fec03dc27c80250dc"
+      },
+      {
+        "role": "Chocolate chilli brownie",
+        "source": "v7-24",
+        "cell": 11,
+        "sha256": "a7639b29fa33009ac6fa73102063d91685eff8b25693871ab668bdbeae4e6189"
+      },
+      {
+        "role": "Pineapple lime plate",
+        "source": "v7-24",
+        "cell": 12,
+        "sha256": "370a27dc6d8f1fa5a8fbeda8c350ff8ee66601830850835fb9fa1c02c71bd336"
+      },
+      {
+        "role": "Hero",
+        "source": "v7-hero",
+        "cell": null,
+        "sha256": "dddc5f7423ec51e4c3c6ac746edcc214388fe804366704d7fb612a07f7f72673"
+      }
+    ],
+    "Aster-and-Ash-V8.html": [
+      {
+        "role": "Ginger chicken bowl",
+        "source": "v8-0",
+        "cell": 1,
+        "sha256": "f2107086b19f51774fb5c5a56aa352d25cefabf5d7decd426ecff643de6a0c4d"
+      },
+      {
+        "role": "Pilau beef bowl",
+        "source": "v8-0",
+        "cell": 2,
+        "sha256": "79c7afbcc32825bda8ffb5821c9d4628fc0271f7119d3087851a7ab42e0b7fdf"
+      },
+      {
+        "role": "Citrus tilapia bowl",
+        "source": "v8-0",
+        "cell": 3,
+        "sha256": "74b22338701f6828abf19e35edc543bfdd5fe9aad86475e8509e6d037a98c13c"
+      },
+      {
+        "role": "Peanut greens bowl",
+        "source": "v8-0",
+        "cell": 4,
+        "sha256": "2697d9a24637db2cb3634daf319d0fe0e26938dff22d6b3eeb65bf9b462f1206"
+      },
+      {
+        "role": "Coconut chickpea bowl",
+        "source": "v8-0",
+        "cell": 5,
+        "sha256": "f65db986c1933705eafa62153c1d099a20ae044c25dd90ebb878c5728b961f4f"
+      },
+      {
+        "role": "Roasted pumpkin grains",
+        "source": "v8-0",
+        "cell": 6,
+        "sha256": "9a0d41749383235b154b6597e5ec2773ba46bdedad5e3d3617b705813b7f3219"
+      },
+      {
+        "role": "Plantain bean bowl",
+        "source": "v8-0",
+        "cell": 7,
+        "sha256": "6b11c81fb3293d741b7df93278fe9ab8c8519f1e578c12de4120ef32b9277d82"
+      },
+      {
+        "role": "Charred goat bowl",
+        "source": "v8-0",
+        "cell": 8,
+        "sha256": "b18c87630f9e59508e3cc5e8abc34b4a4a2cde0b208a4b29dc4a308277190529"
+      },
+      {
+        "role": "Market egg bowl",
+        "source": "v8-0",
+        "cell": 9,
+        "sha256": "7331862feb9025b7e036c5e5566079a07a67c8adaf27f3564eef6ef7259ee7d7"
+      },
+      {
+        "role": "Matoke & lake fish",
+        "source": "v8-0",
+        "cell": 10,
+        "sha256": "e1d7a942a57f850bef4434d8ea55f64938560f5cfae87701cd01668538947ff4"
+      },
+      {
+        "role": "Turmeric chicken plate",
+        "source": "v8-0",
+        "cell": 11,
+        "sha256": "afe51d76cddb8f0112ecaf4dce8eda03310df510c16804af7e9846affee6d956"
+      },
+      {
+        "role": "Smoky beef plate",
+        "source": "v8-0",
+        "cell": 12,
+        "sha256": "e19040462131e69ca4d82c679699ac1185972059415a62d6d2f59f77be0d8d10"
+      },
+      {
+        "role": "Garden bean stew",
+        "source": "v8-12",
+        "cell": 1,
+        "sha256": "6d3290061f860e990463b2dda2d9a470111ef2869d3e1af2e709fbb064a6a997"
+      },
+      {
+        "role": "Tomato fish curry",
+        "source": "v8-12",
+        "cell": 2,
+        "sha256": "380d69b532f943716ec2b839091d30f30e9f4854291924659540a21ad4aba2a5"
+      },
+      {
+        "role": "Roast chicken lunch",
+        "source": "v8-12",
+        "cell": 3,
+        "sha256": "18e3ae93179bf2a273322a35a9610bacdbcf5523ac2f7e07552bfcfe5e10d559"
+      },
+      {
+        "role": "Coconut lentils & rice",
+        "source": "v8-12",
+        "cell": 4,
+        "sha256": "418b9bd2fee0201b2af9b80a9d093b73271453fa3f8bbc92766b77b0643f2d03"
+      },
+      {
+        "role": "Peanut greens & rice",
+        "source": "v8-12",
+        "cell": 5,
+        "sha256": "292cbf43247874436e24de4a98473a97ea881e51721e3a006dc1fa195c20b80f"
+      },
+      {
+        "role": "Avocado tomato salad",
+        "source": "v8-12",
+        "cell": 6,
+        "sha256": "802388a8deabcc2b9e2a5f6e6c110338ff33fce2a5cdb58b45f7b8e959041587"
+      },
+      {
+        "role": "Spiced chickpeas",
+        "source": "v8-12",
+        "cell": 7,
+        "sha256": "9560614a8f945e653720aea0b8d549a304289a8fc876d454a5559e80e172faa9"
+      },
+      {
+        "role": "Cassava chilli bites",
+        "source": "v8-12",
+        "cell": 8,
+        "sha256": "da0fbda780e6b8cc37b03071558cdcb57ec1747c5546c1cb6f9e9f0d71f734fe"
+      },
+      {
+        "role": "Sweet plantain",
+        "source": "v8-12",
+        "cell": 9,
+        "sha256": "68cb09f92bad1ca1817a74ab34cd1405fb5dd97e908c1826d97cc15dcb5053af"
+      },
+      {
+        "role": "Charred maize",
+        "source": "v8-12",
+        "cell": 10,
+        "sha256": "4e96ae4641cc786cde99d9f3e404c868a663c23b3c685da058724fa8b032421e"
+      },
+      {
+        "role": "Market greens",
+        "source": "v8-12",
+        "cell": 11,
+        "sha256": "37553f8dddd841022ac33e570497f56055defe854b425d42d566545f027e9340"
+      },
+      {
+        "role": "Passion fruit fizz",
+        "source": "v8-12",
+        "cell": 12,
+        "sha256": "709acc425510bd2f05e2cc83c39e0358476d6b2f8abcf565562a6f84563cbc00"
+      },
+      {
+        "role": "Iced tamarind tea",
+        "source": "v8-24",
+        "cell": 1,
+        "sha256": "2eb7db5453d6db1982a18eff4292fe5766699f4817350702934ef7c1edb2058f"
+      },
+      {
+        "role": "Mango ginger shake",
+        "source": "v8-24",
+        "cell": 2,
+        "sha256": "4384b63cc3daa1c9a823ff1189ba2be09f0a8f69603926ebb01c7d46d80224ba"
+      },
+      {
+        "role": "Hibiscus cooler",
+        "source": "v8-24",
+        "cell": 3,
+        "sha256": "4e00db256668aecb28e90128cd83696184724438ab5a44ee124fb54ec2f7db4c"
+      },
+      {
+        "role": "Coconut lime water",
+        "source": "v8-24",
+        "cell": 4,
+        "sha256": "97102b8bc3d4bc3d5841361e5810bd48d76c0cafacf7a07f80625833984ef26f"
+      },
+      {
+        "role": "Mandazi & fruit",
+        "source": "v8-24",
+        "cell": 5,
+        "sha256": "fb0a07ed40e0b1af63e3edb83de6dc5d5f2e5f60b032f8bf67afdb0ed6c498a1"
+      },
+      {
+        "role": "Banana caramel chapati",
+        "source": "v8-24",
+        "cell": 6,
+        "sha256": "39c2b4a74ac9787137aeaea5b3c9fb145083de1473b638321792d6291a8591f9"
+      },
+      {
+        "role": "Coconut cassava cake",
+        "source": "v8-24",
+        "cell": 7,
+        "sha256": "b731faa83ad063040a4d2132633daf446121d9e890a419e5dac299ece2d4fdb1"
+      },
+      {
+        "role": "Mango market bowl",
+        "source": "v8-24",
+        "cell": 8,
+        "sha256": "76ececdc01172ec39991e0e3e45c6b17264f9215a91be81d10684d2a6df57f6c"
+      },
+      {
+        "role": "Date peanut bites",
+        "source": "v8-24",
+        "cell": 9,
+        "sha256": "e60ada35649ca4933edf137ec17cc41e9471a084e2eba6342518d2111de27f9e"
+      },
+      {
+        "role": "Cardamom yoghurt cup",
+        "source": "v8-24",
+        "cell": 10,
+        "sha256": "39b113b0974a820b6293b910864ef7cbc4cc26457d90a68a902e1cb38b21edd0"
+      },
+      {
+        "role": "Chocolate chilli brownie",
+        "source": "v8-24",
+        "cell": 11,
+        "sha256": "20a2e820d090ed971b99c8090dfcbf109fd0d615a8c7ac472f0abac938f51577"
+      },
+      {
+        "role": "Pineapple lime plate",
+        "source": "v8-24",
+        "cell": 12,
+        "sha256": "9531a496a11be9288fdd0c80dc06d0b1800dc9e582d0a348e04c173a3afda6b5"
+      },
+      {
+        "role": "Hero",
+        "source": "v8-hero",
+        "cell": null,
+        "sha256": "c7c70585ae4ac965019007738df16e0fb89489b5f270fcc1f9fbe88130e49215"
+      }
+    ],
+    "Nyota-and-Smoke-V9.html": [
+      {
+        "role": "Lake Victoria tilapia",
+        "source": "v9-0",
+        "cell": 1,
+        "sha256": "966d268ec76bc47de7e8a0bac9b09c4cd36f1e652a4c13fd41873872ebac82d9"
+      },
+      {
+        "role": "Charcoal chicken & pilau",
+        "source": "v9-0",
+        "cell": 2,
+        "sha256": "38fc268aa078f318599451d269608318cea08b9ed788e3e0fed6576b7a6122e8"
+      },
+      {
+        "role": "Mwanza market vegetable bowl",
+        "source": "v9-0",
+        "cell": 3,
+        "sha256": "3df242c5221d080cf322bd529ce67fdd9e4d0ce3773c43bf6f829aef777915ec"
+      },
+      {
+        "role": "Coconut bean stew",
+        "source": "v9-0",
+        "cell": 4,
+        "sha256": "07458db02bc8462942d71355471a0baf46ec14d9ba2336c14d1aaea652a3bf96"
+      },
+      {
+        "role": "Pan-seared Nile perch",
+        "source": "v9-0",
+        "cell": 5,
+        "sha256": "5ecd42b1f3bcf4f9f3346e23a1b8b79210f2529de0833ae3b3478f9e0dbf0d86"
+      },
+      {
+        "role": "Smoked aubergine with tahini",
+        "source": "v9-0",
+        "cell": 6,
+        "sha256": "22a2f7261d6db6c00ecb1933acc774740a8b995c25fac564d1e2605e378d19d1"
+      },
+      {
+        "role": "Cassava crisps & pili pili",
+        "source": "v9-0",
+        "cell": 7,
+        "sha256": "db4d2a76b02c362ec9d0877cf47cedb1a57868a1cd7a578a43a5585ffba4cac3"
+      },
+      {
+        "role": "Fire-roasted sweet plantain",
+        "source": "v9-0",
+        "cell": 8,
+        "sha256": "2f89e92b8856db20d69a1011c5274b76e91d4d017f661e792cf7fdacb949b797"
+      },
+      {
+        "role": "Tamarind-glazed chicken",
+        "source": "v9-0",
+        "cell": 9,
+        "sha256": "95f0f83791b831e50327439fbb17358d9e2618bc0766fe45019d55b43c99dc4f"
+      },
+      {
+        "role": "Crisp sambusa trio",
+        "source": "v9-0",
+        "cell": 10,
+        "sha256": "8664fae76172d45cf8579b28d7a099f3057fb4a422c9ce953b2ce2d72d2305d1"
+      },
+      {
+        "role": "Mchuzi wa samaki",
+        "source": "v9-0",
+        "cell": 11,
+        "sha256": "51795ce5c9639a22918f4d2272df40e810bf171248ce0f8209f29750d5a9e268"
+      },
+      {
+        "role": "Charred corn, lime & chilli",
+        "source": "v9-0",
+        "cell": 12,
+        "sha256": "68b9e4fd85023499b936b2a20f0099071b37d27b8234c1e453c30627db83469b"
+      },
+      {
+        "role": "Lake prawns in coconut",
+        "source": "v9-12",
+        "cell": 1,
+        "sha256": "747d975dc21c4aafe1c7ecc4cdbe2e6df35d7061eb750dca98db09f24411acbf"
+      },
+      {
+        "role": "Slow-cooked goat pilau",
+        "source": "v9-12",
+        "cell": 2,
+        "sha256": "2c529d772418bf9c852abea6da67a4c251f59b1e0e49e9f42a27681cdf003f09"
+      },
+      {
+        "role": "Avocado kachumbari",
+        "source": "v9-12",
+        "cell": 3,
+        "sha256": "8bb78629f278d21c812170bb938d5f6f715b48ff49acdadfbdc11cc1094a21ba"
+      },
+      {
+        "role": "Market greens with sesame",
+        "source": "v9-12",
+        "cell": 4,
+        "sha256": "f86030b6b0b6a3d39b2d4ac447b151acf842c25582317866ccffa1384f52ee62"
+      },
+      {
+        "role": "Grilled fish tacos, pili pili",
+        "source": "v9-12",
+        "cell": 5,
+        "sha256": "adab401e1aeb7a1c3a75404a911251d6c6cac3276ef2412c283437760f4c9197"
+      },
+      {
+        "role": "Crispy cassava & tomato relish",
+        "source": "v9-12",
+        "cell": 6,
+        "sha256": "063d9e99f6552f1ef86c05dc8ac1a696b990a039084c8c0ca1cbb05e4316483a"
+      },
+      {
+        "role": "Warm chapati & coconut dhal",
+        "source": "v9-12",
+        "cell": 7,
+        "sha256": "1627d59196c4640476d51278e3cd8ab73ed0a314de60fa9bf5953e21e818ad48"
+      },
+      {
+        "role": "Pepper steak & spiced potatoes",
+        "source": "v9-12",
+        "cell": 8,
+        "sha256": "a304487a607f8b54f48645a3d3000b6ad4b1e3f47e886f7429f4642588033e15"
+      },
+      {
+        "role": "Roast squash, chickpeas & herbs",
+        "source": "v9-12",
+        "cell": 9,
+        "sha256": "d216ca33b5804a2d9b1af57bc79cf66fb30bb46263cd5a0572edc341288f41b9"
+      },
+      {
+        "role": "Smoky tomato soup",
+        "source": "v9-12",
+        "cell": 10,
+        "sha256": "6ae4883a9b25437a7203eb129319e57c8f9ba185c047bc480f5e396463d4721c"
+      },
+      {
+        "role": "Charcoal chicken skewers",
+        "source": "v9-12",
+        "cell": 11,
+        "sha256": "18cab0ce48dd1b14cdfe7d7659e6a5c933c3b9aaec2a1bfb05fa3f9603a350b3"
+      },
+      {
+        "role": "Mango, avocado & lime salad",
+        "source": "v9-12",
+        "cell": 12,
+        "sha256": "a883eee1b23ccac6417d4d1de5ede1f254320b98a81583f8e7a4bef38b7aac02"
+      },
+      {
+        "role": "Coconut rice with green peas",
+        "source": "v9-24",
+        "cell": 1,
+        "sha256": "5c1c2363adaa2b5e0df5eddc3814d141c752dfc37b90bf5e40f72a8662dd70b7"
+      },
+      {
+        "role": "Spiced lentil fritters",
+        "source": "v9-24",
+        "cell": 2,
+        "sha256": "eb61996a34f0728d17b89cbfa323bc5f0502b7b61ab25ace205506133a301e5e"
+      },
+      {
+        "role": "Fried plantain & peanut sauce",
+        "source": "v9-24",
+        "cell": 3,
+        "sha256": "8eb3ca9d26ffd1d0c7ac1f149a043202ce3a5465258dada8c261f9e4fca26d05"
+      },
+      {
+        "role": "Grilled lake fish, ginger broth",
+        "source": "v9-24",
+        "cell": 4,
+        "sha256": "9d4807b19598f1b92120eb3559e0fb73ff9e15228e60a63c00a83856e2be40bf"
+      },
+      {
+        "role": "Tamarind-glazed carrots",
+        "source": "v9-24",
+        "cell": 5,
+        "sha256": "0fdc199a43d30844b703dfaf96b81c56165797c2b4a95cbe0eacc0db2ea5f324"
+      },
+      {
+        "role": "Mango & cardamom cake",
+        "source": "v9-24",
+        "cell": 6,
+        "sha256": "e93db34d6c9f687cff21e7252ed2fb283515fc4f851b4c8c893ad96064183ec9"
+      },
+      {
+        "role": "Coconut cassava pudding",
+        "source": "v9-24",
+        "cell": 7,
+        "sha256": "cbb1458b8206f1bf456571e8a8be380522f5f2a0a5812e0110e74c6c98aa53e3"
+      },
+      {
+        "role": "Charred pineapple, lime cream",
+        "source": "v9-24",
+        "cell": 8,
+        "sha256": "5d4b4a37212b821eebb00f369b7fff8c4bdbf9ef1f21ecc5769089cc24a049ba"
+      },
+      {
+        "role": "Ginger hibiscus cooler",
+        "source": "v9-24",
+        "cell": 9,
+        "sha256": "b654857e8da603ab9031d534c54ce39a8c8ca0841d3eb446b1a189d1715b6428"
+      },
+      {
+        "role": "Tamarind soda with mint",
+        "source": "v9-24",
+        "cell": 10,
+        "sha256": "e50b89815c5d1ce547809261b4b6bb42ea8f379063e2af7d6c2ea531baf00166"
+      },
+      {
+        "role": "Lake breeze passionfruit spritz",
+        "source": "v9-24",
+        "cell": 11,
+        "sha256": "fa0e7d911746433b8cdae64527e294af3433373aa5fff142461c6030ffb4423c"
+      },
+      {
+        "role": "Spiced Swahili coffee",
+        "source": "v9-24",
+        "cell": 12,
+        "sha256": "20f132291287022258efc89ca8785af383f0cdd5944184ae583c57eb0ac53d3e"
+      },
+      {
+        "role": "Hero",
+        "source": "v9-hero",
+        "cell": null,
+        "sha256": "8bb3f635cf60cdef647480892664503461256dcf4684e051449573d97e771f18"
+      }
+    ],
+    "Kora-and-Clay-V10.html": [
+      {
+        "role": "Ful with warm kita",
+        "source": "v10-0",
+        "cell": 1,
+        "sha256": "f3d4a6db14cd8aca313cd190f624ec52427e5b28dbe68c8eb5d2f3dbaf7f2c23"
+      },
+      {
+        "role": "Spiced scrambled eggs & injera",
+        "source": "v10-0",
+        "cell": 2,
+        "sha256": "0edbe48673995a5dbd8f710380ee401f98845523bd0d4a1e564b592f45d73d7d"
+      },
+      {
+        "role": "Honey butter chechebsa",
+        "source": "v10-0",
+        "cell": 3,
+        "sha256": "003e9b928773de5ec4b2df36897c2daab3998d1b9e766c28aa30e88653742a8f"
+      },
+      {
+        "role": "Shiro breakfast bowl",
+        "source": "v10-0",
+        "cell": 4,
+        "sha256": "10d9fdbc498b6d0c802eaddd7db2fb705c1c5db0bb3a3343b75f357ca5691b7a"
+      },
+      {
+        "role": "Avocado, tomato & toasted barley",
+        "source": "v10-0",
+        "cell": 5,
+        "sha256": "d8be5b7d294c1f3e756d921a08ef99be6ebb8b3347c361dec797b82f04a2480c"
+      },
+      {
+        "role": "Buna granola with mango",
+        "source": "v10-0",
+        "cell": 6,
+        "sha256": "e6444538a9a700cfa3cf048291d0c92498956d9ffc6c23dcceadb2a3f746c069"
+      },
+      {
+        "role": "Injera rolls with awaze",
+        "source": "v10-0",
+        "cell": 7,
+        "sha256": "2eedad1230ed4f2c266582a38b393f2d47dc0957dd200097156e3cedbfb5ada5"
+      },
+      {
+        "role": "Sambusa trio, lentil & herb",
+        "source": "v10-0",
+        "cell": 8,
+        "sha256": "35adc6196cd6520f84ecf59c1c3d82485282fe8a06927e3c88736dc549979d22"
+      },
+      {
+        "role": "Gomen with garlic oil",
+        "source": "v10-0",
+        "cell": 9,
+        "sha256": "257ef87edc201101d4715d02c4639e111a42c463c0337cbcb168a45ff95395ff"
+      },
+      {
+        "role": "Roasted beetroot & mitmita",
+        "source": "v10-0",
+        "cell": 10,
+        "sha256": "fa7f1d8ed2aa7ebc03b8115e3d76e7fbfbe97b2c92b2d91e73f80e04ade7e9db"
+      },
+      {
+        "role": "Ayib with green chilli honey",
+        "source": "v10-0",
+        "cell": 11,
+        "sha256": "9f0a2c8a3bc3be1ea90e240bb503f834be59d1eef9ff32bab9e4fe88442533b9"
+      },
+      {
+        "role": "Crisp chickpeas & berbere",
+        "source": "v10-0",
+        "cell": 12,
+        "sha256": "de8d876c000fbc1b806dff6860ef7bb88cdc6ac5d3512e8040f5c2b14e194ab1"
+      },
+      {
+        "role": "Doro tibs with rosemary",
+        "source": "v10-12",
+        "cell": 1,
+        "sha256": "1a896461166bb580648201b7a8d8a6e93f83d74a16d683b9589be4ebecf2ae0b"
+      },
+      {
+        "role": "Mushroom tibs, smoked paprika",
+        "source": "v10-12",
+        "cell": 2,
+        "sha256": "37552ae328576ea3ab671d93e730397d93962309f678c6e26eb5066f1a7050c9"
+      },
+      {
+        "role": "Slow braised beef wot",
+        "source": "v10-12",
+        "cell": 3,
+        "sha256": "1b6e4ad2b60c2e7c31155be3ed989171f76adf7b90402222ead1b5e842613ff2"
+      },
+      {
+        "role": "Berbere roast chicken",
+        "source": "v10-12",
+        "cell": 4,
+        "sha256": "4297371055100c6e7f8d775caf0fb840fb427f30871710410de420d9bbc73a79"
+      },
+      {
+        "role": "Lentil misir wot",
+        "source": "v10-12",
+        "cell": 5,
+        "sha256": "2fd0b9f29b657cdce47880b21f63c85126af092fa734b95f785f1becc19ed3b5"
+      },
+      {
+        "role": "Charred cauliflower & tahini",
+        "source": "v10-12",
+        "cell": 6,
+        "sha256": "2d7f2d53408b3b010aca794cb17c2d8ae6b98a771293650fb8a157344786ba38"
+      },
+      {
+        "role": "Red lentil sambusa plate",
+        "source": "v10-12",
+        "cell": 7,
+        "sha256": "ea5cdaf231e96408ade79e5d9235b1ee461120f9418e1ad0f0fa29446b9cef6e"
+      },
+      {
+        "role": "Kik alicha with turmeric oil",
+        "source": "v10-12",
+        "cell": 8,
+        "sha256": "dd3784053b8d16a6ab869619e18b70d66142ac4b26b65488d943bb73f3f5b525"
+      },
+      {
+        "role": "Tibs wat with caramelized onion",
+        "source": "v10-12",
+        "cell": 9,
+        "sha256": "4b076d3c1d99d9d16091551e68e266a528bc03ebc9aff429a8e37a20971d67e7"
+      },
+      {
+        "role": "Teff injera & house stew",
+        "source": "v10-12",
+        "cell": 10,
+        "sha256": "889bebd6623c8cdf6b824aa6c0e9057839c287e75ca066b1d145692d242f40df"
+      },
+      {
+        "role": "Crispy potato, rosemary & awaze",
+        "source": "v10-12",
+        "cell": 11,
+        "sha256": "cf548e110e4229ef668295e7c0d44c320b8dbff5c647c28c3101ef9f3b8f787f"
+      },
+      {
+        "role": "Market greens with lemon",
+        "source": "v10-12",
+        "cell": 12,
+        "sha256": "283706a627ef958727cda77b8feb3cb6562d107dcbdcbe9a667187d527223f3e"
+      },
+      {
+        "role": "Orange & cardamom cake",
+        "source": "v10-24",
+        "cell": 1,
+        "sha256": "65a5dc8a32a0732f16a59ab16e9e8c776eee5712e6a7370cae4ca0ae3709f674"
+      },
+      {
+        "role": "Teff brownie with coffee cream",
+        "source": "v10-24",
+        "cell": 2,
+        "sha256": "e31714c55f8b13d6ea3236064055b89df486ae29827ac75c2f8d50234d788e91"
+      },
+      {
+        "role": "Warm honey dumplings",
+        "source": "v10-24",
+        "cell": 3,
+        "sha256": "c18f831893d6fb6f83555b0fc689a7e0002eb4f32e83b42c3ec3b4997c6a610a"
+      },
+      {
+        "role": "Mango sorbet with lime",
+        "source": "v10-24",
+        "cell": 4,
+        "sha256": "f60b568defd4803bae4c46f3530725ca8a0b345e99915e87e323eaa2e51b6a44"
+      },
+      {
+        "role": "Spiced hibiscus iced tea",
+        "source": "v10-24",
+        "cell": 5,
+        "sha256": "65af2906103bb9042d41a49d51f13f5d5f3ed05d0b622dadd860ee6ed18e598e"
+      },
+      {
+        "role": "Lime, ginger & mint fizz",
+        "source": "v10-24",
+        "cell": 6,
+        "sha256": "b14714feccae566734c59d5a033a710813de2cd182162ea0b08deb2d4a99372f"
+      },
+      {
+        "role": "Fresh buna, jebena pour",
+        "source": "v10-24",
+        "cell": 7,
+        "sha256": "d4b016831d6f6a3912c37aa05f75428ad4d0054a4d01da2abdc161c48c5b47ee"
+      },
+      {
+        "role": "Ethiopian coffee macchiato",
+        "source": "v10-24",
+        "cell": 8,
+        "sha256": "ab5c489115f39c695aa84d817bf7b3d80c3102307d08ed8e7656113d4866369b"
+      },
+      {
+        "role": "Hero",
+        "source": "v10-hero",
+        "cell": null,
+        "sha256": "bf0fc4e39f7660bc7a1649ae54c9b8c8dd3c8199bc6594d48e859eb7330b31a8"
+      }
+    ],
+    "Tamu-and-Tide-V11.html": [
+      {
+        "role": "Charcoal reef fish",
+        "source": "tamu-0",
+        "cell": 1,
+        "sha256": "9005c2d842976990736b72424b0bf388fc94908f81cf62675c06cd0831f42a65"
+      },
+      {
+        "role": "Coconut prawns",
+        "source": "tamu-0",
+        "cell": 2,
+        "sha256": "25da34b4b87c966b27ebfa51aaf7b0596ee70a7189a74d8d4f3eddff12f5c4e5"
+      },
+      {
+        "role": "Zanzibar octopus pilau",
+        "source": "tamu-0",
+        "cell": 3,
+        "sha256": "690977bdf8a8c5f17a6c1085777aa05bf60c1d93f900db1819c28e1cb47c6091"
+      },
+      {
+        "role": "Tamarind-glazed catch",
+        "source": "tamu-0",
+        "cell": 4,
+        "sha256": "3f71e7674c2058c83280351f665bc10009301e22fe9ad5907a6c085127d2e59c"
+      },
+      {
+        "role": "Swahili crab curry",
+        "source": "tamu-0",
+        "cell": 5,
+        "sha256": "93ef0486411decfe8ed8823f72a6ca341476ef92fef50fcd379267585f62b107"
+      },
+      {
+        "role": "Crisp cassava & pili pili",
+        "source": "tamu-0",
+        "cell": 6,
+        "sha256": "27eeb481a8b35e82c84dbaa2c431aa971dafbdfb0aa45d20e6f14446b5aacf90"
+      },
+      {
+        "role": "Coconut greens with lime",
+        "source": "tamu-0",
+        "cell": 7,
+        "sha256": "dda102a1c1d5b712f1d379b1d239272e8a29c9255f2502962c345947a8eac8b7"
+      },
+      {
+        "role": "Coastal chicken mishkaki",
+        "source": "tamu-0",
+        "cell": 8,
+        "sha256": "21112f28c4472719f7bf15b962bd0349a828e6c40024b7f0a944c9069de8de81"
+      },
+      {
+        "role": "Market tomato kachumbari",
+        "source": "tamu-8",
+        "cell": 1,
+        "sha256": "d569de5b92c9241dd3cbd0478205db99edff7ab97e7d6ae4594432040de05528"
+      },
+      {
+        "role": "Grilled plantain & peanut",
+        "source": "tamu-8",
+        "cell": 2,
+        "sha256": "defcb25e25ed66715f9346df7351b6d97f9c6cfdd0e3d5ea8e046cb62800dc08"
+      },
+      {
+        "role": "Mango-chilli snapper",
+        "source": "tamu-8",
+        "cell": 3,
+        "sha256": "4582dd84d6c809430a2940acbafb921697694c9707d33e02680fcebb52762dd7"
+      },
+      {
+        "role": "Slow-cooked beef mishkaki",
+        "source": "tamu-8",
+        "cell": 4,
+        "sha256": "bd2fa650bf2e2d8f792132adf8cae4c2c757a202ff611e80367dae37726ddbdc"
+      },
+      {
+        "role": "Cardamom pilau rice",
+        "source": "tamu-8",
+        "cell": 5,
+        "sha256": "b68991cb2f8a204fcca80a798f5369c0ba7c9f4366a28d995b5251e8c0baa6a3"
+      },
+      {
+        "role": "Coconut bean stew",
+        "source": "tamu-8",
+        "cell": 6,
+        "sha256": "b60396c4fa519fa114038e33b8e33dc0ca228ae666eb179731bfbcfb98cc72c3"
+      },
+      {
+        "role": "Tandoori reef fish",
+        "source": "tamu-8",
+        "cell": 7,
+        "sha256": "ca68ecbefaff3f6ec642b8b97ce8d632d0811b57debd61c827b1b6cf4a20fefa"
+      },
+      {
+        "role": "Lime-coconut prawns",
+        "source": "tamu-8",
+        "cell": 8,
+        "sha256": "a26cce6da45ac93a42ce85950d2c828e765490db7db28fe91371f1cf71c0a717"
+      },
+      {
+        "role": "Spiced pumpkin & chickpeas",
+        "source": "tamu-16",
+        "cell": 1,
+        "sha256": "3cfcafa3f3fee86fecc02992f93c4c878d0b5a977dc7e7f6d28682dc67d053a2"
+      },
+      {
+        "role": "Charred corn with pili pili",
+        "source": "tamu-16",
+        "cell": 2,
+        "sha256": "93799f58eb5a26097fb5743506a2f0d92e4f99fab5d56d1a42a0f5031011ae8f"
+      },
+      {
+        "role": "Sea-salt mandazi",
+        "source": "tamu-16",
+        "cell": 3,
+        "sha256": "e3466ec3c06ceafbe1143bc3fc7b83150a6ede474203dab18251fe81e0cdc4e8"
+      },
+      {
+        "role": "Passionfruit & cardamom tart",
+        "source": "tamu-16",
+        "cell": 4,
+        "sha256": "a85ef111a75c2d1d6f2897d7c581b6829dd6b86bc846db276ebd63af7802af3c"
+      },
+      {
+        "role": "Chai ice cream",
+        "source": "tamu-16",
+        "cell": 5,
+        "sha256": "261f549e21d6eda8bfbbd366f62f410005d36e09f616851df088bb022de9800d"
+      },
+      {
+        "role": "Tamarind ginger fizz",
+        "source": "tamu-16",
+        "cell": 6,
+        "sha256": "11ee7a1235a5767a1f29bf4da53f548e25c75dcd083b6bdd7c5b65f1af0532bd"
+      },
+      {
+        "role": "Baobab lime cooler",
+        "source": "tamu-16",
+        "cell": 7,
+        "sha256": "5638de6cf2055f4d9c003b0bdc621f4630c99814bd08d3f812f1c10093691e26"
+      },
+      {
+        "role": "Spiced coastal coffee",
+        "source": "tamu-16",
+        "cell": 8,
+        "sha256": "401f86af67f3e4b3e10810a5c2315359e049929719a09cc3b92649fd2a97ab74"
+      },
+      {
+        "role": "Coconut fish moilee",
+        "source": "tamu-24",
+        "cell": 1,
+        "sha256": "4885149d4d040108c7da12284f59af42c5120547c2661e4cb3c455a09eb401b5"
+      },
+      {
+        "role": "Pili pili calamari",
+        "source": "tamu-24",
+        "cell": 2,
+        "sha256": "4aeef3e0ff8919c67ede532b7a9b09ca24e75119f13f8ba520c589725e712ac1"
+      },
+      {
+        "role": "Tamarind reef prawns",
+        "source": "tamu-24",
+        "cell": 3,
+        "sha256": "d27fb8a800ae5502c61690458ab0d53af2ddf68bf9b5066efc169a22b2bcb22d"
+      },
+      {
+        "role": "Roasted aubergine with tahini",
+        "source": "tamu-24",
+        "cell": 4,
+        "sha256": "8b76ee74be0d40de9143930ebca1c054dd7877897f840f8dc4a3db7fcc1b4e54"
+      },
+      {
+        "role": "Spiced lentil fritters",
+        "source": "tamu-24",
+        "cell": 5,
+        "sha256": "2f9f1b25ad97039316558f1d2b0ec2dbc5cca2491709f2081dba9fbea195accf"
+      },
+      {
+        "role": "Coconut flatbread",
+        "source": "tamu-24",
+        "cell": 6,
+        "sha256": "ee836aa2bdb128714939732b6d27198323bddd53f7968d95364705ed4443528e"
+      },
+      {
+        "role": "Cucumber lime salad",
+        "source": "tamu-24",
+        "cell": 7,
+        "sha256": "dca5f111911e6d5f89b8ce86fb91bdcc7143df1f696bb24734830e4863941c62"
+      },
+      {
+        "role": "Goat and coconut stew",
+        "source": "tamu-24",
+        "cell": 8,
+        "sha256": "7753ae5d32a3956c5e7c8de4778f0ff6acee26d61c72f8bc2b65da0b9902d558"
+      },
+      {
+        "role": "Pineapple ginger sorbet",
+        "source": "tamu-32",
+        "cell": 1,
+        "sha256": "407dfe23e7a243aaf54bee9f07d8d1c463ccaa136bce0c1c003a9ff74a109a72"
+      },
+      {
+        "role": "Mango coconut pudding",
+        "source": "tamu-32",
+        "cell": 2,
+        "sha256": "6342df56820c805716d46f1a1f96b0e087071f3e2d197c40d35d9aa015210580"
+      },
+      {
+        "role": "Hibiscus lime cooler",
+        "source": "tamu-32",
+        "cell": 3,
+        "sha256": "c9ff762cdc76d3b2d7db3f16a972e8b08baa2a76f64d5bb74df1386efaeaefee"
+      },
+      {
+        "role": "Vanilla chai pot",
+        "source": "tamu-32",
+        "cell": 4,
+        "sha256": "63da682c7043932de2124cb9586722e32eb853c9f6bbd2df72cfb2f4c07fc756"
+      },
+      {
+        "role": "Hero",
+        "source": "tamu-hero",
+        "cell": null,
+        "sha256": "2322abf6a9ea5265cce5e7d2d3f90e438e3fd6e6f99315879f9832b493f27612"
+      }
+    ],
+    "Isaro-V12.html": [
+      {
+        "role": "Lake tilapia over charcoal",
+        "source": "isaro-first",
+        "cell": 1,
+        "sha256": "c2382295c26e3e1b7bb03a681c11872d90d24816060a8f78568b15f188dae0bf"
+      },
+      {
+        "role": "Pepper prawns",
+        "source": "isaro-first",
+        "cell": 2,
+        "sha256": "1c268c9df9b5f2b2f305276c5d70178c832a1d187d042fdcbaa982441dbd6ab5"
+      },
+      {
+        "role": "Lake fish pilau",
+        "source": "isaro-first",
+        "cell": 3,
+        "sha256": "f05a67402cd079859bce493dbd63dcac89df197665d90183921e82adce808334"
+      },
+      {
+        "role": "Tamarind grilled fish",
+        "source": "isaro-first",
+        "cell": 4,
+        "sha256": "e2266e36bb3f46ee14e48276d73f29a688cf37b0948b590f9185d78ffc21ac89"
+      },
+      {
+        "role": "Bean stew with cassava leaves",
+        "source": "isaro-4",
+        "cell": 1,
+        "sha256": "f0324911590fc74f54d282f4d9569b415dc3cd39b749ed3db7cec0171d666610"
+      },
+      {
+        "role": "Crisp cassava & pili pili",
+        "source": "isaro-4",
+        "cell": 2,
+        "sha256": "1fe6ad0f9ee42e68cc33e8e80a79db6102df78afc580b3626669c53362a2e253"
+      },
+      {
+        "role": "Highland greens with groundnuts",
+        "source": "isaro-4",
+        "cell": 3,
+        "sha256": "d4015077db0908d0601186533e810883a424b8f0dbf8f3653b0d7300552c4ea3"
+      },
+      {
+        "role": "Fire-roasted chicken brochettes",
+        "source": "isaro-4",
+        "cell": 4,
+        "sha256": "68d280e57a03ff7866030beb47dc273739f2544c0e575e093e1f2ea3f14f0e24"
+      },
+      {
+        "role": "Tomato & tree tomato salad",
+        "source": "isaro-4",
+        "cell": 5,
+        "sha256": "af355bd5dc677c9a3fecfb3d638dc1a2c4dcd5692f1dadc4c1c55d99c8c58b6c"
+      },
+      {
+        "role": "Grilled plantain & groundnuts",
+        "source": "isaro-4",
+        "cell": 6,
+        "sha256": "1b9415320ec233e3c555ca2e8b6138c889e5a4fd48761b2cf4d0b0cd52a2bd58"
+      },
+      {
+        "role": "Lake perch with mango chilli",
+        "source": "isaro-4",
+        "cell": 7,
+        "sha256": "c926492b3f50910b745d13cd2a6f3fddb229e4ec0a6ad78cb90b443f8e796e93"
+      },
+      {
+        "role": "Slow-cooked beef brochettes",
+        "source": "isaro-4",
+        "cell": 8,
+        "sha256": "f5a88ef4772855f7e701be87ac5fbe815724963905baa29c50f831f704918600"
+      },
+      {
+        "role": "Cardamom pilau rice",
+        "source": "isaro-12",
+        "cell": 1,
+        "sha256": "9dacc7e02645bc32b80dea8999a0efb16916db366e14df144d6ba6d5bf5efded"
+      },
+      {
+        "role": "Coconut bean stew",
+        "source": "isaro-12",
+        "cell": 2,
+        "sha256": "29d4cd20ff4f32d194d3029f4635f0435fb9b01f85ca87ce1f18492655861fc9"
+      },
+      {
+        "role": "Smoked lake sardines",
+        "source": "isaro-12",
+        "cell": 3,
+        "sha256": "d670aee0953aecb20ea542eb3319ed6aca40271f3ab72916fc5d493ea6c89a41"
+      },
+      {
+        "role": "Lime & pepper lake prawns",
+        "source": "isaro-12",
+        "cell": 4,
+        "sha256": "d42140caa84954440251c6fc6ab825c53a38f0be2c25387752b10b2653edd8ad"
+      },
+      {
+        "role": "Spiced pumpkin & chickpeas",
+        "source": "isaro-12",
+        "cell": 5,
+        "sha256": "cfe773949973ead944c0f44174d12e835f17cdea2b3bf49f3e7b6bca7328791a"
+      },
+      {
+        "role": "Charred maize with pili pili",
+        "source": "isaro-12",
+        "cell": 6,
+        "sha256": "570df688e8a01440cebaf31f262da12144462848804f154e88e5389d8b34d5f4"
+      },
+      {
+        "role": "Honey mandazi",
+        "source": "isaro-12",
+        "cell": 7,
+        "sha256": "1b89151f46b88f4c9e688c3b0b172bccf8f5b23baf286823bea9c59e6cc7185a"
+      },
+      {
+        "role": "Passionfruit & cardamom tart",
+        "source": "isaro-12",
+        "cell": 8,
+        "sha256": "0d4bbaa1053d8912cc5c27c4cdd60c21916857014c9462d9d3ef9adc50c8b277"
+      },
+      {
+        "role": "Chai ice cream",
+        "source": "isaro-20",
+        "cell": 1,
+        "sha256": "dfcb2650e03aa4c9f09155c1de7c22287c565b5bae4ebce5aca7f8046e6e9454"
+      },
+      {
+        "role": "Tamarind ginger fizz",
+        "source": "isaro-20",
+        "cell": 2,
+        "sha256": "782307faee79aea42837d53f0aa800e98970941ca20769f29f90e5de2ec02a94"
+      },
+      {
+        "role": "Baobab lime cooler",
+        "source": "isaro-20",
+        "cell": 3,
+        "sha256": "0798ea4189e8c1dd330ced042972a3860c31b7be9ea719e33527c5ea99a617e1"
+      },
+      {
+        "role": "Spiced highland coffee",
+        "source": "isaro-20",
+        "cell": 4,
+        "sha256": "5eba521842adfed45ed9708dbeb1ae84347d962e8f5afffd58c8fea4d7a55d0a"
+      },
+      {
+        "role": "Hero",
+        "source": "isaro-hero",
+        "cell": null,
+        "sha256": "7be558f1397050eb1db38f4f4741c9d5c654bfcde52e159450695ce72e7b3ebf"
+      }
+    ],
+    "index.html": [
+      {
+        "role": "Collection hero",
+        "source": "collection",
+        "cell": null,
+        "sha256": "764472a181f1244d4239a96274a5d990852295924a5f6bb37f2acc2075bb8988"
+      }
+    ]
+  }
+}
