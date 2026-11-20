@@ -25,6 +25,10 @@ Each HTML demo is self-contained. Matching `*- style.css` and `*- script.js` fil
 
 All restaurant contact information in the demos is fictional, varied across East Africa, and intended for replacement. The pages include theme and language controls, image close-up previews, scroll reveals, and a Back-to-Top Button.
 
+## Dining preview photography
+
+The twelve numbered demos credit licensed photographs in their footers. [DINING-IMAGERY.json](DINING-IMAGERY.json) records the source, creator, license and embedded WebP hash for each photo, alongside the provenance of retained generated artwork. For future changes, check existing image permissions first, then look for a free photograph that fits the dish and crop. Generate an image only for a remaining gap. Customer downloads contain editable photo slots.
+
 ## GitHub Pages
 
 The `main` branch is configured to publish from the repository root. The collection page and demo links above use the live Pages address.
